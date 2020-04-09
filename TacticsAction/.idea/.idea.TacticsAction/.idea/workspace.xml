@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/17/e30b75a3/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F28216F-EA9F-453A-BF2E-05B770ED3EE4/e1/137f42c7/Node.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/6d/3ca1ad42/UnityEventBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/2019.2.17f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/59/8afbbb0f/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/79/37a79958/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59837000-EBF5-4955-A9CB-1D31CAA86097/27/70c8409b/GUILayoutOption.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scenes/GridBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/GridBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/InGameCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/SelectionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEvnet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SelectionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VaQqfp5CHWSjXjXtC9VKTvSCdt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="" />
+      <created>1577488917428</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577488917428</updated>
+      <workItem from="1577488919249" duration="1403000" />
+      <workItem from="1585513823166" duration="9834000" />
+      <workItem from="1585705850580" duration="13240000" />
+      <workItem from="1585844705336" duration="2075000" />
+      <workItem from="1586010801493" duration="15565000" />
+      <workItem from="1586351446038" duration="22526000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="399" y="248" key="RiderGenerateDialog" timestamp="1586379982884">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1586379982884" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1586041635463" />
+    <state x="827" y="257" key="SettingsEditor" timestamp="1586364029050">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state x="827" y="257" key="SettingsEditor/0.0.2560.1027@0.0.2560.1027" timestamp="1586364029050" />
+    <state x="1395" y="403" key="SettingsEditor/0.0.3072.1240@0.0.3072.1240" timestamp="1585751584025" />
+    <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585780192195">
+      <screen x="0" y="0" width="3072" height="1240" />
+    </state>
+    <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
+    <state x="425" y="293" width="672" height="677" key="run.anything.popup" timestamp="1586041809513">
+      <screen x="0" y="0" width="3072" height="1240" />
+    </state>
+    <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
+    <state x="943" y="222" width="672" height="678" key="search.everywhere.popup" timestamp="1586378301565">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586378301565" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs</url>
+          <line>15</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" initialLine="14">
+            <startOffsets>
+              <option value="428" />
+            </startOffsets>
+            <endOffsets>
+              <option value="468" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" initialLine="17">
+            <startOffsets>
+              <option value="506" />
+            </startOffsets>
+            <endOffsets>
+              <option value="564" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
