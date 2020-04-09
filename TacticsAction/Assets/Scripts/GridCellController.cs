@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using API;
+using API.Events;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +46,7 @@ public class GridCellEdge{
 public class GridCellController : MonoBehaviour{
     public int X;
     public int Y;
+    public uint GraphIndex; //used for graph node correlation
     public TileType TileType;
     public GameObject OccupiedBy;
     public List<GridCellEdge> Edges;
@@ -78,7 +81,9 @@ public class GridCellController : MonoBehaviour{
             new GridCellEdge {Dir = GridCellDir.SE, Enabled = true}
         };
         IsWalkable = true;
-        
+    }
+    
+    public void Start(){
         GameEvents.GridCellSelected.AddListener(OnGridCellSelected);
     }
 
@@ -91,10 +96,22 @@ public class GridCellController : MonoBehaviour{
                 GetComponent<Renderer>().material.color = Color.white;
         }
         
+        if(Debug.isDebugBuild)
+            foreach (var gridCellEdge in Edges)
+            {
+                if(gridCellEdge.Enabled)
+                    Debug.DrawLine(gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().position + gridCellEdge.DirVector(), Color.green);     
+            }
+    }
+    
+    void OnDrawGizmos()
+    {
         foreach (var gridCellEdge in Edges)
         {
-            if(gridCellEdge.Enabled)
-                Debug.DrawLine(gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().position + gridCellEdge.DirVector(), Color.green);     
+            if(gridCellEdge.Enabled){
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().position + gridCellEdge.DirVector());     
+            }
         }
     }
     
@@ -102,41 +119,15 @@ public class GridCellController : MonoBehaviour{
     
     private void OnGridCellSelected(GridCellSelectedData data)
     {
+        print("OnGridCellSelected");
         bool wasSelected = IsSelected;
         IsSelected = data.GameObject == this.gameObject;
     
+        //TODO: Base on what is OccupiedBy on the tile we need to dispatch the correct event (or a generic one)
         if(OccupiedBy != null)
             if(IsSelected && !wasSelected)
                 GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(OccupiedBy));
             else if(wasSelected)
                 GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
     }
-    
-}
-[CanEditMultipleObjects]
-[CustomEditor(typeof(GridCellController))]
-public class GridCellEditor : Editor 
-{
-    bool showEdges =true;
-    string edgesLabel = "Edges";
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        GridCellController gridCell = (GridCellController)target;
-        showEdges = EditorGUILayout.Foldout(showEdges, edgesLabel);
-        if( showEdges){
-            foreach (var gridCellEdge in gridCell.Edges)
-            {
-                GUILayout.BeginHorizontal();
-                GUILayout.Space(25f);
-                GUILayout.Label(gridCellEdge.Dir.ToString(), GUILayout.Width(50));
-                gridCellEdge.Enabled = GUILayout.Toggle(gridCellEdge.Enabled,"", GUILayout.Width(20));
-                gridCellEdge.MoveCost = EditorGUILayout.IntField(gridCellEdge.MoveCost, GUILayout.Width(50));
-            
-                GUILayout.EndHorizontal();
-            }
-        }
-    }
-   
 }

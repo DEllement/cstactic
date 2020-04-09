@@ -58,16 +58,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AStarSearch.cs" />
-     <Compile Include="Assets\Scripts\Events\GridCellSelected.cs" />
-     <Compile Include="Assets\Scripts\Events\GridCharacterDeSelected.cs" />
-     <Compile Include="Assets\Scripts\Events\GridCharacterSelected.cs" />
-     <Compile Include="Assets\Scripts\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\AssignCharacterToGrid.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCellSelected.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCharacterDeSelected.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCharacterSelected.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridReady.cs" />
+     <Compile Include="Assets\Scripts\API\GameCommands.cs" />
+     <Compile Include="Assets\Scripts\API\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />
+     <Compile Include="Assets\Scripts\Editors\GridControllerEditor.cs" />
      <Compile Include="Assets\Scripts\GridCellController.cs" />
      <Compile Include="Assets\Scripts\GridCharacterController.cs" />
      <Compile Include="Assets\Scripts\GridController.cs" />
+     <Compile Include="Assets\Scripts\GridPath.cs" />
      <Compile Include="Assets\Scripts\InGameCamera.cs" />
-     <Compile Include="Assets\Scripts\PriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Extensions\EnumerableExtensions.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Edge.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\EdgeTemp.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Exceptions\EdgeNotFoundException.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Graph.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\IGraph.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\INode.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Node.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\NodeConstants.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Simple\EdgeTemp.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Simple\Graph.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Simple\GraphExtensions.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Simple\ReadonlyEdge.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\PageRank\IPageRankGraph.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\PageRank\PageRankExtensions.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\PageRank\PageRankResult.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\Dijkstra.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\DijkstraExtensions.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\Edge.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\IDijkstraGraph.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\NodeComparer.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\ShortestPathResult.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\SortedSetExtensions.cs" />
+     <Compile Include="Assets\Scripts\Utils\PriorityQueue.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Works/TacticsAction/TacticsAction/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

@@ -1,31 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="" />
+    <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GridPath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GridPath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Extensions/EnumerableExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Extensions/EnumerableExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/EdgeTemp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/EdgeTemp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Exceptions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Exceptions/EdgeNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Exceptions/EdgeNotFoundException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/IGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/IGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/NodeConstants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/NodeConstants.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/EdgeTemp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/EdgeTemp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/Graph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/Graph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/GraphExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/GraphExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/ReadonlyEdge.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Simple/ReadonlyEdge.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/IPageRankGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/IPageRankGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/PageRankExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/PageRankExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/PageRankResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/PageRankResult.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/IDijkstraGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/IDijkstraGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/NodeComparer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/NodeComparer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/SortedSetExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/SortedSetExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs.meta" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/17/e30b75a3/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F28216F-EA9F-453A-BF2E-05B770ED3EE4/e1/137f42c7/Node.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/6d/3ca1ad42/UnityEventBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/2019.2.17f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/59/8afbbb0f/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/17/e30b75a3/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F28216F-EA9F-453A-BF2E-05B770ED3EE4/e1/137f42c7/Node.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/2019.2.17f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/79/37a79958/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59837000-EBF5-4955-A9CB-1D31CAA86097/27/70c8409b/GUILayoutOption.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -38,21 +143,46 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EventsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEvnet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/GameEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SelectionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PathFinder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PathfindMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/GridBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/PathfindMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Node.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/AStarSearch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridReady.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameCommands.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Commands/AssignCharacterToGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridPath.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1VaQqfp5CHWSjXjXtC9VKTvSCdt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -62,6 +192,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -74,10 +205,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31020">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="31020" />
       <method v="2" />
     </configuration>
   </component>
@@ -108,7 +239,7 @@
       <workItem from="1585705850580" duration="13240000" />
       <workItem from="1585844705336" duration="2075000" />
       <workItem from="1586010801493" duration="15565000" />
-      <workItem from="1586351446038" duration="22526000" />
+      <workItem from="1586351446038" duration="47730000" />
     </task>
     <servers />
   </component>
@@ -117,7 +248,86 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state width="409" height="466" key="DebuggerActiveHint" timestamp="1586470374912">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="409" height="466" key="DebuggerActiveHint/0.0.2560.1027@0.0.2560.1027" timestamp="1586470374912" />
+    <state width="2203" height="342" key="GridCell.Tab.0.bottom" timestamp="1586470326842">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.0.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326842" />
+    <state width="2203" height="342" key="GridCell.Tab.0.center" timestamp="1586470326842">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.0.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326842" />
+    <state width="2203" height="342" key="GridCell.Tab.0.left" timestamp="1586470326842">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.0.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326842" />
+    <state width="2203" height="342" key="GridCell.Tab.0.right" timestamp="1586470326842">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.0.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326842" />
+    <state width="2203" height="342" key="GridCell.Tab.1.bottom" timestamp="1586470340636">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.1.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586470340636" />
+    <state width="2203" height="342" key="GridCell.Tab.1.center" timestamp="1586470340636">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.1.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586470340636" />
+    <state width="2203" height="342" key="GridCell.Tab.1.left" timestamp="1586470340636">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.1.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586470340636" />
+    <state width="2203" height="342" key="GridCell.Tab.1.right" timestamp="1586470340636">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.1.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586470340636" />
+    <state width="2203" height="342" key="GridCell.Tab.2.bottom" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.2.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
+    <state width="2203" height="342" key="GridCell.Tab.2.center" timestamp="1586470326675">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.2.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326675" />
+    <state width="2203" height="342" key="GridCell.Tab.2.left" timestamp="1586470326675">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.2.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326675" />
+    <state width="2203" height="342" key="GridCell.Tab.2.right" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.2.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
+    <state width="2203" height="342" key="GridCell.Tab.3.bottom" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.3.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
+    <state width="2203" height="342" key="GridCell.Tab.3.center" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.3.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
+    <state width="2203" height="342" key="GridCell.Tab.3.left" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.3.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
+    <state width="2203" height="342" key="GridCell.Tab.3.right" timestamp="1586470326676">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state width="2203" height="342" key="GridCell.Tab.3.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586470326676" />
     <state x="399" y="248" key="RiderGenerateDialog" timestamp="1586379982884">
       <screen x="0" y="0" width="2560" height="1027" />
     </state>
@@ -132,6 +342,10 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
+    <state x="959" y="245" width="642" height="536" key="find.popup" timestamp="1586456348057">
+      <screen x="0" y="0" width="2560" height="1027" />
+    </state>
+    <state x="959" y="245" width="642" height="536" key="find.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586456348057" />
     <state x="425" y="293" width="672" height="677" key="run.anything.popup" timestamp="1586041809513">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -146,29 +360,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs</url>
-          <line>15</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" initialLine="14">
+          <line>55</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" initialLine="52">
             <startOffsets>
-              <option value="428" />
+              <option value="1452" />
             </startOffsets>
             <endOffsets>
-              <option value="468" />
+              <option value="1471" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" initialLine="17">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs</url>
+          <line>60</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" initialLine="60">
             <startOffsets>
-              <option value="506" />
+              <option value="2174" />
             </startOffsets>
             <endOffsets>
-              <option value="564" />
+              <option value="2187" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs</url>
+          <line>68</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" initialLine="68">
+            <startOffsets>
+              <option value="2432" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2444" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
