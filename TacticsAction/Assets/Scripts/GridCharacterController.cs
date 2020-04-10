@@ -47,23 +47,32 @@ public class GridCharacterController : MonoBehaviour
         currPathIndex = 0;
         isMoving = true;
     }
-    
+    Vector3 lastPath;
     // Update is called once per frame
     void Update()
     {
         if(isMoving){
+            X = movePath[currPathIndex].X;
+            Y = movePath[currPathIndex].Y;
             float step =  moveSpeed * Time.deltaTime;
-            print(X + " " + Y);
+            //print(X + " " + Y);
             transform.position = Vector3.MoveTowards(transform.position, movePath[currPathIndex].Position, step);
             if( Vector3.Distance(transform.position, movePath[currPathIndex].Position) < 0.001f)
             {
                 SetNextPath();
             }
         }
+        if( movePath != null && movePath.Length > 0){
+            lastPath = movePath[0].Position;
+            for(var i =1;i < movePath.Length; i++)
+            {
+                Debug.DrawLine(lastPath+(Vector3.up*.5f), movePath[i].Position+Vector3.up*.5f, Color.red);   
+                lastPath=movePath[i].Position;
+            }
+        }
     }
     void SetNextPath() {
-        X = movePath[currPathIndex].X;
-        Y = movePath[currPathIndex].Y;
+        
         if(++currPathIndex >= movePath.Length){
             isMoving = false;
         }

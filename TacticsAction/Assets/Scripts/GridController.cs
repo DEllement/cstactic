@@ -161,10 +161,10 @@ public class GridController : MonoBehaviour
                         case GridCellDir.S: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x,y-1].GetComponent<GridCellController>().GraphIndex, 1, null); return;
                         case GridCellDir.W: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x-1,y].GetComponent<GridCellController>().GraphIndex, 1, null); return;
                         case GridCellDir.E: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x+1,y].GetComponent<GridCellController>().GraphIndex, 1, null); return;
-                        case GridCellDir.NW: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x-1,y+1].GetComponent<GridCellController>().GraphIndex, 1, null); return;
-                        case GridCellDir.NE: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x+1,y+1].GetComponent<GridCellController>().GraphIndex, 1, null); return;
-                        case GridCellDir.SW: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x-1,y-1].GetComponent<GridCellController>().GraphIndex, 1, null); return;
-                        case GridCellDir.SE: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x+1,y-1].GetComponent<GridCellController>().GraphIndex, 1, null); return;
+                        case GridCellDir.NW: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x-1,y+1].GetComponent<GridCellController>().GraphIndex, 2, null); return;
+                        case GridCellDir.NE: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x+1,y+1].GetComponent<GridCellController>().GraphIndex, 2, null); return;
+                        case GridCellDir.SW: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x-1,y-1].GetComponent<GridCellController>().GraphIndex, 2, null); return;
+                        case GridCellDir.SE: graph.Connect(gridCellCtrl.GraphIndex, gridCells[x+1,y-1].GetComponent<GridCellController>().GraphIndex, 2, null); return;
                         default:
                             throw new ArgumentOutOfRangeException();
                     }

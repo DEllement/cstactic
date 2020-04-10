@@ -96,12 +96,12 @@ public class GridCellController : MonoBehaviour{
                 GetComponent<Renderer>().material.color = Color.white;
         }
         
-        if(Debug.isDebugBuild)
+        /*if(Debug.isDebugBuild)
             foreach (var gridCellEdge in Edges)
             {
                 if(gridCellEdge.Enabled)
                     Debug.DrawLine(gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().position + gridCellEdge.DirVector(), Color.green);     
-            }
+            }*/
     }
     
     void OnDrawGizmos()
@@ -127,7 +127,7 @@ public class GridCellController : MonoBehaviour{
         if(OccupiedBy != null)
             if(IsSelected && !wasSelected)
                 GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(OccupiedBy));
-            else if(wasSelected)
-                GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
+            //else if(wasSelected)
+            //    GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
     }
 }
