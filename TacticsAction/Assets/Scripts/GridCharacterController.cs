@@ -44,6 +44,7 @@ public class GridCharacterController : MonoBehaviour
             return;
             
         movePath = data.Path;
+        //movePath. transform.position;
         currPathIndex = 0;
         isMoving = true;
     }
@@ -52,8 +53,7 @@ public class GridCharacterController : MonoBehaviour
     void Update()
     {
         if(isMoving){
-            X = movePath[currPathIndex].X;
-            Y = movePath[currPathIndex].Y;
+            
             float step =  moveSpeed * Time.deltaTime;
             //print(X + " " + Y);
             transform.position = Vector3.MoveTowards(transform.position, movePath[currPathIndex].Position, step);
@@ -72,9 +72,15 @@ public class GridCharacterController : MonoBehaviour
         }
     }
     void SetNextPath() {
-        
-        if(++currPathIndex >= movePath.Length){
+        X = movePath[currPathIndex].X;
+        Y = movePath[currPathIndex].Y;
+        GameEvents.GridCharacterMovedToGridCell.Invoke(new GridCharacterMovedToGridCellData(X,Y, this.gameObject));
+        //GameEvents.GridCharacterLeavingGridCell.Invoke(new GridCharacterLeavingGridCellData(X,Y, this.gameObject));
+        if(currPathIndex+1 >= movePath.Length){
             isMoving = false;
+        }else{
+            currPathIndex++;
+            GameEvents.GridCharacterMovingToGridCell.Invoke(new GridCharacterMovingToGridCellData(movePath[currPathIndex].X,movePath[currPathIndex].Y, this.gameObject));
         }
     }
 }

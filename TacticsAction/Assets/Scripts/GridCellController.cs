@@ -85,15 +85,18 @@ public class GridCellController : MonoBehaviour{
     
     public void Start(){
         GameEvents.GridCellSelected.AddListener(OnGridCellSelected);
+        GameEvents.GridCharacterMovedToGridCell.AddListener(OnGridCharacterMovedToGridCell);
+        GameEvents.GridCharacterMovingToGridCell.AddListener(OnGridCharacterMovingToGridCell);
+        
     }
 
     public void Update(){
     
         if(_isRenderedDirty){
-            if(IsSelected)
+            /*if(IsSelected)
                 GetComponent<Renderer>().material.color = Color.green;
             else
-                GetComponent<Renderer>().material.color = Color.white;
+                GetComponent<Renderer>().material.color = Color.white;*/
         }
         
         /*if(Debug.isDebugBuild)
@@ -127,7 +130,25 @@ public class GridCellController : MonoBehaviour{
         if(OccupiedBy != null)
             if(IsSelected && !wasSelected)
                 GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(OccupiedBy));
-            //else if(wasSelected)
-            //    GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
+        //else if(wasSelected)
+        //    GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
+    }
+    
+    private void OnGridCharacterMovedToGridCell(GridCharacterMovedToGridCellData data){
+        if(data.GameObject == OccupiedBy && data.X != X && data.Y != Y){
+            OccupiedBy = null;
+            //GetComponent<Renderer>().material.color = Color.white;
+            _isRenderedDirty =true;
+        }else if(data.X == X && data.Y == Y){
+            OccupiedBy = data.GameObject;
+            GetComponent<Renderer>().material.color = Color.red;
+            _isRenderedDirty =true;
+        }
+    }
+    private void OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCellData data){
+        if(data.X == X && data.Y == Y){
+            GetComponent<Renderer>().material.color = Color.yellow;
+            _isRenderedDirty =true;
+        }
     }
 }

@@ -62,6 +62,9 @@
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCellSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterDeSelected.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCharacterLeavingGridCell.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCharacterMovedToGridCell.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridCharacterMovingToGridCell.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridReady.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />

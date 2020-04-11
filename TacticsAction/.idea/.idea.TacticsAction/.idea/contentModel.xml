@@ -17,6 +17,9 @@
             <e p="events" t="Include">
               <e p="GridCellSelected.cs" t="Include" />
               <e p="GridCharacterDeSelected.cs" t="Include" />
+              <e p="GridCharacterLeavingGridCell.cs" t="Include" />
+              <e p="GridCharacterMovedToGridCell.cs" t="Include" />
+              <e p="GridCharacterMovingToGridCell.cs" t="Include" />
               <e p="GridCharacterSelected.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
             </e>
