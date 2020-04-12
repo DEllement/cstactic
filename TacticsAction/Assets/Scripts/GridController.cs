@@ -130,8 +130,7 @@ public class GridController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        charactersPositions = new Dictionary<string, (int x, int y, GridCellDir dir)>();
-        cellIdxToGridCellCtrls = new Dictionary<uint, GridCellController>();
+        
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
         GameEvents.GridCharacterSelected.AddListener(Handle);
@@ -148,7 +147,7 @@ public class GridController : MonoBehaviour
     private Dictionary<string, (int x,int y ,GridCellDir dir)> charactersPositions;
     private GameObject selectedCharacter;
     private Graph<uint, string> graph;
-    private Dictionary<uint, GridCellController> cellIdxToGridCellCtrls;
+    private Dictionary<uint, GridCellController> cellIdxToGridCellCtrls = new Dictionary<uint, GridCellController>();
     private Dictionary<uint, uint> avMoveCellToNodeIdx = new Dictionary<uint, uint>();
     private void ConnectNodesUsingGridCellCtrls(GridCellController gridCellCtrlA, GridCellController gridCellCtrlB, bool isDiagonal=false){
         if(!avMoveCellToNodeIdx.ContainsKey(gridCellCtrlA.CellIndex) || !avMoveCellToNodeIdx.ContainsKey(gridCellCtrlB.CellIndex))
