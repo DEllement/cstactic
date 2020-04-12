@@ -11,5 +11,6 @@ namespace API{
         public static GridCharacterLeavingGridCell GridCharacterLeavingGridCell = new GridCharacterLeavingGridCell();
         public static GridCharacterMovingToGridCell GridCharacterMovingToGridCell = new GridCharacterMovingToGridCell();
         public static GridCharacterMovedToGridCell GridCharacterMovedToGridCell = new GridCharacterMovedToGridCell();
+        public static GridCharacterDoneMoving GridCharacterDoneMoving = new GridCharacterDoneMoving();
     }
 }

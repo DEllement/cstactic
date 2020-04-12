@@ -16,15 +16,20 @@ namespace Editors
                 Undo.RecordObject(target, "Generated Grid");
                 myTarget.GenerateGrid();
             }
-            if(GUILayout.Button("Disable Impossible Edge"))
+            if(GUILayout.Button("Compute Edges"))
             {
-                Undo.RecordObject(target, "Disable Impossible Edge");
+                Undo.RecordObject(target, "Compute Edges");
                 myTarget.ComputeEdges();
             }
             if(GUILayout.Button("LoadGridCellsFromChilds"))
             {
                 Undo.RecordObject(target, "GridCellsFromChildsLoaded");
                 myTarget.LoadGridCellsFromChilds();
+            }
+            if(GUILayout.Button("Toggle GridCellsLabels"))
+            {
+                Undo.RecordObject(target, "ToggleGridCellsLabels");
+                myTarget.ToggleGridCellsLabels();
             }
             if(GUILayout.Button("Destroy Grid"))
             {

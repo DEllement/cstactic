@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using API;
+using API.Commands;
 using API.Events;
 using UnityEditor;
 using UnityEngine;
@@ -46,7 +47,7 @@ public class GridCellEdge{
 public class GridCellController : MonoBehaviour{
     public int X;
     public int Y;
-    public uint GraphIndex; //used for graph node correlation
+    public uint CellIndex; //used for graph node correlation Rename to CellIdx
     public TileType TileType;
     public GameObject OccupiedBy;
     public List<GridCellEdge> Edges;
@@ -82,29 +83,32 @@ public class GridCellController : MonoBehaviour{
         };
         IsWalkable = true;
     }
-    
+    Color defaultColor;
+    Color overColor;
     public void Start(){
         GameEvents.GridCellSelected.AddListener(OnGridCellSelected);
+        GameEvents.GridCharacterLeavingGridCell.AddListener(OnGridCharacterLeavingGridCell);
         GameEvents.GridCharacterMovedToGridCell.AddListener(OnGridCharacterMovedToGridCell);
         GameEvents.GridCharacterMovingToGridCell.AddListener(OnGridCharacterMovingToGridCell);
         
+        defaultColor = new Color {r=255f,g=255f,b=255f, a = 0.25f};
+        overColor = new Color {r=0f,g=0f,b=255f, a = 0.25f};
+        GetComponent<Renderer>().material.color = defaultColor;
     }
-
+    
     public void Update(){
     
-        if(_isRenderedDirty){
-            /*if(IsSelected)
-                GetComponent<Renderer>().material.color = Color.green;
-            else
-                GetComponent<Renderer>().material.color = Color.white;*/
-        }
+            //if(OccupiedBy != null)
+            //    GetComponent<Renderer>().material.color = Color.green;
+            //else
+            //    GetComponent<Renderer>().material.color = Color.white;
         
-        /*if(Debug.isDebugBuild)
+        if(Debug.isDebugBuild)
             foreach (var gridCellEdge in Edges)
             {
                 if(gridCellEdge.Enabled)
                     Debug.DrawLine(gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().position + gridCellEdge.DirVector(), Color.green);     
-            }*/
+            }
     }
     
     void OnDrawGizmos()
@@ -118,7 +122,35 @@ public class GridCellController : MonoBehaviour{
         }
     }
     
+    //Commands
+    private bool showAsPossibleMove;
+    public void ShowGridCellAsPossibleMove(){
+         showAsPossibleMove = true;
+         if(showAsPossibleMove)
+            GetComponent<Renderer>().material.color = Color.magenta;
+    }
+    public void HideGridCellAsPossibleMove(){
+        showAsPossibleMove = false;
+        GetComponent<Renderer>().material.color = defaultColor;
+    }
+    
     //Event Handlers
+    
+    void OnMouseOver()
+    {
+        if(showAsPossibleMove)
+            GetComponent<Renderer>().material.color = Color.red;
+        else
+            GetComponent<Renderer>().material.color = overColor;
+    }
+
+    void OnMouseExit()
+    {
+        if(showAsPossibleMove)
+            GetComponent<Renderer>().material.color = Color.magenta;
+        else
+            GetComponent<Renderer>().material.color = defaultColor;
+    }
     
     private void OnGridCellSelected(GridCellSelectedData data)
     {
@@ -133,16 +165,19 @@ public class GridCellController : MonoBehaviour{
         //else if(wasSelected)
         //    GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
     }
-    
+    private void OnGridCharacterLeavingGridCell(GridCharacterLeavingGridCellData data){
+        if(this.OccupiedBy == data.GameObject){
+            this.OccupiedBy = null;
+            GetComponent<Renderer>().material.color = defaultColor;
+        }
+    }
     private void OnGridCharacterMovedToGridCell(GridCharacterMovedToGridCellData data){
         if(data.GameObject == OccupiedBy && data.X != X && data.Y != Y){
             OccupiedBy = null;
-            //GetComponent<Renderer>().material.color = Color.white;
+            GetComponent<Renderer>().material.color = defaultColor;
             _isRenderedDirty =true;
         }else if(data.X == X && data.Y == Y){
             OccupiedBy = data.GameObject;
-            GetComponent<Renderer>().material.color = Color.red;
-            _isRenderedDirty =true;
         }
     }
     private void OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCellData data){
@@ -151,4 +186,5 @@ public class GridCellController : MonoBehaviour{
             _isRenderedDirty =true;
         }
     }
+    
 }

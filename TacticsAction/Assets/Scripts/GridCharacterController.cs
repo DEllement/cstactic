@@ -21,8 +21,10 @@ public class GridCharacterController : MonoBehaviour
 
     private void OnSelected(GridCharacterSelectedData data)
     {
-        if( data.GameObject != this.gameObject )
+        if( data.GameObject != this.gameObject ){
+            GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(this.gameObject));
             return;
+        }
         
         this.GetComponent<Renderer>().material.color = Color.blue;
     }
@@ -40,6 +42,8 @@ public class GridCharacterController : MonoBehaviour
     int currPathIndex;
 
     private void Execute(MoveGridCharacterData data){
+        if(data.CharacterGameObject != gameObject)
+            return;
         if(data.Path == null || data.Path.Length == 0)
             return;
             
@@ -72,12 +76,13 @@ public class GridCharacterController : MonoBehaviour
         }
     }
     void SetNextPath() {
+        GameEvents.GridCharacterLeavingGridCell.Invoke(new GridCharacterLeavingGridCellData(X,Y, this.gameObject));
         X = movePath[currPathIndex].X;
         Y = movePath[currPathIndex].Y;
         GameEvents.GridCharacterMovedToGridCell.Invoke(new GridCharacterMovedToGridCellData(X,Y, this.gameObject));
-        //GameEvents.GridCharacterLeavingGridCell.Invoke(new GridCharacterLeavingGridCellData(X,Y, this.gameObject));
         if(currPathIndex+1 >= movePath.Length){
             isMoving = false;
+            GameEvents.GridCharacterDoneMoving.Invoke(new GridCharacterDoneMovingData(X,Y, this.gameObject));
         }else{
             currPathIndex++;
             GameEvents.GridCharacterMovingToGridCell.Invoke(new GridCharacterMovingToGridCellData(movePath[currPathIndex].X,movePath[currPathIndex].Y, this.gameObject));
