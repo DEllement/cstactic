@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\API\Commands\AssignCharacterToGrid.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\DeSelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCellSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterDeSelected.cs" />

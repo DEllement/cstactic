@@ -86,7 +86,6 @@ public class GridCellController : MonoBehaviour{
     Color defaultColor;
     Color overColor;
     public void Start(){
-        GameEvents.GridCellSelected.AddListener(OnGridCellSelected);
         GameEvents.GridCharacterLeavingGridCell.AddListener(OnGridCharacterLeavingGridCell);
         GameEvents.GridCharacterMovedToGridCell.AddListener(OnGridCharacterMovedToGridCell);
         GameEvents.GridCharacterMovingToGridCell.AddListener(OnGridCharacterMovingToGridCell);
@@ -126,8 +125,7 @@ public class GridCellController : MonoBehaviour{
     private bool showAsPossibleMove;
     public void ShowGridCellAsPossibleMove(){
          showAsPossibleMove = true;
-         if(showAsPossibleMove)
-            GetComponent<Renderer>().material.color = Color.magenta;
+         GetComponent<Renderer>().material.color = Color.magenta;
     }
     public void HideGridCellAsPossibleMove(){
         showAsPossibleMove = false;
@@ -152,19 +150,19 @@ public class GridCellController : MonoBehaviour{
             GetComponent<Renderer>().material.color = defaultColor;
     }
     
-    private void OnGridCellSelected(GridCellSelectedData data)
+    public void Select()
     {
-        print("OnGridCellSelected");
-        bool wasSelected = IsSelected;
-        IsSelected = data.GameObject == this.gameObject;
+        IsSelected = true;
     
         //TODO: Base on what is OccupiedBy on the tile we need to dispatch the correct event (or a generic one)
         if(OccupiedBy != null)
-            if(IsSelected && !wasSelected)
-                GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(OccupiedBy));
-        //else if(wasSelected)
-        //    GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(OccupiedBy));
+            OccupiedBy.GetComponent<GridCharacterController>().Select();
     }
+    public void DeSelect(){
+        if(OccupiedBy != null)
+            OccupiedBy.GetComponent<GridCharacterController>().DeSelect();
+    }
+    
     private void OnGridCharacterLeavingGridCell(GridCharacterLeavingGridCellData data){
         if(this.OccupiedBy == data.GameObject){
             this.OccupiedBy = null;

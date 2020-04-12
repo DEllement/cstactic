@@ -14,26 +14,19 @@ public class GridCharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameEvents.GridCharacterSelected.AddListener(OnSelected);
-        GameEvents.GridCharacterDeSelected.AddListener(OnDeSelected);
+        GameCommands.DeSelectCharacter.AddListener(Execute);
         GameCommands.MoveGridCharacter.AddListener(Execute);
     }
 
-    private void OnSelected(GridCharacterSelectedData data)
+    public void Select()
     {
-        if( data.GameObject != this.gameObject ){
-            GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(this.gameObject));
-            return;
-        }
-        
         this.GetComponent<Renderer>().material.color = Color.blue;
+        GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(this.gameObject));
     }
-    private void OnDeSelected(GridCharacterDeSelectedData data)
+    public void DeSelect()
     {
-        if( data.GameObject != this.gameObject )
-            return;
-        
         this.GetComponent<Renderer>().material.color = Color.green;
+        GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(this.gameObject));
     }
     
     public float moveSpeed = 2.0f;
@@ -52,6 +45,13 @@ public class GridCharacterController : MonoBehaviour
         currPathIndex = 0;
         isMoving = true;
     }
+    private void Execute(DeSelectCharacterData data){
+        if( data.CharacterGameObject != this.gameObject )
+            return;
+        
+        this.GetComponent<Renderer>().material.color = Color.green;
+    }
+    
     Vector3 lastPath;
     // Update is called once per frame
     void Update()

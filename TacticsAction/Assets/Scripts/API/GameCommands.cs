@@ -5,5 +5,6 @@ namespace API{
     {
         public static AssignCharacterToGrid AssignCharacterToGrid = new AssignCharacterToGrid();
         public static MoveGridCharacter MoveGridCharacter = new MoveGridCharacter();
+        public static DeSelectCharacter DeSelectCharacter = new DeSelectCharacter();
     }
 }

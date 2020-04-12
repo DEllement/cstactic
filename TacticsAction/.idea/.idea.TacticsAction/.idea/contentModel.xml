@@ -12,6 +12,7 @@
           <e p="API" t="Include">
             <e p="Commands" t="Include">
               <e p="AssignCharacterToGrid.cs" t="Include" />
+              <e p="DeSelectCharacter.cs" t="Include" />
               <e p="MoveGridCharacter.cs" t="Include" />
             </e>
             <e p="events" t="Include">
