@@ -25,7 +25,7 @@ public class GridCharacterController : MonoBehaviour
     }
     public void DeSelect()
     {
-        this.GetComponent<Renderer>().material.color = Color.green;
+        this.GetComponent<Renderer>().material.color = CompareTag("Ennemy") ? Color.red : Color.green;
         GameEvents.GridCharacterDeSelected.Invoke(new GridCharacterDeSelectedData(this.gameObject));
     }
     
@@ -49,7 +49,7 @@ public class GridCharacterController : MonoBehaviour
         if( data.CharacterGameObject != this.gameObject )
             return;
         
-        this.GetComponent<Renderer>().material.color = Color.green;
+        DeSelect();
     }
     
     Vector3 lastPath;

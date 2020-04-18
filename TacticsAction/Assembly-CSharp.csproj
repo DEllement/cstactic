@@ -60,7 +60,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\API\Commands\AssignCharacterToGrid.cs" />
      <Compile Include="Assets\Scripts\API\Commands\DeSelectCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ExecuteCharacterTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Events\CharacterTurnEnded.cs" />
+     <Compile Include="Assets\Scripts\API\Events\CharacterTurnStarted.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCellSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterDeSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterDoneMoving.cs" />
