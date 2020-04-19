@@ -93,10 +93,6 @@ public class TurnManager {
     List<Character> ennemies;
     
     //Computed Properties
-    public int TotalFriendlyAlive => friendly.Count(x=>x.Stats.HP > 0);
-    public int TotalEnnemiesAlive => ennemies.Count(x=>x.Stats.HP > 0);
-    List<Character> FriendlyUnitsAlive => friendly.Where(x=>x.Stats.HP > 0).ToList();
-    List<Character> EnnemiesUnitsAlive => ennemies.Where(x=>x.Stats.HP > 0).ToList();
     
     public TurnManager()
     {
@@ -112,26 +108,23 @@ public class TurnManager {
         var i_f = 0;
         var i_e = 0;
         
-        var friendlyAlive = FriendlyUnitsAlive;
-        var ennemiesAlive = EnnemiesUnitsAlive;
-        
-        var totalFriendlyAlive = friendlyAlive.Count;
-        var totalEnnemiesAlive = ennemiesAlive.Count;
+        var totalFriendlyAlive = friendly.Count;
+        var totalEnnemiesAlive = ennemies.Count;
         var totalCharactersAlive = totalFriendlyAlive+totalEnnemiesAlive;
         
         
         for(var i=0; i < totalCharactersAlive; i++){
             //Friendly
             if(i%2==0){
-                if(i_f++>=totalFriendlyAlive)
+                if(i_f>=totalFriendlyAlive)
                     continue;
-                lineUp.Enqueue(friendlyAlive[i_f]);  
+                lineUp.Enqueue(friendly[i_f++]);  
             }
             //Ennemy
             else{
-                if(i_e++>=totalEnnemiesAlive)
+                if(i_e>=totalEnnemiesAlive)
                     continue;
-                lineUp.Enqueue(ennemiesAlive[i_e]);    
+                lineUp.Enqueue(ennemies[i_e++]);    
             }
         }
     }
