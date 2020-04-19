@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/EnnemyMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/EnnemyMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TacticsAction.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TacticsAction.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,53 +30,46 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/6d/3ca1ad42/UnityEventBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/59/8afbbb0f/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/17/e30b75a3/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F28216F-EA9F-453A-BF2E-05B770ED3EE4/e1/137f42c7/Node.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/2019.2.17f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/79/37a79958/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59837000-EBF5-4955-A9CB-1D31CAA86097/27/70c8409b/GUILayoutOption.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scenes/GridBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/GridBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/InGameCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/SelectionManager.cs" />
@@ -134,6 +120,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
       </list>
     </option>
   </component>
@@ -151,10 +138,11 @@
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
+    <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -204,6 +192,9 @@
       <workItem from="1587064782032" duration="10014000" />
       <workItem from="1587148587614" duration="2581000" />
       <workItem from="1587156862627" duration="4241000" />
+      <workItem from="1587180145502" duration="183000" />
+      <workItem from="1587180747905" duration="218000" />
+      <workItem from="1587181036596" duration="3959000" />
     </task>
     <servers />
   </component>
@@ -226,6 +217,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="102" key="#Notifications" timestamp="1587253268172">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="320" y="102" key="#Notifications/0.23.1440.830@0.23.1440.830" timestamp="1587253268172" />
     <state x="922" y="280" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1587096080395">
       <screen x="0" y="0" width="2560" height="1027" />
     </state>
@@ -298,16 +293,22 @@
       <screen x="0" y="0" width="2560" height="1027" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
+    <state x="308" y="179" key="IDE.errors.dialog" timestamp="1587213880051">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
     <state x="399" y="248" key="RiderGenerateDialog" timestamp="1587157069280">
       <screen x="0" y="0" width="2560" height="1027" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
     <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1586041635463" />
-    <state x="827" y="257" key="SettingsEditor" timestamp="1587131213276">
-      <screen x="0" y="0" width="2560" height="1027" />
+    <state x="295" y="128" key="SettingsEditor" timestamp="1587181160475">
+      <screen x="0" y="23" width="1440" height="828" />
     </state>
+    <state x="279" y="129" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1587180930562" />
     <state x="827" y="257" key="SettingsEditor/0.0.2560.1027@0.0.2560.1027" timestamp="1587131213276" />
     <state x="1395" y="403" key="SettingsEditor/0.0.3072.1240@0.0.3072.1240" timestamp="1585751584025" />
+    <state x="295" y="128" key="SettingsEditor/0.23.1440.828@0.23.1440.828" timestamp="1587181160475" />
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585780192195">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>

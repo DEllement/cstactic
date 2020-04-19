@@ -62,7 +62,9 @@ public class Stats{
     }    
 }
 
-public class Character{
+public class Character
+{
+    public int Id;
     public string Name;
     public int Level;
     public bool IsEnnemy;
@@ -117,6 +119,7 @@ public class TurnManager {
         var totalEnnemiesAlive = ennemiesAlive.Count;
         var totalCharactersAlive = totalFriendlyAlive+totalEnnemiesAlive;
         
+        
         for(var i=0; i < totalCharactersAlive; i++){
             //Friendly
             if(i%2==0){
@@ -136,6 +139,14 @@ public class TurnManager {
     public void Next(){
     
         var character = lineUp.Dequeue();
+        if (character == null)
+            return; //Dispatch: GameEvents.AllCharactersDied.Invoke();
+        
+        if (character.Stats.HP <= 0){
+            Next();
+            return;
+        }
+
         lineUp.Enqueue(character);
         
         if(character.IsEnnemy || character.IsGuest || character.AutoCombat)
@@ -161,6 +172,14 @@ public class LevelManager : MonoBehaviour
     
     private void OnGridReady()
     {
+        Character c1 = new Character();
+        Character c2 = new Character();
+        Ennemy e1 = new Ennemy();
+
+        var turnManager = new TurnManager();
+        turnManager.Init(new List<Character>{c1,c2}, new List<Character>{e1} );
+        
+        
         //TODO: Get selected start position
         GameObject Character01 = GameObject.Find("Character01");
         GameObject Character02 = GameObject.Find("Character02");
@@ -174,7 +193,7 @@ public class LevelManager : MonoBehaviour
     
         //After the level started
         
-        TurnManager.Init();
+        //TurnManager.Init();
     
     }
 
