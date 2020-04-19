@@ -140,6 +140,8 @@ public class GridCellController : MonoBehaviour{
             GetComponent<Renderer>().material.color = Color.red;
         else
             GetComponent<Renderer>().material.color = overColor;
+        
+        //GameEvents.GridCellMouseOver.Invoke(gameObject);
     }
 
     void OnMouseExit()
@@ -148,6 +150,8 @@ public class GridCellController : MonoBehaviour{
             GetComponent<Renderer>().material.color = Color.magenta;
         else
             GetComponent<Renderer>().material.color = defaultColor;
+        
+        //GameEvents.GridCellMouseExit.Invoke(gameObject);
     }
     
     public void Select()

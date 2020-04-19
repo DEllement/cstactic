@@ -13,10 +13,12 @@
               <e p="AssignCharacterToGrid.cs" t="Include" />
               <e p="DeSelectCharacter.cs" t="Include" />
               <e p="ExecuteCharacterTurn.cs" t="Include" />
+              <e p="ForceNextTurn.cs" t="Include" />
               <e p="MoveGridCharacter.cs" t="Include" />
               <e p="SelectCharacter.cs" t="Include" />
             </e>
             <e p="events" t="Include">
+              <e p="CharacterDied.cs" t="Include" />
               <e p="CharacterTurnEnded.cs" t="Include" />
               <e p="CharacterTurnStarted.cs" t="Include" />
               <e p="GridCellSelected.cs" t="Include" />
@@ -27,6 +29,8 @@
               <e p="GridCharacterMovingToGridCell.cs" t="Include" />
               <e p="GridCharacterSelected.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
+              <e p="TurnManagerInitialized.cs" t="Include" />
+              <e p="TurnManagerLineUpChanged.cs" t="Include" />
             </e>
             <e p="GameCommands.cs" t="Include" />
             <e p="GameEvent.cs" t="Include" />
@@ -81,6 +85,9 @@
             </e>
           </e>
           <e p="Scripts.asmdef" t="Include" />
+          <e p="TestButtonsHandlers.cs" t="Include" />
+          <e p="TurnBarController.cs" t="Include" />
+          <e p="TurnManager.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="PriorityQueue.cs" t="Include" />
           </e>

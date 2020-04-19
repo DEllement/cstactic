@@ -8,5 +8,7 @@ namespace API{
         public static SelectCharacter SelectCharacter = new SelectCharacter();
         public static DeSelectCharacter DeSelectCharacter = new DeSelectCharacter();
         public static ExecuteCharacterTurn ExecuteCharacterTurn = new ExecuteCharacterTurn();
+        
+        public static ForceNextTurn ForceNextTurn = new ForceNextTurn();
     }
 }

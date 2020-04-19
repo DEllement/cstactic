@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using API;
 using API.Commands;
+using API.Events;
 using UnityEngine;
 
 public class CharacterStatus{}
@@ -81,97 +82,46 @@ public class Ennemy : Character{
     }
 }
 
-public class CharacterTurnStarted{
-}
-public class CharacterTurnEnded{
-}
-
-public class TurnManager {
-    public Queue<Character> lineUp;
-    public int Round;
-    List<Character> friendly;
-    List<Character> ennemies;
-    
-    //Computed Properties
-    
-    public TurnManager()
-    {
-        this.lineUp = new Queue<Character>();
-    }
-
-    public void Init(List<Character> friendly, List<Character> ennemies){
-        
-        this.friendly = friendly;
-        this.ennemies = ennemies;
-        
-        
-        var i_f = 0;
-        var i_e = 0;
-        
-        var totalFriendlyAlive = friendly.Count;
-        var totalEnnemiesAlive = ennemies.Count;
-        var totalCharactersAlive = totalFriendlyAlive+totalEnnemiesAlive;
-        
-        
-        for(var i=0; i < totalCharactersAlive; i++){
-            //Friendly
-            if(i%2==0){
-                if(i_f>=totalFriendlyAlive)
-                    continue;
-                lineUp.Enqueue(friendly[i_f++]);  
-            }
-            //Ennemy
-            else{
-                if(i_e>=totalEnnemiesAlive)
-                    continue;
-                lineUp.Enqueue(ennemies[i_e++]);    
-            }
-        }
-    }
-    
-    public void Next(){
-    
-        var character = lineUp.Dequeue();
-        if (character == null)
-            return; //Dispatch: GameEvents.AllCharactersDied.Invoke();
-        
-        if (character.Stats.HP <= 0){
-            Next();
-            return;
-        }
-
-        lineUp.Enqueue(character);
-        
-        if(character.IsEnnemy || character.IsGuest || character.AutoCombat)
-            GameCommands.ExecuteCharacterTurn.Invoke(null);
-        else
-            GameCommands.SelectCharacter.Invoke(null);
-    }
-}
 
 public class LevelManager : MonoBehaviour
 {
     public Character[] characters;
     public Ennemy[] ennemies;
     
-    
     // Life Cycle
     void Start()
     {
         GameEvents.GridReady.AddListener(OnGridReady);
+        GameEvents.TurnBarReady.AddListener(OnTurnBarReady);
     }
 
     //Event Handlers
+    bool gridReady, turnBarReady, setupStarted;
+    bool CanSetupLevel => gridReady && turnBarReady && !setupStarted;
     
     private void OnGridReady()
     {
-        Character c1 = new Character();
-        Character c2 = new Character();
-        Ennemy e1 = new Ennemy();
+        gridReady = true;
+        if(CanSetupLevel)
+            SetupLevel();
+    }
+    private void OnTurnBarReady(){
+        turnBarReady = true;
+        if(CanSetupLevel)
+            SetupLevel();
+    }
 
-        var turnManager = new TurnManager();
-        turnManager.Init(new List<Character>{c1,c2}, new List<Character>{e1} );
+    private void SetupLevel(){
+        setupStarted = true;
+        Character c1 = new Character{Id=1, Stats=new Stats{HP=10}};
+        Character c2 = new Character{Id=2, Stats=new Stats{HP=10}};
+        Character c3 = new Character{Id=3, Stats=new Stats{HP=10}};
+        Ennemy e1 = new Ennemy{Id=4, Stats=new Stats{HP=10}};
+        Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10}};
+        Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10}};
         
+        var turnManager = new TurnManager();
+        turnManager.Init(new List<Character>{c1,c2,c3}, new List<Character>{e1,e2,e3} );
         
         //TODO: Get selected start position
         GameObject Character01 = GameObject.Find("Character01");
@@ -181,15 +131,9 @@ public class LevelManager : MonoBehaviour
             
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Ennemy01,9,9));  
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01,5,5));  
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,0,1));  
-    
-    
-        //After the level started
-        
-        //TurnManager.Init();
-    
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,0,1)); 
     }
-
+    
     // Update is called once per frame
     void Update()
     {

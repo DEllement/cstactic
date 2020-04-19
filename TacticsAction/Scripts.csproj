@@ -61,8 +61,10 @@
      <Compile Include="Assets\Scripts\API\Commands\AssignCharacterToGrid.cs" />
      <Compile Include="Assets\Scripts\API\Commands\DeSelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ExecuteCharacterTurn.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ForceNextTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Events\CharacterDied.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterTurnEnded.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterTurnStarted.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCellSelected.cs" />
@@ -73,6 +75,8 @@
      <Compile Include="Assets\Scripts\API\Events\GridCharacterMovingToGridCell.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridReady.cs" />
+     <Compile Include="Assets\Scripts\API\Events\TurnManagerInitialized.cs" />
+     <Compile Include="Assets\Scripts\API\Events\TurnManagerLineUpChanged.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />
      <Compile Include="Assets\Scripts\API\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />
@@ -106,6 +110,9 @@
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\NodeComparer.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\ShortestPathResult.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\ShortestPath\SortedSetExtensions.cs" />
+     <Compile Include="Assets\Scripts\TestButtonsHandlers.cs" />
+     <Compile Include="Assets\Scripts\TurnBarController.cs" />
+     <Compile Include="Assets\Scripts\TurnManager.cs" />
      <Compile Include="Assets\Scripts\Utils\PriorityQueue.cs" />
      <None Include="Assets\Scripts\Scripts.asmdef" />
  <Reference Include="UnityEditor.UI">

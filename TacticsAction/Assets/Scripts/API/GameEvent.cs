@@ -1,4 +1,5 @@
 using API.Events;
+using UnityEngine.Events;
 
 namespace API{
     public static class GameEvents
@@ -15,5 +16,11 @@ namespace API{
         
         public static CharacterTurnStarted CharacterTurnStarted = new CharacterTurnStarted();
         public static CharacterTurnEnded CharacterTurnEnded = new CharacterTurnEnded();
+        public static CharacterDied CharacterDied = new CharacterDied();
+        
+        public static TurnManagerInitialized TurnManagerInitialized = new TurnManagerInitialized();
+        public static TurnManagerLineUpChanged TurnManagerLineUpChanged = new TurnManagerLineUpChanged();
+        
+        public static UnityEvent TurnBarReady = new UnityEvent();
     }
 }
