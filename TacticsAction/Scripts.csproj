@@ -79,6 +79,8 @@
      <Compile Include="Assets\Scripts\API\Events\TurnManagerLineUpChanged.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />
      <Compile Include="Assets\Scripts\API\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\ActionTreeManager.cs" />
+     <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />
      <Compile Include="Assets\Scripts\Editors\GridControllerEditor.cs" />
      <Compile Include="Assets\Scripts\GridCellController.cs" />

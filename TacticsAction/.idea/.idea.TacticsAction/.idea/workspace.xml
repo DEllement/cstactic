@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,56 +27,56 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Tests/Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/SelectionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" />
@@ -137,9 +124,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
       </list>
     </option>
   </component>
@@ -149,7 +137,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -170,24 +157,12 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9252">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9252" />
+      <option name="pid" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,12 +190,14 @@
       <workItem from="1587180747905" duration="218000" />
       <workItem from="1587181036596" duration="3959000" />
       <workItem from="1587260046967" duration="879000" />
-      <workItem from="1587260930443" duration="18465000" />
+      <workItem from="1587260930443" duration="19371000" />
+      <workItem from="1587375146761" duration="3933000" />
+      <workItem from="1587388030199" duration="4903000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -229,108 +206,115 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="102" key="#Notifications" timestamp="1587253268172">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="683" y="118" key="#Notifications" timestamp="1587389284535">
+      <screen x="0" y="0" width="3072" height="1240" />
     </state>
+    <state x="683" y="118" key="#Notifications/0.0.3072.1240@0.0.3072.1240" timestamp="1587389284535" />
     <state x="320" y="102" key="#Notifications/0.23.1440.830@0.23.1440.830" timestamp="1587253268172" />
     <state x="922" y="280" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1587096080395">
       <screen x="0" y="0" width="2560" height="1027" />
     </state>
     <state x="922" y="280" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587096080395" />
+    <state x="900" y="359" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587387696416">
+      <screen x="0" y="0" width="3072" height="1240" />
+    </state>
+    <state x="900" y="359" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587387696416" />
     <state width="622" height="563" key="DebuggerActiveHint" timestamp="1587328480058">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="518" height="466" key="DebuggerActiveHint/0.0.2560.1027@0.0.2560.1027" timestamp="1586660347018" />
     <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240@0.0.3072.1240" timestamp="1587328480058" />
-    <state width="2700" height="390" key="GridCell.Tab.0.bottom" timestamp="1587328987856">
+    <state width="2700" height="390" key="GridCell.Tab.0.bottom" timestamp="1587330619876">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987856" />
-    <state width="2700" height="390" key="GridCell.Tab.0.center" timestamp="1587328987856">
+    <state width="2700" height="390" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
+    <state width="2700" height="390" key="GridCell.Tab.0.center" timestamp="1587330619876">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987856" />
-    <state width="2700" height="390" key="GridCell.Tab.0.left" timestamp="1587328987856">
+    <state width="2700" height="390" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
+    <state width="2700" height="390" key="GridCell.Tab.0.left" timestamp="1587330619876">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987856" />
-    <state width="2700" height="390" key="GridCell.Tab.0.right" timestamp="1587328987856">
+    <state width="2700" height="390" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
+    <state width="2700" height="390" key="GridCell.Tab.0.right" timestamp="1587330619876">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987856" />
-    <state width="2700" height="390" key="GridCell.Tab.1.bottom" timestamp="1587329227014">
+    <state width="2700" height="390" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
+    <state width="2700" height="390" key="GridCell.Tab.1.bottom" timestamp="1587330622996">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587329227014" />
-    <state width="2700" height="390" key="GridCell.Tab.1.center" timestamp="1587329227014">
+    <state width="2700" height="390" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
+    <state width="2700" height="390" key="GridCell.Tab.1.center" timestamp="1587330622996">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587329227014" />
-    <state width="2700" height="390" key="GridCell.Tab.1.left" timestamp="1587329227014">
+    <state width="2700" height="390" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
+    <state width="2700" height="390" key="GridCell.Tab.1.left" timestamp="1587330622996">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587329227014" />
-    <state width="2700" height="390" key="GridCell.Tab.1.right" timestamp="1587329227014">
+    <state width="2700" height="390" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
+    <state width="2700" height="390" key="GridCell.Tab.1.right" timestamp="1587330622996">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587329227014" />
-    <state width="2700" height="390" key="GridCell.Tab.2.bottom" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
+    <state width="2700" height="390" key="GridCell.Tab.2.bottom" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.2.center" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.2.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.2.center" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.2.left" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.2.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.2.left" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.2.right" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.2.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.2.right" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.3.bottom" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.2.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.3.bottom" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.3.center" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.3.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.3.center" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.3.left" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.3.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.3.left" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
-    <state width="2700" height="390" key="GridCell.Tab.3.right" timestamp="1587328987701">
+    <state width="2700" height="390" key="GridCell.Tab.3.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2700" height="390" key="GridCell.Tab.3.right" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587328987701" />
+    <state width="2700" height="390" key="GridCell.Tab.3.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
     <state x="308" y="179" key="IDE.errors.dialog" timestamp="1587213880051">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
@@ -477,10 +461,10 @@
           <line>67</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="65">
             <startOffsets>
-              <option value="1807" />
+              <option value="-1" />
             </startOffsets>
             <endOffsets>
-              <option value="1807" />
+              <option value="-1" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="23" />
@@ -526,26 +510,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>45</line>
+          <line>46</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="41">
             <startOffsets>
-              <option value="1383" />
+              <option value="1392" />
             </startOffsets>
             <endOffsets>
-              <option value="1417" />
+              <option value="1426" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>97</line>
+          <line>102</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="85">
             <startOffsets>
-              <option value="3452" />
+              <option value="3619" />
             </startOffsets>
             <endOffsets>
-              <option value="3469" />
+              <option value="3636" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />
@@ -578,16 +562,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>69</line>
+          <line>70</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="58">
             <startOffsets>
-              <option value="2385" />
+              <option value="2387" />
             </startOffsets>
             <endOffsets>
-              <option value="2421" />
+              <option value="2423" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="60">
+            <startOffsets>
+              <option value="2234" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2252" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
+          <line>60</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="59">
+            <startOffsets>
+              <option value="2151" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2217" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

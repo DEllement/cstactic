@@ -132,6 +132,12 @@ public class LevelManager : MonoBehaviour
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Ennemy01,9,9));  
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01,5,5));  
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,0,1)); 
+        
+        //TODO: Execute intro animation/scene
+        //TODO: Show Level Name
+        //TODO: Show Objectives
+        //Start Turn
+        turnManager.Next();
     }
     
     // Update is called once per frame

@@ -28,6 +28,7 @@ public class TurnBarController : MonoBehaviour
         GameEvents.CharacterTurnStarted.AddListener(Handle);
         GameEvents.CharacterTurnEnded.AddListener(Handle);
         GameEvents.CharacterDied.AddListener(Handle);
+        
         GameEvents.GridCharacterSelected.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         
@@ -57,7 +58,7 @@ public class TurnBarController : MonoBehaviour
                     item.transform.localScale = new Vector3(.5f,.5f,1f);
             }
             var firstItem = idxToItems[lineUp[0].Id];
-            if(Math.Abs(firstItem.transform.position.x - (PaddingLeft + 50)) < 0.001)
+            if(Math.Abs(firstItem.transform.position.x - PaddingLeft) < 0.001)
                 moveItems = false;
             
         }
@@ -78,12 +79,12 @@ public class TurnBarController : MonoBehaviour
             var pos = item.transform.position;
             pos.x = PaddingLeft+ i * 50;
             item.transform.position = pos;
-            if(c.IsEnnemy)
+            if( c.IsEnnemy )
                 item.GetComponent<Image>().color = Color.red;
             else
                 item.GetComponent<Image>().color = Color.green;
             
-            if(lastItem != null)
+            if( lastItem != null )
                 item.transform.SetSiblingIndex(lastItem.transform.GetSiblingIndex());
             lastItem = item;
             
