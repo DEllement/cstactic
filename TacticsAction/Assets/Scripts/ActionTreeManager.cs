@@ -4,17 +4,40 @@ using API;
 using API.Events;
 using UnityEngine;
 
-public class ActionTree{
-
+public enum ActionType
+{
+    Move,
+    Act,
+    Wait,
 }
-public class ActionTreeItem{
+
+public class ActionTreeProvider
+{
+    private static ActionItem Move = new ActionItem();
     
+    public List<ActionItem> Get(ActionState _state)
+    {
+        
+        
+        return new List<ActionItem>{
+            Move,   
+        };
+
+
+    }
+}
+
+public class ActionItem
+{
+    public ActionState _state;
+    public List<ActionItem> Children;
+    public ActionType ActionType;
 }
 public class ActionState{
     bool haveMoved;
     bool haveActed;
-    
-    
+    private Character character;
+    public List<ActionItem> Actions;
 }
 
 public class ActionTreeManager : MonoBehaviour
