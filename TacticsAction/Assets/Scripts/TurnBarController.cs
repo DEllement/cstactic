@@ -5,6 +5,7 @@ using API;
 using UnityEngine;
 
 using API.Events;
+using Model;
 using UnityEngine.UI;
 
 public class TurnBarController : MonoBehaviour

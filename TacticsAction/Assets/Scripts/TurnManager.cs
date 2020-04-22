@@ -4,6 +4,7 @@ using System.Linq;
 using API;
 using API.Commands;
 using API.Events;
+using Model;
 
 public class TurnManager {
     public Character CurrentCharacter;

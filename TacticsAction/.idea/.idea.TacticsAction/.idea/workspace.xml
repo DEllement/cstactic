@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.csproj" afterDir="false" />
     </list>
@@ -25,58 +57,60 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Tests/Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/MoveGridCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Edge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/ShortestPathResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/DijkstraExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterSelected.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PriorityQueue.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AStarSearch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathFinder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathfindMaster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/GridBase.cs" />
@@ -111,20 +145,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/NewTestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnBarMediator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
-        <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +182,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -160,18 +197,6 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -202,6 +227,8 @@
       <workItem from="1587260930443" duration="19371000" />
       <workItem from="1587375146761" duration="3933000" />
       <workItem from="1587388030199" duration="4903000" />
+      <workItem from="1587512563239" duration="224000" />
+      <workItem from="1587512802105" duration="806000" />
     </task>
     <servers />
   </component>
@@ -215,13 +242,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -329,17 +355,17 @@
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
-    <state x="399" y="248" key="RiderGenerateDialog" timestamp="1587157069280">
-      <screen x="0" y="0" width="2560" height="1027" />
+    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1587489783376">
+      <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
-    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1586041635463" />
-    <state x="295" y="128" key="SettingsEditor" timestamp="1587181160475">
-      <screen x="0" y="23" width="1440" height="828" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587489783376" />
+    <state x="1395" y="403" key="SettingsEditor" timestamp="1587513208072">
+      <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="279" y="129" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1587180930562" />
     <state x="827" y="257" key="SettingsEditor/0.0.2560.1027@0.0.2560.1027" timestamp="1587131213276" />
-    <state x="1395" y="403" key="SettingsEditor/0.0.3072.1240@0.0.3072.1240" timestamp="1585751584025" />
+    <state x="1395" y="403" key="SettingsEditor/0.0.3072.1240@0.0.3072.1240" timestamp="1587513208072" />
     <state x="295" y="128" key="SettingsEditor/0.23.1440.828@0.23.1440.828" timestamp="1587181160475" />
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585780192195">
       <screen x="0" y="0" width="3072" height="1240" />
@@ -353,31 +379,31 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
-    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup" timestamp="1587321571610">
+    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup" timestamp="1587489648322">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1587132202665" />
-    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587321571610" />
+    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587489648322" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>60</line>
+          <line>61</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="59">
             <startOffsets>
-              <option value="1602" />
+              <option value="1615" />
             </startOffsets>
             <endOffsets>
-              <option value="1634" />
+              <option value="1647" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>67</line>
+          <line>68</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="65">
             <startOffsets>
               <option value="-1" />
@@ -390,130 +416,130 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>68</line>
+          <line>69</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="66">
             <startOffsets>
-              <option value="1910" />
+              <option value="1923" />
             </startOffsets>
             <endOffsets>
-              <option value="1946" />
+              <option value="1959" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>66</line>
+          <line>67</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="64">
             <startOffsets>
-              <option value="1765" />
+              <option value="1778" />
             </startOffsets>
             <endOffsets>
-              <option value="1798" />
+              <option value="1811" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>70</line>
+          <line>71</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="68">
             <startOffsets>
-              <option value="1964" />
+              <option value="1977" />
             </startOffsets>
             <endOffsets>
-              <option value="2052" />
+              <option value="2065" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>46</line>
+          <line>47</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="41">
             <startOffsets>
-              <option value="1392" />
+              <option value="1405" />
             </startOffsets>
             <endOffsets>
-              <option value="1426" />
+              <option value="1439" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>102</line>
+          <line>103</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="85">
             <startOffsets>
-              <option value="3619" />
+              <option value="3632" />
             </startOffsets>
             <endOffsets>
-              <option value="3636" />
+              <option value="3649" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>55</line>
+          <line>56</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="55">
             <startOffsets>
-              <option value="1424" />
+              <option value="1437" />
             </startOffsets>
             <endOffsets>
-              <option value="1514" />
+              <option value="1527" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>21</line>
+          <line>22</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="20">
             <startOffsets>
-              <option value="502" />
+              <option value="515" />
             </startOffsets>
             <endOffsets>
-              <option value="536" />
+              <option value="549" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>70</line>
+          <line>71</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="58">
             <startOffsets>
-              <option value="2387" />
+              <option value="2400" />
             </startOffsets>
             <endOffsets>
-              <option value="2423" />
+              <option value="2436" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>61</line>
+          <line>62</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="60">
             <startOffsets>
-              <option value="2234" />
+              <option value="2247" />
             </startOffsets>
             <endOffsets>
-              <option value="2252" />
+              <option value="2265" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>60</line>
+          <line>61</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="59">
             <startOffsets>
-              <option value="2151" />
+              <option value="2164" />
             </startOffsets>
             <endOffsets>
-              <option value="2217" />
+              <option value="2230" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="35" />
