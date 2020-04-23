@@ -20,25 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +46,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="UnityGameEvent" />
         <option value="UnityGameCommand" />
+        <option value="UnityGameEvent" />
       </list>
     </option>
   </component>
@@ -59,6 +57,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterDied.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ExecuteCharacterTurn.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,14 +68,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridCellEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/2d/f6c2fbe5/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/INode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Edge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/Graph/Graph.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
@@ -87,6 +90,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/ShortestPath/Dijkstra.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -96,7 +100,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InGameCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridReady.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,13 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PathFinder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PathfindMaster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/GridBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/PathfindMaster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Node.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pathfinding/AStarSearch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterSelected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCharacterDeSelected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/GridCellSelected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" />
@@ -143,25 +142,32 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Editors/GridControllerEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideGridCellAsPossibleMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridCharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/NewTestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnBarMediator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridCellController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnStarted.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerInitialized.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/TurnManagerLineUpChanged.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowContextAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ContextActionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" />
       </list>
     </option>
   </component>
@@ -174,6 +180,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35004076" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.2999185" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -191,10 +199,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17152">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="17152" />
       <method v="2" />
     </configuration>
   </component>
@@ -228,7 +236,7 @@
       <workItem from="1587375146761" duration="3933000" />
       <workItem from="1587388030199" duration="4903000" />
       <workItem from="1587512563239" duration="224000" />
-      <workItem from="1587512802105" duration="806000" />
+      <workItem from="1587512802105" duration="21327000" />
     </task>
     <servers />
   </component>
@@ -266,51 +274,51 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="900" y="359" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587387696416" />
-    <state width="622" height="563" key="DebuggerActiveHint" timestamp="1587328480058">
+    <state width="622" height="563" key="DebuggerActiveHint" timestamp="1587613471704">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="518" height="466" key="DebuggerActiveHint/0.0.2560.1027@0.0.2560.1027" timestamp="1586660347018" />
-    <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240@0.0.3072.1240" timestamp="1587328480058" />
-    <state width="2700" height="390" key="GridCell.Tab.0.bottom" timestamp="1587330619876">
+    <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240@0.0.3072.1240" timestamp="1587613471704" />
+    <state width="2493" height="645" key="GridCell.Tab.0.bottom" timestamp="1587613417042">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
-    <state width="2700" height="390" key="GridCell.Tab.0.center" timestamp="1587330619876">
+    <state width="2493" height="645" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
+    <state width="2493" height="645" key="GridCell.Tab.0.center" timestamp="1587613417042">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
-    <state width="2700" height="390" key="GridCell.Tab.0.left" timestamp="1587330619876">
+    <state width="2493" height="645" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
+    <state width="2493" height="645" key="GridCell.Tab.0.left" timestamp="1587613417042">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
-    <state width="2700" height="390" key="GridCell.Tab.0.right" timestamp="1587330619876">
+    <state width="2493" height="645" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
+    <state width="2493" height="645" key="GridCell.Tab.0.right" timestamp="1587613417042">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619876" />
-    <state width="2700" height="390" key="GridCell.Tab.1.bottom" timestamp="1587330622996">
+    <state width="2493" height="645" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
+    <state width="2493" height="645" key="GridCell.Tab.1.bottom" timestamp="1587613420226">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
-    <state width="2700" height="390" key="GridCell.Tab.1.center" timestamp="1587330622996">
+    <state width="2493" height="645" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420226" />
+    <state width="2493" height="645" key="GridCell.Tab.1.center" timestamp="1587613420225">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
-    <state width="2700" height="390" key="GridCell.Tab.1.left" timestamp="1587330622996">
+    <state width="2493" height="645" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
+    <state width="2493" height="645" key="GridCell.Tab.1.left" timestamp="1587613420225">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
-    <state width="2700" height="390" key="GridCell.Tab.1.right" timestamp="1587330622996">
+    <state width="2493" height="645" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
+    <state width="2493" height="645" key="GridCell.Tab.1.right" timestamp="1587613420225">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330622996" />
+    <state width="2493" height="645" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
     <state width="2700" height="390" key="GridCell.Tab.2.bottom" timestamp="1587330619744">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -355,11 +363,11 @@
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
-    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1587489783376">
+    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1587596523318">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
-    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587489783376" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587596523318" />
     <state x="1395" y="403" key="SettingsEditor" timestamp="1587513208072">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -367,23 +375,28 @@
     <state x="827" y="257" key="SettingsEditor/0.0.2560.1027@0.0.2560.1027" timestamp="1587131213276" />
     <state x="1395" y="403" key="SettingsEditor/0.0.3072.1240@0.0.3072.1240" timestamp="1587513208072" />
     <state x="295" y="128" key="SettingsEditor/0.23.1440.828@0.23.1440.828" timestamp="1587181160475" />
+    <state width="1543" height="627" key="XDebugger.FullValuePopup" timestamp="1587613468268">
+      <screen x="0" y="0" width="3072" height="1240" />
+    </state>
+    <state width="1543" height="627" key="XDebugger.FullValuePopup/0.0.3072.1240@0.0.3072.1240" timestamp="1587613468268" />
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585780192195">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
-    <state x="959" y="245" width="739" height="606" key="find.popup" timestamp="1586663311362">
-      <screen x="0" y="0" width="2560" height="1027" />
+    <state x="1151" y="296" width="887" height="732" key="find.popup" timestamp="1587601599009">
+      <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="959" y="245" width="739" height="606" key="find.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586663311362" />
+    <state x="1151" y="296" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587601599009" />
     <state x="425" y="293" width="672" height="677" key="run.anything.popup" timestamp="1586041809513">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
-    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup" timestamp="1587489648322">
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1587601610895">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1587132202665" />
-    <state x="1132" y="268" width="807" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587489648322" />
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587601610895" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -543,6 +556,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs</url>
+          <line>80</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" initialLine="76">
+            <startOffsets>
+              <option value="2205" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2260" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs</url>
+          <line>81</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" initialLine="78">
+            <startOffsets>
+              <option value="2273" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2339" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

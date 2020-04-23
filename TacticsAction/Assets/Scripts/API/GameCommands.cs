@@ -9,6 +9,10 @@ namespace API{
         public static DeSelectCharacter DeSelectCharacter = new DeSelectCharacter();
         public static ExecuteCharacterTurn ExecuteCharacterTurn = new ExecuteCharacterTurn();
         
+        public static ShowActionsMenu ShowActionsMenu = new ShowActionsMenu();
+        public static HideActionsMenu HideActionsMenu = new HideActionsMenu();
+        
+        //Tests Actions
         public static ForceNextTurn ForceNextTurn = new ForceNextTurn();
     }
 }

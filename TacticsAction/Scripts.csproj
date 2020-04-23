@@ -62,8 +62,11 @@
      <Compile Include="Assets\Scripts\API\Commands\DeSelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ExecuteCharacterTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ForceNextTurn.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\HideActionsMenu.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ShowActionsMenu.cs" />
+     <Compile Include="Assets\Scripts\API\Events\ActionMenuItemClicked.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterDied.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterTurnEnded.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterTurnStarted.cs" />
@@ -79,6 +82,8 @@
      <Compile Include="Assets\Scripts\API\Events\TurnManagerLineUpChanged.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />
      <Compile Include="Assets\Scripts\API\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\ActionMenuController.cs" />
+     <Compile Include="Assets\Scripts\ActionMenuItemController.cs" />
      <Compile Include="Assets\Scripts\ActionTreeManager.cs" />
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />

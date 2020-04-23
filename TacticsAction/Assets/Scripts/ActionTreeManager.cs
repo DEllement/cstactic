@@ -40,17 +40,25 @@ public class ActionState{
 
 public class ActionTreeManager : MonoBehaviour
 {
+    public static ActionTreeManager instance;
+    
     private Dictionary<int, Character> characters;
     
     private Character CurrentCharacterTurn;
     private ActionState ActionState;
-    private List<ActionItem> Actions;
-    
+    public List<ActionItem> Actions;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         GameEvents.CharacterTurnStarted.AddListener(Handle);
         GameEvents.CharacterTurnEnded.AddListener(Handle);
+        GameEvents.ActionMenuItemClicked.AddListener(Handle);
+    }
+
+    private void Handle(ActionMenuItemClickedData arg0)
+    {
     }
 
     private void Handle(CharacterTurnStartedData data)
@@ -59,7 +67,7 @@ public class ActionTreeManager : MonoBehaviour
         ActionState = new ActionState{
             Character = CurrentCharacterTurn
         };
-        Actions = GetActions(()=>ActionState);
+        Actions = GetSelfActions(()=>ActionState);
     }
     private void Handle(CharacterTurnEndedData data){
         CurrentCharacterTurn = null;
@@ -75,7 +83,11 @@ public class ActionTreeManager : MonoBehaviour
     
     //Factory
     
-    public List<ActionItem> GetActions(Func<ActionState> _state)
+    //TODO: Terrain Selection Action Tree
+    //TODO: Ennemy Selection Action Tree
+    
+    //Self Selection Action Tree
+    public List<ActionItem> GetSelfActions(Func<ActionState> _state)
     {
         return new List<ActionItem>{
             new ActionItem{ActionType = ActionType.Move,  Enabled=()=>!_state().HaveMoved, Executable=true },

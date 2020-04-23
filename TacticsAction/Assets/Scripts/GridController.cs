@@ -41,8 +41,7 @@ public class GridController : MonoBehaviour
                 obj.tag = "GridCell";
                 obj.GetComponentInChildren<TextMesh>().text = x+","+y;
                 obj.transform.SetParent(gameObject.transform);
-                obj.AddComponent<GridCellController>();
-                var gridCellCtrl = obj.GetComponent<GridCellController>();
+                var gridCellCtrl = obj.AddComponent<GridCellController>();
                 gridCellCtrl.Init();
                 gridCellCtrl.X = x;
                 gridCellCtrl.Y = y;

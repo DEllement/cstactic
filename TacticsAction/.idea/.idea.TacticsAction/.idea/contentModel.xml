@@ -8,6 +8,8 @@
     <e p="C:\Works\TacticsAction\TacticsAction" t="IncludeRecursive">
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ActionMenuController.cs" t="Include" />
+          <e p="ActionMenuItemController.cs" t="Include" />
           <e p="ActionTreeManager.cs" t="Include" />
           <e p="API" t="Include">
             <e p="Commands" t="Include">
@@ -15,10 +17,13 @@
               <e p="DeSelectCharacter.cs" t="Include" />
               <e p="ExecuteCharacterTurn.cs" t="Include" />
               <e p="ForceNextTurn.cs" t="Include" />
+              <e p="HideActionsMenu.cs" t="Include" />
               <e p="MoveGridCharacter.cs" t="Include" />
               <e p="SelectCharacter.cs" t="Include" />
+              <e p="ShowActionsMenu.cs" t="Include" />
             </e>
             <e p="events" t="Include">
+              <e p="ActionMenuItemClicked.cs" t="Include" />
               <e p="CharacterDied.cs" t="Include" />
               <e p="CharacterTurnEnded.cs" t="Include" />
               <e p="CharacterTurnStarted.cs" t="Include" />

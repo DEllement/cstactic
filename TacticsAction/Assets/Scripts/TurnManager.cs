@@ -74,7 +74,7 @@ public class TurnManager {
         else
             GameCommands.SelectCharacter.Invoke(null);
         
-     
+        GameEvents.CharacterTurnStarted.Invoke(new CharacterTurnStartedData(CurrentCharacter));
     }
     
     public void OnClick(){

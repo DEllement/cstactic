@@ -21,5 +21,9 @@ public class TestButtonsHandlers : MonoBehaviour
         print("OnNextTurnClick");
         GameCommands.ForceNextTurn.Invoke(null);
     }
+    public void OnShowActionMenuClick(){
+        
+       GameCommands.ShowActionsMenu.Invoke(null);
+    }
     
 }
