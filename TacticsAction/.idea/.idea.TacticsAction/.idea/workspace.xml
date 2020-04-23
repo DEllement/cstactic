@@ -20,23 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +53,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/DeSelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/ForceNextTurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2EFDC780-086B-47F2-8399-FD0CE7A4BFA4/75/5164f926/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Commands/SelectCharacter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -162,11 +151,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" />
       </list>
     </option>
@@ -236,7 +225,7 @@
       <workItem from="1587375146761" duration="3933000" />
       <workItem from="1587388030199" duration="4903000" />
       <workItem from="1587512563239" duration="224000" />
-      <workItem from="1587512802105" duration="21327000" />
+      <workItem from="1587512802105" duration="26567000" />
     </task>
     <servers />
   </component>
@@ -279,86 +268,86 @@
     </state>
     <state width="518" height="466" key="DebuggerActiveHint/0.0.2560.1027@0.0.2560.1027" timestamp="1586660347018" />
     <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240@0.0.3072.1240" timestamp="1587613471704" />
-    <state width="2493" height="645" key="GridCell.Tab.0.bottom" timestamp="1587613417042">
+    <state width="2493" height="203" key="GridCell.Tab.0.bottom" timestamp="1587653925281">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
-    <state width="2493" height="645" key="GridCell.Tab.0.center" timestamp="1587613417042">
+    <state width="2493" height="203" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925281" />
+    <state width="2493" height="203" key="GridCell.Tab.0.center" timestamp="1587653925281">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
-    <state width="2493" height="645" key="GridCell.Tab.0.left" timestamp="1587613417042">
+    <state width="2493" height="203" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925281" />
+    <state width="2493" height="203" key="GridCell.Tab.0.left" timestamp="1587653925281">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
-    <state width="2493" height="645" key="GridCell.Tab.0.right" timestamp="1587613417042">
+    <state width="2493" height="203" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925281" />
+    <state width="2493" height="203" key="GridCell.Tab.0.right" timestamp="1587653925281">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587613417042" />
-    <state width="2493" height="645" key="GridCell.Tab.1.bottom" timestamp="1587613420226">
+    <state width="2493" height="203" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925281" />
+    <state width="2493" height="203" key="GridCell.Tab.1.bottom" timestamp="1587653929926">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420226" />
-    <state width="2493" height="645" key="GridCell.Tab.1.center" timestamp="1587613420225">
+    <state width="2493" height="203" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587653929926" />
+    <state width="2493" height="203" key="GridCell.Tab.1.center" timestamp="1587653929926">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
-    <state width="2493" height="645" key="GridCell.Tab.1.left" timestamp="1587613420225">
+    <state width="2493" height="203" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587653929926" />
+    <state width="2493" height="203" key="GridCell.Tab.1.left" timestamp="1587653929926">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
-    <state width="2493" height="645" key="GridCell.Tab.1.right" timestamp="1587613420225">
+    <state width="2493" height="203" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587653929926" />
+    <state width="2493" height="203" key="GridCell.Tab.1.right" timestamp="1587653929926">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2493" height="645" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587613420225" />
-    <state width="2700" height="390" key="GridCell.Tab.2.bottom" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587653929926" />
+    <state width="2493" height="203" key="GridCell.Tab.2.bottom" timestamp="1587653925174">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.2.center" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.2.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925174" />
+    <state width="2493" height="203" key="GridCell.Tab.2.center" timestamp="1587653925173">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.2.left" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.2.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925173" />
+    <state width="2493" height="203" key="GridCell.Tab.2.left" timestamp="1587653925173">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.2.right" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.2.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925173" />
+    <state width="2493" height="203" key="GridCell.Tab.2.right" timestamp="1587653925173">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.2.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.2.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.3.bottom" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.2.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925173" />
+    <state width="2493" height="203" key="GridCell.Tab.3.bottom" timestamp="1587653925174">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.3.center" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.3.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925174" />
+    <state width="2493" height="203" key="GridCell.Tab.3.center" timestamp="1587653925174">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.3.left" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.3.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925174" />
+    <state width="2493" height="203" key="GridCell.Tab.3.left" timestamp="1587653925174">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
-    <state width="2700" height="390" key="GridCell.Tab.3.right" timestamp="1587330619744">
+    <state width="2493" height="203" key="GridCell.Tab.3.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925174" />
+    <state width="2493" height="203" key="GridCell.Tab.3.right" timestamp="1587653925174">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.3.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2700" height="390" key="GridCell.Tab.3.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587330619744" />
+    <state width="2493" height="203" key="GridCell.Tab.3.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587653925174" />
     <state x="308" y="179" key="IDE.errors.dialog" timestamp="1587213880051">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
@@ -392,198 +381,10 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1587601610895">
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1587655071446">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1587132202665" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587601610895" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>61</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="59">
-            <startOffsets>
-              <option value="1615" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1647" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>68</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="65">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>69</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="66">
-            <startOffsets>
-              <option value="1923" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1959" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>67</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="64">
-            <startOffsets>
-              <option value="1778" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1811" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>71</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="68">
-            <startOffsets>
-              <option value="1977" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2065" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>47</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="41">
-            <startOffsets>
-              <option value="1405" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1439" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>103</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="85">
-            <startOffsets>
-              <option value="3632" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3649" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnManager.cs</url>
-          <line>56</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" initialLine="55">
-            <startOffsets>
-              <option value="1437" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1527" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="20">
-            <startOffsets>
-              <option value="515" />
-            </startOffsets>
-            <endOffsets>
-              <option value="549" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>71</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="58">
-            <startOffsets>
-              <option value="2400" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2436" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>62</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="60">
-            <startOffsets>
-              <option value="2247" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2265" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs</url>
-          <line>61</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TurnBarController.cs" initialLine="59">
-            <startOffsets>
-              <option value="2164" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2230" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs</url>
-          <line>80</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" initialLine="76">
-            <startOffsets>
-              <option value="2205" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2260" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs</url>
-          <line>81</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" initialLine="78">
-            <startOffsets>
-              <option value="2273" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2339" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587655071446" />
   </component>
 </project>

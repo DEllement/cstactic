@@ -22,7 +22,8 @@ namespace API{
         public static TurnManagerLineUpChanged TurnManagerLineUpChanged = new TurnManagerLineUpChanged();
         
         public static ActionMenuItemClicked ActionMenuItemClicked = new ActionMenuItemClicked();
-        
+        public static UnityEvent ActionMenuOpened = new UnityEvent();
+        public static UnityEvent ActionMenuClosed = new UnityEvent();
         
         public static UnityEvent TurnBarReady = new UnityEvent();
     }

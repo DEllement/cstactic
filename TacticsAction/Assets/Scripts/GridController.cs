@@ -135,13 +135,24 @@ public class GridController : MonoBehaviour
         GameEvents.GridCharacterSelected.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         GameEvents.GridCharacterDoneMoving.AddListener(Handle);
+        GameEvents.ActionMenuOpened.AddListener(OnActionMenuOpened);
+        GameEvents.ActionMenuClosed.AddListener(OnActionMenuClosed);
         
         print("Start");
         if(gridCells == null)
             LoadGridCellsFromChilds();      
     }
 
- 
+    bool isActionMenuOpen = false;
+    private void OnActionMenuOpened()
+    {
+        isActionMenuOpen=true;
+    }
+    private void OnActionMenuClosed()
+    {
+        isActionMenuOpen=false;
+    }
+
 
     private Dictionary<string, (int x,int y ,GridCellDir dir)> charactersPositions;
     private GameObject selectedCharacter;
@@ -260,7 +271,7 @@ public class GridController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonUp(0)){
+        if(Input.GetMouseButtonUp(0) && !isActionMenuOpen){
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit))
