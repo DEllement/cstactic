@@ -13,10 +13,14 @@ using UnityEngine.UIElements;
 public class ActionMenuController : MonoBehaviour
 {
     public GameObject ActionMenuItem;
+    public int MarginBetweenBtn = 30;
+    public int MarginLeft = 150;
+    public int MarginTop = 50;
     
     private ActionType OverAction;
     private List<ActionType> CurrentActionPath; 
-    
+    private Camera mainCam;
+    private GameObject target;
     //Life Cycle
     void Start()
     {
@@ -26,14 +30,9 @@ public class ActionMenuController : MonoBehaviour
         GameCommands.ShowActionsMenu.AddListener(Execute); 
         GameCommands.HideActionsMenu.AddListener(Execute);
     }
-
-
-
-    Camera mainCam;
-    
     void Update()
     {
-        if(mainCam == null)
+        if( mainCam == null)
             mainCam = Camera.main;
         
         if(this.gameObject.activeSelf && target != null)
@@ -45,14 +44,14 @@ public class ActionMenuController : MonoBehaviour
         }
     }
 
-    GameObject target;
-    
     //Events Handlers
     private void Handle(GridCharacterSelectedData data)
     {
+        if(target == data.GameObject && this.gameObject.activeSelf)
+            return;
+        
         target = data.GameObject;
-        this.gameObject.SetActive(true);
-        CreateMenu();
+        Execute(new ShowActionsMenuData(null));
     }
     private void Handle(GridCharacterDeSelectedData arg0)
     {
@@ -66,14 +65,10 @@ public class ActionMenuController : MonoBehaviour
     // Commands Handlers
     private void Execute(ShowActionsMenuData menuData)
     {
-        if(this.gameObject.activeSelf)
-            return;
-        
         OverAction = ActionType.Move;
         CurrentActionPath = new List<ActionType>();
         CreateMenu();
         this.gameObject.SetActive(true);
-        
         GameEvents.ActionMenuOpened.Invoke();
     }
     private void Execute(HideActionsMenuData menuData)
@@ -81,10 +76,6 @@ public class ActionMenuController : MonoBehaviour
         this.gameObject.SetActive(false);
         GameEvents.ActionMenuClosed.Invoke();
     }
-    
-    public int MarginBetweenBtn = 30;
-    public int MarginLeft = 150;
-    public int MarginTop = 50;
     
     private List<GameObject> MenuItems;
     private void CreateMenu(){

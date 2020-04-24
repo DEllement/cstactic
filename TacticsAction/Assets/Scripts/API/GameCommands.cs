@@ -12,6 +12,8 @@ namespace API{
         public static ShowActionsMenu ShowActionsMenu = new ShowActionsMenu();
         public static HideActionsMenu HideActionsMenu = new HideActionsMenu();
         
+        public static ShowPossibleMove ShowPossibleMove = new ShowPossibleMove(); 
+        
         //Tests Actions
         public static ForceNextTurn ForceNextTurn = new ForceNextTurn();
     }

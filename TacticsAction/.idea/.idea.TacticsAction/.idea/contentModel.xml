@@ -21,6 +21,7 @@
               <e p="MoveGridCharacter.cs" t="Include" />
               <e p="SelectCharacter.cs" t="Include" />
               <e p="ShowActionsMenu.cs" t="Include" />
+              <e p="ShowPossibleMove.cs" t="Include" />
             </e>
             <e p="events" t="Include">
               <e p="ActionMenuItemClicked.cs" t="Include" />

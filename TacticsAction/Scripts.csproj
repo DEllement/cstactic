@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ShowActionsMenu.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ShowPossibleMove.cs" />
      <Compile Include="Assets\Scripts\API\Events\ActionMenuItemClicked.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterDied.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterTurnEnded.cs" />

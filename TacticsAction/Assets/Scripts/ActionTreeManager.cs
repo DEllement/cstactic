@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using API;
+using API.Commands;
 using API.Events;
 using Model;
 using UnityEngine;
 
 public enum ActionType
 {
+    None,
     Move,
     Act,
         Attack,
@@ -57,8 +59,14 @@ public class ActionTreeManager : MonoBehaviour
         GameEvents.ActionMenuItemClicked.AddListener(Handle);
     }
 
-    private void Handle(ActionMenuItemClickedData arg0)
+    private void Handle(ActionMenuItemClickedData data)
     {
+        switch(data.ActionType){
+            case ActionType.Move:
+                GameCommands.ShowPossibleMove.Invoke(new ShowPossibleMoveData(CurrentCharacterTurn, true));        
+                break;
+        }
+        
     }
 
     private void Handle(CharacterTurnStartedData data)
