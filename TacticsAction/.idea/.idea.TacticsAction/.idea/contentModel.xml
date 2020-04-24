@@ -8,9 +8,6 @@
     <e p="C:\Works\TacticsAction\TacticsAction" t="IncludeRecursive">
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="ActionMenuController.cs" t="Include" />
-          <e p="ActionMenuItemController.cs" t="Include" />
-          <e p="ActionTreeManager.cs" t="Include" />
           <e p="API" t="Include">
             <e p="Commands" t="Include">
               <e p="AssignCharacterToGrid.cs" t="Include" />
@@ -28,13 +25,13 @@
               <e p="CharacterDied.cs" t="Include" />
               <e p="CharacterTurnEnded.cs" t="Include" />
               <e p="CharacterTurnStarted.cs" t="Include" />
-              <e p="GridCellSelected.cs" t="Include" />
+              <e p="GridCellClicked.cs" t="Include" />
+              <e p="GridCharacterClicked.cs" t="Include" />
               <e p="GridCharacterDeSelected.cs" t="Include" />
               <e p="GridCharacterDoneMoving.cs" t="Include" />
               <e p="GridCharacterLeavingGridCell.cs" t="Include" />
               <e p="GridCharacterMovedToGridCell.cs" t="Include" />
               <e p="GridCharacterMovingToGridCell.cs" t="Include" />
-              <e p="GridCharacterSelected.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
               <e p="TurnManagerInitialized.cs" t="Include" />
               <e p="TurnManagerLineUpChanged.cs" t="Include" />
@@ -42,20 +39,46 @@
             <e p="GameCommands.cs" t="Include" />
             <e p="GameEvent.cs" t="Include" />
           </e>
-          <e p="BattleManager.cs" t="Include" />
+          <e p="Controllers" t="Include">
+            <e p="BattleScene" t="Include">
+              <e p="ActionMenuController.cs" t="Include" />
+              <e p="ActionMenuItemController.cs" t="Include" />
+              <e p="BattleSceneController.cs" t="Include" />
+              <e p="GridCellController.cs" t="Include" />
+              <e p="GridCharacterController.cs" t="Include" />
+              <e p="GridController.cs" t="Include" />
+              <e p="InGameCamera.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="ActionMenuOpenState.cs" t="Include" />
+                <e p="BattleIntroState.cs" t="Include" />
+                <e p="BattleSceneState.cs" t="Include" />
+                <e p="CharacterSelectedState.cs" t="Include" />
+                <e p="InventoryOpenState.cs" t="Include" />
+                <e p="LevelObjectiveOverviewState.cs" t="Include" />
+                <e p="MovingCharacterState.cs" t="Include" />
+                <e p="NothingSelectedState.cs" t="Include" />
+                <e p="PerformActionState.cs" t="Include" />
+                <e p="PickMeleeTargetState.cs" t="Include" />
+                <e p="PickMoveLocationState.cs" t="Include" />
+              </e>
+              <e p="TurnBarController.cs" t="Include" />
+            </e>
+          </e>
           <e p="Editors" t="Include">
             <e p="GridCellEditor.cs" t="Include" />
             <e p="GridControllerEditor.cs" t="Include" />
           </e>
-          <e p="GridCellController.cs" t="Include" />
-          <e p="GridCharacterController.cs" t="Include" />
-          <e p="GridController.cs" t="Include" />
-          <e p="GridPath.cs" t="Include" />
-          <e p="InGameCamera.cs" t="Include" />
-          <e p="LevelManager.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="ActionTreeManager.cs" t="Include" />
+            <e p="BattleManager.cs" t="Include" />
+            <e p="LevelManager.cs" t="Include" />
+            <e p="TestButtonsHandlers.cs" t="Include" />
+            <e p="TurnManager.cs" t="Include" />
+          </e>
           <e p="Model" t="Include">
             <e p="Character.cs" t="Include" />
             <e p="CharacterStats.cs" t="Include" />
+            <e p="GridPath.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
           </e>
           <e p="Pathfinding" t="Include">
@@ -98,9 +121,6 @@
             </e>
           </e>
           <e p="Scripts.asmdef" t="Include" />
-          <e p="TestButtonsHandlers.cs" t="Include" />
-          <e p="TurnBarController.cs" t="Include" />
-          <e p="TurnManager.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="PriorityQueue.cs" t="Include" />
           </e>

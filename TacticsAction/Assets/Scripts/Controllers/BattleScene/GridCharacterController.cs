@@ -14,14 +14,12 @@ public class GridCharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameCommands.DeSelectCharacter.AddListener(Execute);
-        GameCommands.MoveGridCharacter.AddListener(Execute);
     }
 
     public void Select()
     {
         this.GetComponent<Renderer>().material.color = Color.blue;
-        GameEvents.GridCharacterSelected.Invoke(new GridCharacterSelectedData(this.gameObject));
+        GameEvents.GridCharacterClicked.Invoke(new GridCharacterClickedData(this.gameObject));
     }
     public void DeSelect()
     {
@@ -34,22 +32,15 @@ public class GridCharacterController : MonoBehaviour
     GridPath[] movePath;
     int currPathIndex;
 
-    private void Execute(MoveGridCharacterData data){
-        if(data.CharacterGameObject != gameObject)
-            return;
-        if(data.Path == null || data.Path.Length == 0)
+    public void MoveGridCharacter(GridPath[] path)
+    {
+        if(path == null || path.Length == 0)
             return;
             
-        movePath = data.Path;
+        movePath = path;
         //movePath. transform.position;
         currPathIndex = 0;
         isMoving = true;
-    }
-    private void Execute(DeSelectCharacterData data){
-        if( data.CharacterGameObject != this.gameObject )
-            return;
-        
-        DeSelect();
     }
     
     Vector3 lastPath;
@@ -88,4 +79,6 @@ public class GridCharacterController : MonoBehaviour
             GameEvents.GridCharacterMovingToGridCell.Invoke(new GridCharacterMovingToGridCellData(movePath[currPathIndex].X,movePath[currPathIndex].Y, this.gameObject));
         }
     }
+
+  
 }

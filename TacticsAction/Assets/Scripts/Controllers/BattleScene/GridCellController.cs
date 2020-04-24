@@ -6,6 +6,7 @@ using API.Commands;
 using API.Events;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public enum GridCellDir{
@@ -57,14 +58,6 @@ public class GridCellController : MonoBehaviour{
     
     public bool IsWalkable; //TODO: that could be computed
     
-    private bool _isSelected;
-    public bool IsSelected {
-        get => _isSelected;
-        set{
-            _isSelected = value;
-            _isRenderedDirty = true;
-        }
-    }
     private bool _isRenderedDirty;
 
     //LifeCycle
@@ -154,11 +147,10 @@ public class GridCellController : MonoBehaviour{
         //GameEvents.GridCellMouseExit.Invoke(gameObject);
     }
     
-    public void Select()
+    public void Click()
     {
-        IsSelected = true;
-    
-        //TODO: Base on what is OccupiedBy on the tile we need to dispatch the correct event (or a generic one)
+        GameEvents.GridCellClicked.Invoke(new GridCellClickedData(gameObject, (X,Y)));
+        
         if(OccupiedBy != null)
             OccupiedBy.GetComponent<GridCharacterController>().Select();
     }

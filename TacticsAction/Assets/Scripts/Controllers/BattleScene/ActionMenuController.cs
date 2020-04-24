@@ -24,11 +24,11 @@ public class ActionMenuController : MonoBehaviour
     //Life Cycle
     void Start()
     {
-        GameEvents.GridCharacterSelected.AddListener(Handle);
+        /*GameEvents.GridCharacterSelected.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         GameEvents.ActionMenuItemClicked.AddListener(Handle);
         GameCommands.ShowActionsMenu.AddListener(Execute); 
-        GameCommands.HideActionsMenu.AddListener(Execute);
+        GameCommands.HideActionsMenu.AddListener(Execute);*/
     }
     void Update()
     {
@@ -40,18 +40,18 @@ public class ActionMenuController : MonoBehaviour
         
         if(Input.GetMouseButtonUp(0)){
             if(!EventSystem.current.IsPointerOverGameObject())
-                Execute(new HideActionsMenuData(null));
+                CloseActionMenu();
         }
     }
 
     //Events Handlers
-    private void Handle(GridCharacterSelectedData data)
+    private void Handle(GridCharacterClickedData data)
     {
         if(target == data.GameObject && this.gameObject.activeSelf)
             return;
         
         target = data.GameObject;
-        Execute(new ShowActionsMenuData(null));
+        //Execute(new ShowActionsMenuData(null));
     }
     private void Handle(GridCharacterDeSelectedData arg0)
     {
@@ -59,23 +59,32 @@ public class ActionMenuController : MonoBehaviour
     }
     private void Handle(ActionMenuItemClickedData arg0)
     {
-        Execute(new HideActionsMenuData(null));
+        CloseActionMenu();
     }
     
     // Commands Handlers
     private void Execute(ShowActionsMenuData menuData)
     {
+        ShowActionsMenu();
+    }
+    private void Execute(HideActionsMenuData menuData)
+    {
+        CloseActionMenu();
+    }
+    
+    public void ShowActionsMenu(){
         OverAction = ActionType.Move;
         CurrentActionPath = new List<ActionType>();
         CreateMenu();
         this.gameObject.SetActive(true);
         GameEvents.ActionMenuOpened.Invoke();
     }
-    private void Execute(HideActionsMenuData menuData)
-    {
+    public void CloseActionMenu(){
         this.gameObject.SetActive(false);
         GameEvents.ActionMenuClosed.Invoke();
     }
+    
+    
     
     private List<GameObject> MenuItems;
     private void CreateMenu(){

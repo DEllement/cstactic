@@ -6,8 +6,8 @@ namespace API{
     {
         //Grid Events
         public static GridReady GridReady = new GridReady();
-        public static GridCellSelected GridCellSelected = new GridCellSelected();
-        public static GridCharacterSelected GridCharacterSelected = new GridCharacterSelected();
+        public static GridCellClicked GridCellClicked = new GridCellClicked();
+        public static GridCharacterClicked GridCharacterClicked = new GridCharacterClicked();
         public static GridCharacterDeSelected GridCharacterDeSelected = new GridCharacterDeSelected();
         public static GridCharacterLeavingGridCell GridCharacterLeavingGridCell = new GridCharacterLeavingGridCell();
         public static GridCharacterMovingToGridCell GridCharacterMovingToGridCell = new GridCharacterMovingToGridCell();

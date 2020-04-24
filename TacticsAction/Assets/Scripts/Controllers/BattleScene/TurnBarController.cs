@@ -30,7 +30,7 @@ public class TurnBarController : MonoBehaviour
         GameEvents.CharacterTurnEnded.AddListener(Handle);
         GameEvents.CharacterDied.AddListener(Handle);
         
-        GameEvents.GridCharacterSelected.AddListener(Handle);
+        GameEvents.GridCharacterClicked.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         
         GameEvents.TurnBarReady.Invoke();
@@ -112,7 +112,7 @@ public class TurnBarController : MonoBehaviour
     private void Handle(CharacterTurnEndedData data){
     
     }
-    private void Handle(GridCharacterSelectedData data){
+    private void Handle(GridCharacterClickedData data){
     
     }
     private void Handle(GridCharacterDeSelectedData data){
