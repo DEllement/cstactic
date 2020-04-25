@@ -16,7 +16,7 @@ using UnityEngine.UI;
 
 public enum GridSelectionMode {
     Cell, //Nothing is selected yet
-    MenuOpen, //When player choosing an action
+    Disabled, //When player choosing an action
     ActMove, //Need path finding
     ActMelee, //Need path finding+target reachable
     ActRange,//Need target reachable
@@ -41,6 +41,8 @@ public class GridController : MonoBehaviour
     private Dictionary<string, (int x,int y ,GridCellDir dir)> _charactersPositions;
     private Dictionary<uint, GridCellController> _cellIdxToGridCellCtrls = new Dictionary<uint, GridCellController>();
     private Dictionary<uint, uint> _avMoveCellToNodeIdx = new Dictionary<uint, uint>();
+    
+    public GameObject SelectedCharacter => _selectedCharacter;
     
     #region LifeCycle
     void Start()
@@ -149,6 +151,7 @@ public class GridController : MonoBehaviour
         }
     }
     public void DeSelectSelectedCharacter(){
+        print("DeSelectSelectedCharacter");
         selectionMode = GridSelectionMode.Cell;
         
         if(_selectedCharacter == null)
@@ -157,9 +160,9 @@ public class GridController : MonoBehaviour
         _gridCells[characterCtrl.X, characterCtrl.Y].GetComponent<GridCellController>().DeSelect(); //this should dispatch GridCharacterDeSelected
     }
     public void SelectCharacter(GridCharacterClickedData data){ //TODO: change params
-        if(_selectedCharacter != null){
+        /*if(_selectedCharacter != null && _selectedCharacter != data.GameObject){
             DeSelectSelectedCharacter();
-        }
+        }*/
         _selectedCharacter = data.GameObject;
     }
     public void ShowGridCellAsReachable(){
@@ -233,12 +236,7 @@ public class GridController : MonoBehaviour
     public void BuildPossibleRangeGraph(int maxRangeCost){
     
     }
-    private void Handle(GridCharacterDeSelectedData data){
-        if( _selectedCharacter == data.GameObject){
-            _selectedCharacter = null;
-            HideGridCellAsReachable();
-        }
-    }
+    
     public void AssignCharacterToGrid(AssignCharacterToGridData data){
         print("AssignCharacterToGridData");
         _gridCells[data.X,data.Y].GetComponent<GridCellController>().OccupiedBy = data.GameObject;
@@ -247,8 +245,8 @@ public class GridController : MonoBehaviour
         data.GameObject.transform.position = _gridCells[data.X,data.Y].gameObject.transform.position;
     }
     private void DetectGridCellClick(){
-        
-        if(selectionMode == GridSelectionMode.MenuOpen)
+       
+        if(selectionMode == GridSelectionMode.Disabled)
             return;
         
         if(Input.GetMouseButtonUp(0)){
@@ -257,7 +255,7 @@ public class GridController : MonoBehaviour
             if(!hits.Any(x=> x.transform.CompareTag("UI")))
             {
                 var hit = hits.FirstOrDefault(x=> x.transform.CompareTag("GridCell"));
-                if( hit.transform.CompareTag("GridCell")){
+                if( hit.transform != null && hit.transform.CompareTag("GridCell")){
                     print("GridCell hit *****");
                     ClickGridCell(hit.transform.gameObject);
                 }
@@ -286,6 +284,9 @@ public class GridController : MonoBehaviour
             return false;
         
         //test if have possible move
+        if(!_avMoveCellToNodeIdx.ContainsKey(to))
+            return false;
+        
         var result = _graph.Dijkstra(_avMoveCellToNodeIdx[@from], _avMoveCellToNodeIdx[to]);
         var path = result.GetPath().Select(nodeIndex =>{
             var ctrl = _cellIdxToGridCellCtrls[_graph[nodeIndex].Item];

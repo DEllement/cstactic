@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using UnityEngine;
 
 namespace Controllers.BattleScene.States
 {
@@ -10,7 +11,7 @@ namespace Controllers.BattleScene.States
     
         public override IEnumerator Enter()
         {
-            ctrl.grid.selectionMode = GridSelectionMode.MenuOpen;
+            ctrl.grid.selectionMode = GridSelectionMode.Disabled;
             ctrl.grid.HideGridCellAsReachable();
             yield break;
         }
@@ -21,7 +22,8 @@ namespace Controllers.BattleScene.States
                     ctrl.actionMenu.CloseActionMenu();
                     ctrl.grid.BuildPossibleGroundMoveGraph(2); //TODO: depending on unit is flying, use Range Graph instead
                     ctrl.grid.ShowGridCellAsReachable();
-                    ctrl.grid.selectionMode = GridSelectionMode.ActMove;
+                    
+                    yield return new WaitForEndOfFrame(); //NOTE: To avoid the mouseup race issue
                     
                     ctrl.SetState(new PickMoveLocationState(ctrl));
                     
@@ -30,7 +32,8 @@ namespace Controllers.BattleScene.States
                     ctrl.actionMenu.CloseActionMenu();
                     ctrl.grid.BuildPossibleRangeGraph(1);
                     ctrl.grid.ShowGridCellAsReachable();
-                    ctrl.grid.selectionMode = GridSelectionMode.ActMelee;
+                    
+                    yield return new WaitForEndOfFrame();
                     
                     ctrl.SetState(new PickMeleeTargetState(ctrl));
                     break;
@@ -40,7 +43,6 @@ namespace Controllers.BattleScene.States
 
         public override IEnumerator Exit()
         {
-            ctrl.grid.selectionMode = GridSelectionMode.Cell;
             yield break;
         }
     }

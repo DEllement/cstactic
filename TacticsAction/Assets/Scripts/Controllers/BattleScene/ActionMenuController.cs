@@ -16,65 +16,28 @@ public class ActionMenuController : MonoBehaviour
     public int MarginBetweenBtn = 30;
     public int MarginLeft = 150;
     public int MarginTop = 50;
+    public GameObject target;
     
-    private ActionType OverAction;
-    private List<ActionType> CurrentActionPath; 
-    private Camera mainCam;
-    private GameObject target;
+    private ActionType _overAction;
+    private List<ActionType> _currentActionPath; 
+    private Camera _mainCam;
+    private List<GameObject> _menuItems;
     //Life Cycle
     void Start()
     {
-        /*GameEvents.GridCharacterSelected.AddListener(Handle);
-        GameEvents.GridCharacterDeSelected.AddListener(Handle);
-        GameEvents.ActionMenuItemClicked.AddListener(Handle);
-        GameCommands.ShowActionsMenu.AddListener(Execute); 
-        GameCommands.HideActionsMenu.AddListener(Execute);*/
     }
     void Update()
     {
-        if( mainCam == null)
-            mainCam = Camera.main;
+        if( _mainCam == null)
+            _mainCam = Camera.main;
         
         if(this.gameObject.activeSelf && target != null)
-           this.gameObject.transform.position = mainCam.WorldToScreenPoint( target.transform.position + new Vector3(0f,0f,0f));
-        
-        if(Input.GetMouseButtonUp(0)){
-            if(!EventSystem.current.IsPointerOverGameObject())
-                CloseActionMenu();
-        }
+           this.gameObject.transform.position = _mainCam.WorldToScreenPoint( target.transform.position + new Vector3(0f,0f,0f));
     }
 
-    //Events Handlers
-    private void Handle(GridCharacterClickedData data)
-    {
-        if(target == data.GameObject && this.gameObject.activeSelf)
-            return;
-        
-        target = data.GameObject;
-        //Execute(new ShowActionsMenuData(null));
-    }
-    private void Handle(GridCharacterDeSelectedData arg0)
-    {
-        //this.gameObject.SetActive(false);
-    }
-    private void Handle(ActionMenuItemClickedData arg0)
-    {
-        CloseActionMenu();
-    }
-    
-    // Commands Handlers
-    private void Execute(ShowActionsMenuData menuData)
-    {
-        ShowActionsMenu();
-    }
-    private void Execute(HideActionsMenuData menuData)
-    {
-        CloseActionMenu();
-    }
-    
     public void ShowActionsMenu(){
-        OverAction = ActionType.Move;
-        CurrentActionPath = new List<ActionType>();
+        _overAction = ActionType.Move;
+        _currentActionPath = new List<ActionType>();
         CreateMenu();
         this.gameObject.SetActive(true);
         GameEvents.ActionMenuOpened.Invoke();
@@ -84,16 +47,12 @@ public class ActionMenuController : MonoBehaviour
         GameEvents.ActionMenuClosed.Invoke();
     }
     
-    
-    
-    private List<GameObject> MenuItems;
     private void CreateMenu(){
-        MenuItems?.ForEach(obj=>{
+        _menuItems?.ForEach(obj=>{
             Destroy(obj);
         });
-        MenuItems = CreateMenuItems(ActionTreeManager.instance.Actions, new Vector3(MarginLeft, MarginTop), transform, true);
+        _menuItems = CreateMenuItems(ActionTreeManager.instance.Actions, new Vector3(MarginLeft, MarginTop), transform, true);
     }
-    
     private List<GameObject> CreateMenuItems(List<ActionItem> items, Vector3 startPos, Transform parent, bool active){
         float i = 0f;
         return items?.Select(item=>{

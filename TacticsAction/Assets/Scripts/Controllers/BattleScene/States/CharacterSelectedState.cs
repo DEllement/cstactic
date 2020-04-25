@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using UnityEngine;
 
 namespace Controllers.BattleScene.States
 {
@@ -9,19 +10,31 @@ namespace Controllers.BattleScene.States
         }
         
         public override IEnumerator Enter(){
-
-            ctrl.grid.BuildPossibleGroundMoveGraph(2);
-            ctrl.grid.ShowGridCellAsReachable();
-            ctrl.grid.selectionMode = GridSelectionMode.ActMove;
-            
+            ctrl.grid.selectionMode = GridSelectionMode.Cell;
             yield break;        
         }
 
         public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)
         {
+            ctrl.actionMenu.target = ctrl.grid.SelectedCharacter;
             ctrl.actionMenu.ShowActionsMenu();
-            ctrl.SetState(new ActionMenuOpenState(this.ctrl));
+            ctrl.grid.selectionMode = GridSelectionMode.Disabled;
+            ctrl.SetState(new ActionMenuOpenState(ctrl));
             yield break;  
+        }
+
+        public override IEnumerator OnGridCellClicked(GridCellClickedData data)
+        {
+            if(data.GameObject.GetComponent<GridCellController>().OccupiedBy != ctrl.grid.SelectedCharacter){
+                yield return new WaitForEndOfFrame();
+                
+                ctrl.grid.HideGridCellAsReachable();
+                ctrl.grid.DeSelectSelectedCharacter();
+                ctrl.grid.selectionMode = GridSelectionMode.Cell;
+                ctrl.SetState(new NothingSelectedState(ctrl));
+            }
+            
+            yield break;
         }
     }
 }

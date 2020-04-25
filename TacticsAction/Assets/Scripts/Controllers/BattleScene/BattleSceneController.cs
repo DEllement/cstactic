@@ -23,7 +23,7 @@ public class BattleSceneController : MonoBehaviour
         _state = state;
         StartCoroutine(_state.Enter());
         print(_state.ToString());
-    }
+    } 
     
     // Start is called before the first frame update
     void Start()
@@ -47,11 +47,6 @@ public class BattleSceneController : MonoBehaviour
         StartCoroutine(_state.OnGridCellClicked(data));
     }
 
-    /*private void Execute(ShowPossibleMoveData data)
-    {
-        _state.ShowGridCellAsPossibleMove();
-    }*/
-
     private void Execute(AssignCharacterToGridData data)
     {
         grid.AssignCharacterToGrid(data);
@@ -72,20 +67,15 @@ public class BattleSceneController : MonoBehaviour
     private void OnActionMenuOpened()
     {
         //SetState(new ActionMenuOpenState(this));
-
     }
     private void OnActionMenuClosed()
     {
-        /*var data = new {};
-        if(data == null)
-            SetState(new NothingSelectedState(this));*/
+        StartCoroutine(_state.OnActionMenuClosed());
     }
     private void OnActionMenuItemClicked(ActionMenuItemClickedData data)
     {
         StartCoroutine(_state.OnActionMenuItemClicked(data));
     }
-    
-    
     
     // Update is called once per frame
     void Update()

@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using UnityEngine;
 
 namespace Controllers.BattleScene.States
 {
@@ -11,14 +12,18 @@ namespace Controllers.BattleScene.States
         
         public override IEnumerator OnGridCharacterLeavingGridCell(GridCharacterLeavingGridCellData data){yield break;}
         public override IEnumerator OnGridCharacterMovedToGridCell(GridCharacterMovedToGridCellData data){yield break;}
-        public override IEnumerator OnGridCharacterDoneMoving(GridCharacterDoneMovingData data){yield break;}
-        public override IEnumerator OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCell data){
+        public override IEnumerator OnGridCharacterDoneMoving(GridCharacterDoneMovingData data){
             
             //TODO: if character finish turn Next or DoNothing or OpenMenu?
+
+            
             
             ctrl.grid.ComputeEdges();
-            ctrl.SetState(new NothingSelectedState(ctrl));
+            ctrl.SetState(new CharacterSelectedState(ctrl));
             
+            yield break;
+        }
+        public override IEnumerator OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCell data){
             yield break;
         }
     }

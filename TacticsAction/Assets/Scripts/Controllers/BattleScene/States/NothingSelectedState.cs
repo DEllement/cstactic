@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using UnityEngine;
 
 namespace Controllers.BattleScene.States
 {
@@ -12,8 +13,13 @@ namespace Controllers.BattleScene.States
 
         public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)
         {
+            yield return new WaitForEndOfFrame();
+            
             ctrl.grid.SelectCharacter(data);
-            ctrl.SetState(new CharacterSelectedState(this.ctrl));
+            ctrl.grid.BuildPossibleGroundMoveGraph(2);
+            ctrl.grid.ShowGridCellAsReachable();
+            ctrl.grid.selectionMode = GridSelectionMode.ActMove;
+            ctrl.SetState(new PickMoveLocationState(this.ctrl));
             
             yield break;
         }
