@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using Model;
 using UnityEngine;
 
 namespace Controllers.BattleScene.States

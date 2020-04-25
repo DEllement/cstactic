@@ -5,6 +5,7 @@ using System.Linq;
 using API;
 using API.Commands;
 using API.Events;
+using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;

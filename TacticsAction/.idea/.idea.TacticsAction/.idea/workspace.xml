@@ -20,18 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/GridPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/GridPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +136,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowPossibleMove.cs" />
@@ -182,6 +170,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
       </list>
     </option>
   </component>
@@ -250,7 +239,7 @@
       <workItem from="1587375146761" duration="3933000" />
       <workItem from="1587388030199" duration="4903000" />
       <workItem from="1587512563239" duration="224000" />
-      <workItem from="1587512802105" duration="71746000" />
+      <workItem from="1587512802105" duration="72334000" />
     </task>
     <servers />
   </component>

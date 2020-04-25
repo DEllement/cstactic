@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using API;
 using API.Events;
+using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
