@@ -76,8 +76,11 @@
             <e p="TurnManager.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
+            <e p="ActionItem.cs" t="Include" />
             <e p="Character.cs" t="Include" />
             <e p="CharacterStats.cs" t="Include" />
+            <e p="Enums.cs" t="Include" />
+            <e p="GridCellEdge.cs" t="Include" />
             <e p="GridPath.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
           </e>

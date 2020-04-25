@@ -109,8 +109,11 @@
      <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Managers\TestButtonsHandlers.cs" />
      <Compile Include="Assets\Scripts\Managers\TurnManager.cs" />
+     <Compile Include="Assets\Scripts\Model\ActionItem.cs" />
      <Compile Include="Assets\Scripts\Model\Character.cs" />
      <Compile Include="Assets\Scripts\Model\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\Model\Enums.cs" />
+     <Compile Include="Assets\Scripts\Model\GridCellEdge.cs" />
      <Compile Include="Assets\Scripts\Model\GridPath.cs" />
      <Compile Include="Assets\Scripts\Model\Inventory.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Extensions\EnumerableExtensions.cs" />

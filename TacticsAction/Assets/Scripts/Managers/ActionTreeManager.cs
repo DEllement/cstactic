@@ -8,32 +8,7 @@ using API.Events;
 using Model;
 using UnityEngine;
 
-public enum ActionType
-{
-    None,
-    Move,
-    Act,
-        Attack,
-            Melee,
-            Ranged,
-        Magic,
-            White,
-            Grey,
-            Black,
-    Inventory,
-        Scrolls,
-        Consumable,
-    Wait,
-}
 
-public class ActionItem
-{
-    public Func<List<ActionItem>> Children = ()=>null;
-    public ActionType ActionType;
-    public Func<bool> Enabled = ()=>true;
-    public Func<bool> Visible = ()=>true;
-    public bool Executable;
-}
 public class ActionState{
     public bool HaveMoved;
     public bool HaveActed;

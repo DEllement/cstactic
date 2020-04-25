@@ -7,21 +7,13 @@ using API.Commands;
 using API.Events;
 using Dijkstra.NET.Graph;
 using Dijkstra.NET.ShortestPath;
+using Model;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-
-public enum GridSelectionMode {
-    Cell, //Nothing is selected yet
-    Disabled, //When player choosing an action
-    ActMove, //Need path finding
-    ActMelee, //Need path finding+target reachable
-    ActRange,//Need target reachable
-    ActItem,//Need target reachable
-}
 
 [ExecuteInEditMode]
 public class GridController : MonoBehaviour
