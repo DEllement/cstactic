@@ -38,6 +38,15 @@ namespace Controllers.BattleScene.States
                     
                     ctrl.SetState(new PickMeleeTargetState(ctrl));
                     break;
+                case ActionType.Wait:
+
+                    ctrl.actionMenu.CloseActionMenu();
+                    
+                    yield return new WaitForEndOfFrame();
+                    ctrl.grid.HideGridCellAsReachable();
+           
+                    
+                    break;
             }
             yield break;
         }

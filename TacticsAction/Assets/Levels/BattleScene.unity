@@ -12783,6 +12783,7 @@ MonoBehaviour:
   levelManager: {fileID: 1991758995}
   actionTreeManager: {fileID: 1991758998}
   battleManager: {fileID: 0}
+  turnManager: {fileID: 0}
 --- !u!1 &1066948145
 GameObject:
   m_ObjectHideFlags: 0
@@ -22898,6 +22899,7 @@ GameObject:
   - component: {fileID: 1991758995}
   - component: {fileID: 1991758997}
   - component: {fileID: 1991758998}
+  - component: {fileID: 1991758999}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -22955,6 +22957,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176e7b3d1603c3646a252f046eef7e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1991758999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991758994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e80d107e9fb4e54bc66a24413db708e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Round: 0
 --- !u!1 &1995145184
 GameObject:
   m_ObjectHideFlags: 0

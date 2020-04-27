@@ -5,10 +5,11 @@ using API;
 using API.Commands;
 using API.Events;
 using Model;
+using UnityEngine;
 
-public class TurnManager {
+public class TurnManager : MonoBehaviour {
     public Character CurrentCharacter;
-    public Queue<Character> lineUp;
+    public Queue<Character> lineUp = new Queue<Character>();
     public int Round;
     
     //List<Character> friendly;
@@ -18,10 +19,8 @@ public class TurnManager {
         return lineUp.ToList();
     }
     
-    public TurnManager()
+    public void Start()
     {
-        this.lineUp = new Queue<Character>();
-        
         GameCommands.ForceNextTurn.AddListener(Execute);
     }
     
@@ -75,10 +74,6 @@ public class TurnManager {
             GameCommands.SelectCharacter.Invoke(null);
         
         GameEvents.CharacterTurnStarted.Invoke(new CharacterTurnStartedData(CurrentCharacter));
-    }
-    
-    public void OnClick(){
-        Next();      
     }
 }
 

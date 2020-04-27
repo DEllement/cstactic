@@ -93,26 +93,6 @@ public class GridCellController : MonoBehaviour{
     
     //Event Handlers
     
-    void OnMouseOver()
-    {
-        if(showAsPossibleMove)
-            GetComponent<Renderer>().material.color = Color.red;
-        else
-            GetComponent<Renderer>().material.color = overColor;
-        
-        //GameEvents.GridCellMouseOver.Invoke(gameObject);
-    }
-
-    void OnMouseExit()
-    {
-        if(showAsPossibleMove)
-            GetComponent<Renderer>().material.color = Color.magenta;
-        else
-            GetComponent<Renderer>().material.color = defaultColor;
-        
-        //GameEvents.GridCellMouseExit.Invoke(gameObject);
-    }
-    
     public void Click()
     {
         GameEvents.GridCellClicked.Invoke(new GridCellClickedData(gameObject, (X,Y)));

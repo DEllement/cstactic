@@ -53,6 +53,8 @@
                 <e p="BattleIntroState.cs" t="Include" />
                 <e p="BattleSceneState.cs" t="Include" />
                 <e p="CharacterSelectedState.cs" t="Include" />
+                <e p="CharacterTurnEndingState.cs" t="Include" />
+                <e p="CharacterTurnStartingState.cs" t="Include" />
                 <e p="InventoryOpenState.cs" t="Include" />
                 <e p="LevelObjectiveOverviewState.cs" t="Include" />
                 <e p="MovingCharacterState.cs" t="Include" />

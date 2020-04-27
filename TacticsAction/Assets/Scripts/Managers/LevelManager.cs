@@ -47,24 +47,25 @@ public class LevelManager : MonoBehaviour
         Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10},Inventory=new Inventory()};
         Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10},Inventory=new Inventory()};
         
-        var turnManager = new TurnManager();
-        turnManager.Init(new List<Character>{c1,c2,c3}, new List<Character>{e1,e2,e3} );
+       
         
         //TODO: Get selected start position
-        GameObject Character01 = GameObject.Find("Character01");
+        GameObject Character01 = GameObject.Find("Character01"); 
         GameObject Character02 = GameObject.Find("Character02");
         
         GameObject Ennemy01 = GameObject.Find("Ennemy01");
             
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Ennemy01,9,9));  
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01,5,5));  
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,0,1)); 
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Ennemy01, e1,9,9));  
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01, e2,5,5));  
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,e3,0,1)); 
         
         //TODO: Execute intro animation/scene
         //TODO: Show Level Name
         //TODO: Show Objectives
         //Start Turn
-        turnManager.Next();
+        /*var turnManager = new TurnManager();
+        turnManager.Init(new List<Character>{c1,c2,c3}, new List<Character>{e1,e2,e3} );
+        turnManager.Next();*/
     }
     
     // Update is called once per frame

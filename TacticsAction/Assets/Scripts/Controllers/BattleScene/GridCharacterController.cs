@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using API;
 using API.Commands;
 using API.Events;
+using Model;
 using UnityEngine;
 
 public class GridCharacterController : MonoBehaviour
 {
     public int X;
     public int Y;
-    
+    public Character Character;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -14,6 +14,7 @@ public class BattleSceneController : MonoBehaviour
     [SerializeField] public LevelManager levelManager;
     [SerializeField] public ActionTreeManager actionTreeManager;
     [SerializeField] public BattleManager battleManager;
+    [SerializeField] public TurnManager turnManager;
     
     private BattleSceneState _previousState;
     private BattleSceneState _state;
@@ -35,6 +36,7 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.ActionMenuOpened.AddListener(OnActionMenuOpened);
         GameEvents.ActionMenuClosed.AddListener(OnActionMenuClosed);
         GameEvents.ActionMenuItemClicked.AddListener(OnActionMenuItemClicked);
+        GameEvents.CharacterTurnStarted.AddListener(Handle);
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
         //GameCommands.ShowPossibleMove.AddListener(Execute);
@@ -64,6 +66,11 @@ public class BattleSceneController : MonoBehaviour
     {
         StartCoroutine(_state.OnGridCharacterDoneMoving(data));
     }
+    private void Handle(CharacterTurnStartedData arg0)
+    {
+        
+    }
+    
     private void OnActionMenuOpened()
     {
         //SetState(new ActionMenuOpenState(this));

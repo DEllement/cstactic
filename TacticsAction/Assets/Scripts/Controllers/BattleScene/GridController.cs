@@ -30,9 +30,9 @@ public class GridController : MonoBehaviour
     private GameObject [,] _gridCells;
     private GameObject _selectedCharacter;
     private Graph<uint, string> _graph;
-    private Dictionary<string, (int x,int y ,GridCellDir dir)> _charactersPositions;
+    //private Dictionary<string, (int x,int y ,GridCellDir dir)> _charactersPositions;
     private Dictionary<uint, GridCellController> _cellIdxToGridCellCtrls = new Dictionary<uint, GridCellController>();
-    private Dictionary<uint, uint> _avMoveCellToNodeIdx = new Dictionary<uint, uint>();
+    private Dictionary<uint, uint> _avCellToNodeIdx = new Dictionary<uint, uint>();
     
     public GameObject SelectedCharacter => _selectedCharacter;
     
@@ -62,22 +62,22 @@ public class GridController : MonoBehaviour
         for(var y = 0; y < Rows; y++)
             for(var x =0; x < Cols; x++){
                 var obj = Instantiate(prefab, new Vector3(x*Space, 0, y*Space), Quaternion.identity);
-                obj.tag = "GridCell";
-                obj.GetComponentInChildren<TextMesh>().text = x+","+y;
-                obj.transform.SetParent(gameObject.transform);
+                    obj.tag = "GridCell";
+                    obj.name = GetGridCellName(x,y);
+                    obj.GetComponentInChildren<TextMesh>().text = x+","+y;
+                    obj.transform.SetParent(gameObject.transform);
                 var gridCellCtrl = obj.AddComponent<GridCellController>();
-                gridCellCtrl.Init();
-                gridCellCtrl.X = x;
-                gridCellCtrl.Y = y;
-                gridCellCtrl.CellIndex = ++i;
-                obj.name = GetGridCellName(x,y);
+                    gridCellCtrl.Init();
+                    gridCellCtrl.X = x;
+                    gridCellCtrl.Y = y;
+                    gridCellCtrl.CellIndex = ++i;
                 _gridCells[x,y] = obj;
                 _cellIdxToGridCellCtrls[gridCellCtrl.CellIndex] = gridCellCtrl;
             }
             
         ComputeEdges();
         _initialized = true;
-        GameEvents.GridReady.Invoke();
+        GameEvents.GridReady.Invoke(); //TODO: could pass the matrix down
     }
     public string GetGridCellName(int x, int y){
         return "GridCell ("+x+","+y+")";
@@ -100,8 +100,8 @@ public class GridController : MonoBehaviour
             return false;
         return _gridCells[x,y] != null &&
                _gridCells[x,y].GetComponent<GridCellController>().IsWalkable &&
-               (_gridCells[x,y].GetComponent<GridCellController>().OccupiedBy == null ||
-                _gridCells[x,y].GetComponent<GridCellController>().OccupiedBy.CompareTag("Player"));
+              (_gridCells[x,y].GetComponent<GridCellController>().OccupiedBy == null ||
+               _gridCells[x,y].GetComponent<GridCellController>().OccupiedBy.CompareTag("Player"));
     }
     public void ComputeEdges(){
         
@@ -112,10 +112,10 @@ public class GridController : MonoBehaviour
             for(var y = 0; y < Rows; y++)
                 for(var x =0; x < Cols; x++){
                     var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
-                    gridCellCtrl.Get(GridCellDir.N).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y+1);
-                    gridCellCtrl.Get(GridCellDir.S).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y-1);
-                    gridCellCtrl.Get(GridCellDir.W).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y);
-                    gridCellCtrl.Get(GridCellDir.E).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y);
+                    gridCellCtrl.Get(GridCellDir.N ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y+1);
+                    gridCellCtrl.Get(GridCellDir.S ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y-1);
+                    gridCellCtrl.Get(GridCellDir.W ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y);
+                    gridCellCtrl.Get(GridCellDir.E ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y);
                     gridCellCtrl.Get(GridCellDir.NW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y+1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
                     gridCellCtrl.Get(GridCellDir.NE).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y+1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.E).Enabled;
                     gridCellCtrl.Get(GridCellDir.SW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y-1) && gridCellCtrl.Get(GridCellDir.S).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
@@ -133,7 +133,7 @@ public class GridController : MonoBehaviour
                 _cellIdxToGridCellCtrls[gridCellCtrl.CellIndex] = gridCellCtrl;
             }
         }  
-        GameEvents.GridReady.Invoke();
+        GameEvents.GridReady.Invoke(); //TODO: Could pass the matrix down
     }
     public void ToggleGridCellsLabels(){
         for(var y = 0; y < Rows; y++)
@@ -157,39 +157,55 @@ public class GridController : MonoBehaviour
         }*/
         _selectedCharacter = data.GameObject;
     }
+    public void SelectCharacter(int characterId){
+        
+        foreach (var gridCell in _gridCells)
+        {
+            if( gridCell.GetComponent<GridCellController>().OccupiedBy != null){
+                
+                var gridCharacterCtrl = gridCell.GetComponent<GridCellController>()
+                                                .GetComponentInChildren<GridCharacterController>();
+                if( gridCharacterCtrl != null && gridCharacterCtrl.Character.Id == characterId){
+                    gridCharacterCtrl.Select();
+                    break;
+                }
+            }
+        }
+    }
+    
     public void ShowGridCellAsReachable(){
-        foreach (var cellIdx in _avMoveCellToNodeIdx.Keys)
+        foreach (var cellIdx in _avCellToNodeIdx.Keys)
             _cellIdxToGridCellCtrls[cellIdx].ShowGridCellAsPossibleMove();
     }
     public void HideGridCellAsReachable(){
         print("HideGridCellAsPossibleMove");
-        foreach (var cellIdx in _avMoveCellToNodeIdx.Keys)
+        foreach (var cellIdx in _avCellToNodeIdx.Keys)
             _cellIdxToGridCellCtrls[cellIdx].HideGridCellAsPossibleMove();
-        _avMoveCellToNodeIdx.Clear();
+        _avCellToNodeIdx.Clear();
     }
     private void ConnectNodesUsingGridCellCtrls(GridCellController gridCellCtrlA, GridCellController gridCellCtrlB, bool isDiagonal=false){
-        if(!_avMoveCellToNodeIdx.ContainsKey(gridCellCtrlA.CellIndex) || !_avMoveCellToNodeIdx.ContainsKey(gridCellCtrlB.CellIndex))
+        if(!_avCellToNodeIdx.ContainsKey(gridCellCtrlA.CellIndex) || !_avCellToNodeIdx.ContainsKey(gridCellCtrlB.CellIndex))
             return;
-        _graph.Connect(_avMoveCellToNodeIdx[gridCellCtrlA.CellIndex], _avMoveCellToNodeIdx[gridCellCtrlB.CellIndex], isDiagonal ? 2 : 1, null);
+        _graph.Connect(_avCellToNodeIdx[gridCellCtrlA.CellIndex], _avCellToNodeIdx[gridCellCtrlB.CellIndex], isDiagonal ? 2 : 1, null);
     }
     public void BuildPossibleGroundMoveGraph(int maxMoveCost){
         var gridCharCtrl = _selectedCharacter.GetComponent<GridCharacterController>();
         var charPos = (gridCharCtrl.X, gridCharCtrl.Y);
         _graph = new Graph<uint, string>();
-        _avMoveCellToNodeIdx.Clear();
+        _avCellToNodeIdx.Clear();
         for(var y = Math.Max(charPos.Y-maxMoveCost,0); y < Math.Min(Rows,charPos.Y+maxMoveCost+1); y++)
             for(var x =Math.Max(charPos.X-maxMoveCost,0); x < Math.Min(Cols,charPos.X+maxMoveCost+1); x++){
                 var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
                 if( !gridCellCtrl.IsWalkable || (gridCellCtrl.OccupiedBy != null && gridCellCtrl.OccupiedBy.CompareTag("Ennemy")))
                     continue;
                 _graph.AddNode(gridCellCtrl.CellIndex);
-                _avMoveCellToNodeIdx.Add(gridCellCtrl.CellIndex, (uint)_graph.NodesCount);
+                _avCellToNodeIdx.Add(gridCellCtrl.CellIndex, (uint)_graph.NodesCount);
         }
    
         for(var y = Math.Max(charPos.Y-maxMoveCost,0); y < Math.Min(Rows,charPos.Y+maxMoveCost+1); y++)
             for(var x =Math.Max(charPos.X-maxMoveCost,0); x < Math.Min(Cols,charPos.X+maxMoveCost+1); x++){
                 var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
-                if(!_avMoveCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex))
+                if(!_avCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex))
                     continue;
                 gridCellCtrl.Edges.ForEach(edge=>{
                     if(!edge.Enabled)
@@ -211,10 +227,10 @@ public class GridController : MonoBehaviour
         
         //Remove impossible move and calculate move cost
         var charGridCellCtrl = _gridCells[charPos.X,charPos.Y].GetComponent<GridCellController>();
-        _avMoveCellToNodeIdx.Select( kvp=>{
+        _avCellToNodeIdx.Select( kvp=>{
             if( charGridCellCtrl.CellIndex == kvp.Key)
                 return (kvp.Key, -1); //already there
-            var result = _graph.Dijkstra(_avMoveCellToNodeIdx[charGridCellCtrl.CellIndex], _avMoveCellToNodeIdx[kvp.Key]);
+            var result = _graph.Dijkstra(_avCellToNodeIdx[charGridCellCtrl.CellIndex], _avCellToNodeIdx[kvp.Key]);
             //result.Distance;
             var moveCost = result.GetPath().Count();
             return (kvp.Key, moveCost);
@@ -222,7 +238,7 @@ public class GridController : MonoBehaviour
           .ToList()
           .ForEach(x=>{
               if(x.Item2 == 0)
-                _avMoveCellToNodeIdx.Remove(x.Key);
+                _avCellToNodeIdx.Remove(x.Key);
           });
     }
     public void BuildPossibleRangeGraph(int maxRangeCost){
@@ -231,9 +247,11 @@ public class GridController : MonoBehaviour
     
     public void AssignCharacterToGrid(AssignCharacterToGridData data){
         print("AssignCharacterToGridData");
+        //TODO: this is not dynamic yet
         _gridCells[data.X,data.Y].GetComponent<GridCellController>().OccupiedBy = data.GameObject;
         data.GameObject.GetComponent<GridCharacterController>().X = data.X;
         data.GameObject.GetComponent<GridCharacterController>().Y = data.Y;
+        data.GameObject.GetComponent<GridCharacterController>().Character = data.Character;
         data.GameObject.transform.position = _gridCells[data.X,data.Y].gameObject.transform.position;
     }
     private void DetectGridCellClick(){
@@ -262,8 +280,12 @@ public class GridController : MonoBehaviour
         var characterCtrl = this._selectedCharacter.GetComponent<GridCharacterController>(); 
         var gridCellCtrl = _gridCells[pos.x, pos.y].GetComponent<GridCellController>(); 
         return gridCellCtrl.OccupiedBy != null || (                                   //Clicked on a non empty cell
-            !_avMoveCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex) &&              //Clicked on impossible move
+            !_avCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex) &&              //Clicked on impossible move
             (gridCellCtrl.X != characterCtrl.X || gridCellCtrl.Y != characterCtrl.Y));//Clicked not on character
+    }
+    public bool IsInsideZone((int x, int y) pos){
+        var gridCellCtrl = _gridCells[pos.x, pos.y].GetComponent<GridCellController>();
+        return _avCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex);
     }
     public bool WalkCharacterToIfPossible((int x, int y) toPos){
         var characterCtrl = _selectedCharacter.GetComponent<GridCharacterController>();
@@ -272,14 +294,14 @@ public class GridController : MonoBehaviour
             return false;
         var from = _gridCells[characterCtrl.X, characterCtrl.Y].GetComponent<GridCellController>().CellIndex;
         var to = gridCellCtrl.CellIndex;
-        if (@from == to || _graph.NodesCount <= 0 || _avMoveCellToNodeIdx.Count <= 0)
+        if (@from == to || _graph.NodesCount <= 0 || _avCellToNodeIdx.Count <= 0)
             return false;
         
         //test if have possible move
-        if(!_avMoveCellToNodeIdx.ContainsKey(to))
+        if(!_avCellToNodeIdx.ContainsKey(to))
             return false;
         
-        var result = _graph.Dijkstra(_avMoveCellToNodeIdx[@from], _avMoveCellToNodeIdx[to]);
+        var result = _graph.Dijkstra(_avCellToNodeIdx[@from], _avCellToNodeIdx[to]);
         var path = result.GetPath().Select(nodeIndex =>{
             var ctrl = _cellIdxToGridCellCtrls[_graph[nodeIndex].Item];
             return new GridPath(ctrl.X, ctrl.Y, ctrl.gameObject.transform.position, ctrl.TileType);

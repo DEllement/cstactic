@@ -8,7 +8,8 @@ namespace Model
         public bool IsEnnemy;
         public bool IsGuest;
         public bool AutoCombat;
-    
+        public GridCellDir FacingDir;
+        
         //Stats
         public Stats Stats;
         public Inventory Inventory;
