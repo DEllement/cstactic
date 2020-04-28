@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using API.Events;
 using Model;
 using UnityEngine;
@@ -12,8 +13,10 @@ namespace Controllers.BattleScene.States
     
         public override IEnumerator Enter()
         {
-            ctrl.grid.selectionMode = GridSelectionMode.Disabled;
             ctrl.grid.HideGridCellAsReachable();
+            ctrl.grid.selectionMode = GridSelectionMode.Disabled;
+            ctrl.actionMenu.ShowActionsMenu();
+            
             yield break;
         }
     
@@ -25,27 +28,20 @@ namespace Controllers.BattleScene.States
                     ctrl.grid.ShowGridCellAsReachable();
                     
                     yield return new WaitForEndOfFrame(); //NOTE: To avoid the mouseup race issue
-                    
                     ctrl.SetState(new PickMoveLocationState(ctrl));
                     
                     break;
                 case ActionType.Melee:
                     ctrl.actionMenu.CloseActionMenu();
-                    ctrl.grid.BuildPossibleRangeGraph(1);
-                    ctrl.grid.ShowGridCellAsReachable();
                     
                     yield return new WaitForEndOfFrame();
-                    
-                    ctrl.SetState(new PickMeleeTargetState(ctrl));
+                    ctrl.SetState(new PickMeleeTargetState(ctrl, data.ActionType));
                     break;
                 case ActionType.Wait:
-
                     ctrl.actionMenu.CloseActionMenu();
                     
                     yield return new WaitForEndOfFrame();
                     ctrl.grid.HideGridCellAsReachable();
-           
-                    
                     break;
             }
             yield break;

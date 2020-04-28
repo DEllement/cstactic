@@ -1,6 +1,7 @@
 using System.Collections;
 using API.Events;
 using Model;
+using UnityEngine;
 
 namespace Controllers.BattleScene.States
 {
@@ -28,7 +29,7 @@ namespace Controllers.BattleScene.States
             //Reselected Character
             if(data.GridPosition.X == gridCharCtrl.X && data.GridPosition.Y == gridCharCtrl.Y){
                 ctrl.actionMenu.target = ctrl.grid.SelectedCharacter;
-                ctrl.actionMenu.ShowActionsMenu();
+           
                 ctrl.SetState(new ActionMenuOpenState(ctrl));
                 yield break;
             }

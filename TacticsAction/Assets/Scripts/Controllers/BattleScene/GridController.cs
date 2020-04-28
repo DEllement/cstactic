@@ -46,6 +46,7 @@ public class GridController : MonoBehaviour
     void Update()
     {
         DetectGridCellClick();
+        UpdateTargetTracker();
     }
     #endregion
     
@@ -252,22 +253,23 @@ public class GridController : MonoBehaviour
         data.GameObject.GetComponent<GridCharacterController>().X = data.X;
         data.GameObject.GetComponent<GridCharacterController>().Y = data.Y;
         data.GameObject.GetComponent<GridCharacterController>().Character = data.Character;
-        data.GameObject.transform.position = _gridCells[data.X,data.Y].gameObject.transform.position;
+        data.GameObject.transform.position = _gridCells[data.X,data.Y].transform.position + new Vector3(0,.5f,0);
     }
+    private GameObject _overGridCell;
     private void DetectGridCellClick(){
        
         if(selectionMode == GridSelectionMode.Disabled)
             return;
         
-        if(Input.GetMouseButtonUp(0)){
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit[] hits = Physics.RaycastAll(ray);
-            if(!hits.Any(x=> x.transform.CompareTag("UI")))
-            {
-                var hit = hits.FirstOrDefault(x=> x.transform.CompareTag("GridCell"));
-                if( hit.transform != null && hit.transform.CompareTag("GridCell")){
-                    print("GridCell hit *****");
-                    ClickGridCell(hit.transform.gameObject);
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+        if(!hits.Any(x=> x.transform.CompareTag("UI")))
+        {
+            var hit = hits.FirstOrDefault(x=> x.transform.CompareTag("GridCell"));
+            if( hit.transform != null){
+                _overGridCell = hit.transform.gameObject;
+                if(Input.GetMouseButtonUp(0)){
+                    ClickGridCell(_overGridCell);
                 }
             }
         }
@@ -314,5 +316,115 @@ public class GridController : MonoBehaviour
         
         return false;
     }
+    
+    
+    #region RayCastCollision
+    
+    private bool _enableTargetRayTracker;
+    private List<GameObject> _attackZoneGridCells;
+    private List<GameObject> _attackTargetGridCells;
+    private List<AttackRayTarget> _raysTargets;
+    
+    //CreateTargetTracker(true, (5,5), new List<GridCellDir>{},0,1);
+    public class AttackRayTarget{
+        public float startOffset;
+        public float length;
+        public GridCellDir Dir;
+        public Vector3 Start;
+        public Vector3 End => Start + (GridCellEdge.ToDirVector(Dir) * length );
+
+        public Vector3 heading => End - Start;
+        public float distance => heading.magnitude;
+        public Vector3 direction => heading / distance; // This is now the normalized direction.
+        
+        public AttackRayTarget( GridCellDir dir, Vector3 start, float startOffset=0, float length=1)
+        {
+            this.startOffset = startOffset;
+            this.length = length;
+            Dir = dir;
+            Start = start;
+        }
+    }
+    
+    public void CreateTargetTracker(
+        (int x, int y) origPos,
+        List<GridCellDir> attackZoneDirs,
+        float attackZoneMinRadius=0,
+        float attackZoneMaxRadius=1,
+        int attackRangeType=0, //Circle, Square, Line
+        int attackPatternType=0){ //Single, Line, Square
+    
+        var targetTrackerOrigin = _gridCells[origPos.x,origPos.y].transform.position;
+        
+        //Get Affected GridCell
+            
+        _attackZoneGridCells = new List<GameObject>();
+        _attackTargetGridCells = new List<GameObject>();
+        _raysTargets = new List<AttackRayTarget>();
+     
+        //Create Zone of Action
+        attackZoneDirs.ForEach(dir=>{ //This should be an other pattern + radius
+            //_raysTargets.Add(new AttackRayTarget(dir, targetTrackerOrigin,attackZoneMinRadius, attackZoneMaxRadius));
+            var attackRangeRayTarget = new AttackRayTarget(dir, targetTrackerOrigin,attackZoneMinRadius, attackZoneMaxRadius);
+            var hits = Physics.RaycastAll(attackRangeRayTarget.Start, attackRangeRayTarget.direction, attackRangeRayTarget.distance);
+            foreach (var hit in hits)
+            {
+                if( hit.transform.CompareTag("AttackColider") ){
+                    var gridCell = hit.transform.parent.gameObject;
+                    _attackZoneGridCells.Add(gridCell);
+                    gridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        });
+        //Create Target Rays
+        if(attackPatternType == 0){ //1 Generic Forward attack
+            _raysTargets.Add(new AttackRayTarget(GridCellDir.UP, Vector3.zero, 0f, 4f));
+        }
+        
+        _enableTargetRayTracker = true;
+    }
+    private void UpdateTargetTracker(){
+        if(!_enableTargetRayTracker)
+            return;
+        
+        var overGridCellInZone = _attackZoneGridCells.Contains(_overGridCell);
+        
+        _attackTargetGridCells.ForEach(tGridCell=>{
+            tGridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.white;
+        });
+        _attackTargetGridCells.Clear();
+        _attackZoneGridCells.ForEach(tGridCell=>{
+            tGridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.yellow;
+        });
+        
+        if(overGridCellInZone){
+            _raysTargets.ForEach( rayInfo=>{
+                rayInfo.Start = _overGridCell.transform.position+ new Vector3(0f, -1f, 0f);
+                
+                //Debug.DrawRay(rayInfo.Start,  rayInfo.direction*rayInfo.distance, Color.red );
+                var hits = Physics.RaycastAll(rayInfo.Start, rayInfo.direction, rayInfo.distance);
+                foreach (var hit in hits)
+                {
+                    if( hit.transform.CompareTag("GridCell") ){
+                        var gridCell = hit.transform.gameObject;//hit.transform.parent.gameObject;
+                        _attackTargetGridCells.Add(gridCell);
+                        gridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                }
+            });
+        }
+        print(_attackTargetGridCells.Count + " " + Input.GetMouseButtonUp(0));
+        if(Input.GetMouseButtonUp(0) && _attackTargetGridCells.Count > 0){
+            GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackTargetGridCells));
+        }
+    }
+    public void CancelTargetTracker(){
+        _enableTargetRayTracker = false;
+    }
+    
+    #endregion
+    
+    
+    
 }
 

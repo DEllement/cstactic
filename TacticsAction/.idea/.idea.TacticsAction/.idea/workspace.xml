@@ -20,24 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnEndingState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnEndingState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnStartingState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnStartingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetsSelected.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetsSelected.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/BattleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/Prefabs/GridCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/Prefabs/GridCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleIntroState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleIntroState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +54,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="UnityGameEvent" />
         <option value="UnityGameCommand" />
+        <option value="UnityGameEvent" />
       </list>
     </option>
   </component>
@@ -115,6 +121,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding/Dijkstra/PageRank/PageRankExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -137,13 +144,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterClicked.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovingToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetsSelected.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Tests/TurnManagerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowContextAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ContextActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" />
@@ -157,41 +162,44 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleSceneController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleIntroState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/LevelObjectiveOverviewState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/InventoryOpenState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterClicked.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/GameCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellClicked.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/MovingCharacterState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/GridCellDir.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/GridPath.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuItemController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnEndingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnStartingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleIntroState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/Test.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetClicked.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/GameEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetsSelected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" />
       </list>
     </option>
   </component>
@@ -204,8 +212,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.33633634" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.2882883" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.33637053" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.2881549" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -223,10 +231,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17152">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="17152" />
       <method v="2" />
     </configuration>
   </component>
@@ -261,7 +269,7 @@
       <workItem from="1587388030199" duration="4903000" />
       <workItem from="1587512563239" duration="224000" />
       <workItem from="1587512802105" duration="78027000" />
-      <workItem from="1587932425629" duration="12664000" />
+      <workItem from="1587932425629" duration="45778000" />
     </task>
     <servers />
   </component>
@@ -299,58 +307,59 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="900" y="359" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587387696416" />
-    <state width="622" height="563" key="DebuggerActiveHint" timestamp="1587756628544">
+    <state width="622" height="563" key="DebuggerActiveHint" timestamp="1588014644005">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="518" height="466" key="DebuggerActiveHint/0.0.2560.1027@0.0.2560.1027" timestamp="1586660347018" />
+    <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014644005" />
     <state width="622" height="563" key="DebuggerActiveHint/0.0.3072.1240@0.0.3072.1240" timestamp="1587756628544" />
-    <state width="2703" height="178" key="GridCell.Tab.0.bottom" timestamp="1587915223845">
+    <state width="2673" height="177" key="GridCell.Tab.0.bottom" timestamp="1588014493536">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.0.bottom/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
+    <state width="2673" height="177" key="GridCell.Tab.0.bottom/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014493536" />
     <state width="2592" height="178" key="GridCell.Tab.0.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587756406621" />
-    <state width="2703" height="178" key="GridCell.Tab.0.center" timestamp="1587915223844">
+    <state width="2673" height="177" key="GridCell.Tab.0.center" timestamp="1588014493536">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.0.center/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223844" />
+    <state width="2673" height="177" key="GridCell.Tab.0.center/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014493536" />
     <state width="2592" height="178" key="GridCell.Tab.0.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587756406621" />
-    <state width="2703" height="178" key="GridCell.Tab.0.left" timestamp="1587915223844">
+    <state width="2673" height="177" key="GridCell.Tab.0.left" timestamp="1588014493536">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.0.left/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223844" />
+    <state width="2673" height="177" key="GridCell.Tab.0.left/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014493536" />
     <state width="2592" height="178" key="GridCell.Tab.0.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587756406620" />
-    <state width="2703" height="178" key="GridCell.Tab.0.right" timestamp="1587915223844">
+    <state width="2673" height="177" key="GridCell.Tab.0.right" timestamp="1588014493536">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.0.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.0.right/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223844" />
+    <state width="2673" height="177" key="GridCell.Tab.0.right/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014493536" />
     <state width="2592" height="178" key="GridCell.Tab.0.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587756406621" />
-    <state width="2703" height="178" key="GridCell.Tab.1.bottom" timestamp="1587915223845">
+    <state width="2673" height="177" key="GridCell.Tab.1.bottom" timestamp="1588014499576">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.bottom/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.1.bottom/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
+    <state width="2673" height="177" key="GridCell.Tab.1.bottom/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014499576" />
     <state width="2592" height="178" key="GridCell.Tab.1.bottom/0.0.3072.1240@0.0.3072.1240" timestamp="1587756412738" />
-    <state width="2703" height="178" key="GridCell.Tab.1.center" timestamp="1587915223845">
+    <state width="2673" height="177" key="GridCell.Tab.1.center" timestamp="1588014499575">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.center/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.1.center/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
+    <state width="2673" height="177" key="GridCell.Tab.1.center/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014499575" />
     <state width="2592" height="178" key="GridCell.Tab.1.center/0.0.3072.1240@0.0.3072.1240" timestamp="1587756412738" />
-    <state width="2703" height="178" key="GridCell.Tab.1.left" timestamp="1587915223845">
+    <state width="2673" height="177" key="GridCell.Tab.1.left" timestamp="1588014499575">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.left/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.1.left/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
+    <state width="2673" height="177" key="GridCell.Tab.1.left/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014499575" />
     <state width="2592" height="178" key="GridCell.Tab.1.left/0.0.3072.1240@0.0.3072.1240" timestamp="1587756412738" />
-    <state width="2703" height="178" key="GridCell.Tab.1.right" timestamp="1587915223845">
+    <state width="2673" height="177" key="GridCell.Tab.1.right" timestamp="1588014499576">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state width="2212" height="165" key="GridCell.Tab.1.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
-    <state width="2703" height="178" key="GridCell.Tab.1.right/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
+    <state width="2673" height="177" key="GridCell.Tab.1.right/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588014499576" />
     <state width="2592" height="178" key="GridCell.Tab.1.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587756412738" />
     <state width="2703" height="178" key="GridCell.Tab.2.bottom" timestamp="1587915223845">
       <screen x="0" y="0" width="3072" height="1240" />
@@ -400,15 +409,17 @@
     <state width="2212" height="165" key="GridCell.Tab.3.right/0.0.2560.1027@0.0.2560.1027" timestamp="1586704403533" />
     <state width="2703" height="178" key="GridCell.Tab.3.right/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587915223845" />
     <state width="2592" height="178" key="GridCell.Tab.3.right/0.0.3072.1240@0.0.3072.1240" timestamp="1587756406503" />
-    <state x="657" y="233" key="IDE.errors.dialog" timestamp="1587742414831">
+    <state x="657" y="233" key="IDE.errors.dialog" timestamp="1588007081806">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
+    <state x="657" y="233" key="IDE.errors.dialog/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588007081806" />
     <state x="657" y="233" key="IDE.errors.dialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587742414831" />
     <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
-    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1587752412896">
+    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1588034971357">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588034971357" />
     <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587752412896" />
     <state x="1395" y="403" key="SettingsEditor" timestamp="1587513208072">
       <screen x="0" y="0" width="3072" height="1240" />
@@ -425,21 +436,21 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
-    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1587949440032">
+    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1588048489329">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="959" y="245" width="739" height="606" key="find.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586663311362" />
-    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587949440032" />
+    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588048489329" />
     <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587759067022" />
     <state x="425" y="293" width="672" height="677" key="run.anything.popup" timestamp="1586041809513">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1587949453409">
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1588046037418">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1587132202665" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1587949453409" />
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588046037418" />
     <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587759075768" />
   </component>
   <component name="XDebuggerManager">
@@ -447,52 +458,52 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs</url>
-          <line>18</line>
+          <line>19</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" initialLine="14">
             <startOffsets>
-              <option value="496" />
+              <option value="530" />
             </startOffsets>
             <endOffsets>
-              <option value="528" />
+              <option value="562" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs</url>
-          <line>22</line>
+          <line>23</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" initialLine="15">
             <startOffsets>
-              <option value="710" />
+              <option value="744" />
             </startOffsets>
             <endOffsets>
-              <option value="762" />
+              <option value="796" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs</url>
-          <line>20</line>
+          <line>23</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" initialLine="17">
             <startOffsets>
-              <option value="592" />
+              <option value="686" />
             </startOffsets>
             <endOffsets>
-              <option value="615" />
+              <option value="709" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs</url>
-          <line>35</line>
+          <line>36</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" initialLine="23">
             <startOffsets>
-              <option value="1258" />
+              <option value="1238" />
             </startOffsets>
             <endOffsets>
-              <option value="1316" />
+              <option value="1296" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="53" />
@@ -502,10 +513,10 @@
           <line>32</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" initialLine="31">
             <startOffsets>
-              <option value="1153" />
+              <option value="1089" />
             </startOffsets>
             <endOffsets>
-              <option value="1191" />
+              <option value="1127" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="56" />

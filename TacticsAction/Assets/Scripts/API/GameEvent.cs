@@ -7,6 +7,7 @@ namespace API{
         //Grid Events
         public static GridReady GridReady = new GridReady();
         public static GridCellClicked GridCellClicked = new GridCellClicked();
+        public static GridTargetsSelected GridTargetsSelected = new GridTargetsSelected();
         public static GridCharacterClicked GridCharacterClicked = new GridCharacterClicked();
         public static GridCharacterDeSelected GridCharacterDeSelected = new GridCharacterDeSelected();
         public static GridCharacterLeavingGridCell GridCharacterLeavingGridCell = new GridCharacterLeavingGridCell();
@@ -26,5 +27,6 @@ namespace API{
         public static UnityEvent ActionMenuClosed = new UnityEvent();
         
         public static UnityEvent TurnBarReady = new UnityEvent();
+        
     }
 }

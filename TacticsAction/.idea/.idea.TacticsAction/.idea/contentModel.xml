@@ -33,6 +33,7 @@
               <e p="GridCharacterMovedToGridCell.cs" t="Include" />
               <e p="GridCharacterMovingToGridCell.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
+              <e p="GridTargetsSelected.cs" t="Include" />
               <e p="TurnManagerInitialized.cs" t="Include" />
               <e p="TurnManagerLineUpChanged.cs" t="Include" />
             </e>

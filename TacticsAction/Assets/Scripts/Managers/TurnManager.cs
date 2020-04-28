@@ -54,7 +54,6 @@ public class TurnManager : MonoBehaviour {
         }
         
         GameEvents.TurnManagerInitialized.Invoke(new TurnManagerInitializedData(lineUp.ToList()));
-        //CurrentCharacter = lineUp.Peek();
     }
     
     public void Next(){

@@ -11,6 +11,7 @@ public class GridCharacterController : MonoBehaviour
 {
     public int X;
     public int Y;
+    public (int x, int y) GridPosition => (X,Y);
     public Character Character;
 
     // Start is called before the first frame update
@@ -53,8 +54,8 @@ public class GridCharacterController : MonoBehaviour
             
             float step =  moveSpeed * Time.deltaTime;
             //print(X + " " + Y);
-            transform.position = Vector3.MoveTowards(transform.position, movePath[currPathIndex].Position, step);
-            if( Vector3.Distance(transform.position, movePath[currPathIndex].Position) < 0.001f)
+            transform.position = Vector3.MoveTowards(transform.position, movePath[currPathIndex].Position + new Vector3(0,.5f,0), step);
+            if( Vector3.Distance(transform.position, movePath[currPathIndex].Position + new Vector3(0,.5f,0)) < 0.001f)
             {
                 SetNextPath();
             }

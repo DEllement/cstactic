@@ -26,10 +26,25 @@ public class BattleSceneController : MonoBehaviour
         print(_state.ToString());
     } 
     
+    private bool _gridReady, _turnBarReady, _setupStarted;
+    private bool CanSetupLevel => _gridReady && _turnBarReady && !_setupStarted;
+    private void OnGridReady()
+    {
+        _gridReady = true;
+        if(CanSetupLevel)
+            SetupLevel();
+    }
+    private void OnTurnBarReady(){
+        _turnBarReady = true;
+        if(CanSetupLevel)
+            SetupLevel();
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
         GameEvents.GridCellClicked.AddListener(Handle);
+        GameEvents.GridTargetsSelected.AddListener(Handle);
         GameEvents.GridCharacterClicked.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         GameEvents.GridCharacterDoneMoving.AddListener(Handle);
@@ -37,11 +52,21 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.ActionMenuClosed.AddListener(OnActionMenuClosed);
         GameEvents.ActionMenuItemClicked.AddListener(OnActionMenuItemClicked);
         GameEvents.CharacterTurnStarted.AddListener(Handle);
+        GameEvents.GridReady.AddListener(OnGridReady);
+        GameEvents.TurnBarReady.AddListener(OnTurnBarReady);
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
-        //GameCommands.ShowPossibleMove.AddListener(Execute);
         
         SetState(new NothingSelectedState(this));
+    }
+    
+    private void SetupLevel(){
+        _setupStarted = true;
+        levelManager.SetupLevel();
+        turnManager.Init(levelManager.Friends, levelManager.Ennemies);
+        turnManager.Next();
+        
+        //SetState(new BattleIntroState(this));
     }
 
     private void Handle(GridCellClickedData data)
@@ -53,7 +78,10 @@ public class BattleSceneController : MonoBehaviour
     {
         grid.AssignCharacterToGrid(data);
     }
-
+    private void Handle(GridTargetsSelectedData data)
+    {
+        StartCoroutine(_state.OnGridTargetsSelected(data));
+    }
     private void Handle(GridCharacterClickedData data) 
     {
         StartCoroutine(_state.OnGridCharacterClicked(data));
@@ -70,6 +98,7 @@ public class BattleSceneController : MonoBehaviour
     {
         
     }
+   
     
     private void OnActionMenuOpened()
     {

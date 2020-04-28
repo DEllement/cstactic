@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\API\Events\GridCharacterMovedToGridCell.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridCharacterMovingToGridCell.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridReady.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridTargetsSelected.cs" />
      <Compile Include="Assets\Scripts\API\Events\TurnManagerInitialized.cs" />
      <Compile Include="Assets\Scripts\API\Events\TurnManagerLineUpChanged.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />

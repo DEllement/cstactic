@@ -26,6 +26,8 @@ public class GridCellController : MonoBehaviour{
     
     private bool _isRenderedDirty;
 
+    public GameObject Quad => transform.GetChild(2).GetChild(0).gameObject;
+    
     //LifeCycle
 
     public void Init(){
@@ -51,7 +53,7 @@ public class GridCellController : MonoBehaviour{
         
         defaultColor = new Color {r=255f,g=255f,b=255f, a = 0.25f};
         overColor = new Color {r=0f,g=0f,b=255f, a = 0.25f};
-        GetComponent<Renderer>().material.color = defaultColor;
+        Quad.GetComponent<Renderer>().material.color = defaultColor;
     }
     
     public void Update(){
@@ -84,11 +86,11 @@ public class GridCellController : MonoBehaviour{
     private bool showAsPossibleMove;
     public void ShowGridCellAsPossibleMove(){
          showAsPossibleMove = true;
-         GetComponent<Renderer>().material.color = Color.magenta;
+         Quad.GetComponent<Renderer>().material.color = Color.magenta;
     }
     public void HideGridCellAsPossibleMove(){
         showAsPossibleMove = false;
-        GetComponent<Renderer>().material.color = defaultColor;
+        Quad.GetComponent<Renderer>().material.color = defaultColor;
     }
     
     //Event Handlers
@@ -108,13 +110,13 @@ public class GridCellController : MonoBehaviour{
     private void OnGridCharacterLeavingGridCell(GridCharacterLeavingGridCellData data){
         if(this.OccupiedBy == data.GameObject){
             this.OccupiedBy = null;
-            GetComponent<Renderer>().material.color = defaultColor;
+            Quad.GetComponent<Renderer>().material.color = defaultColor;
         }
     }
     private void OnGridCharacterMovedToGridCell(GridCharacterMovedToGridCellData data){
         if(data.GameObject == OccupiedBy && data.X != X && data.Y != Y){
             OccupiedBy = null;
-            GetComponent<Renderer>().material.color = defaultColor;
+            Quad.GetComponent<Renderer>().material.color = defaultColor;
             _isRenderedDirty =true;
         }else if(data.X == X && data.Y == Y){
             OccupiedBy = data.GameObject;
@@ -122,7 +124,7 @@ public class GridCellController : MonoBehaviour{
     }
     private void OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCellData data){
         if(data.X == X && data.Y == Y){
-            GetComponent<Renderer>().material.color = Color.yellow;
+            Quad.GetComponent<Renderer>().material.color = Color.yellow;
             _isRenderedDirty =true;
         }
     }

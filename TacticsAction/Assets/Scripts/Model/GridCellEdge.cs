@@ -17,8 +17,8 @@ namespace Model
         public static Vector3 S = new Vector3(.0f,0f,-.5f);
         public static Vector3 SE = new Vector3(.5f,0f,-.5f);
     
-        public Vector3 DirVector(){
-            switch(Dir){
+        public static Vector3 ToDirVector(GridCellDir dir){
+            switch(dir){
                 case GridCellDir.NW: return NW;
                 case GridCellDir.N: return N;
                 case GridCellDir.NE: return NE;
@@ -27,8 +27,13 @@ namespace Model
                 case GridCellDir.SW: return SW;
                 case GridCellDir.S: return S;
                 case GridCellDir.SE: return SE;
+                case GridCellDir.UP: return Vector3.up;
+                case GridCellDir.BOTTOM: return Vector3.down;
             }
             return Vector3.zero;
+        }
+        public Vector3 DirVector(){
+            return ToDirVector(Dir);
         }
     }
 }

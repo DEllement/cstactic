@@ -1,7 +1,8 @@
 namespace Model
 {
     public enum GridCellDir{
-        NW,N,NE,W,E,SW,S,SE
+        NW,N,NE,W,E,SW,S,SE , 
+        UP, BOTTOM
     }
     public enum TileType{
         Default,

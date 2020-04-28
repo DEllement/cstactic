@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using API.Events;
 using Model;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace Controllers.BattleScene.States
             ctrl.grid.ShowGridCellAsReachable();
             ctrl.grid.selectionMode = GridSelectionMode.ActMove;
             ctrl.SetState(new PickMoveLocationState(this.ctrl));
+            
+    
             
             yield break;
         }

@@ -18,10 +18,10 @@ namespace Controllers.BattleScene.States
         public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)
         {
             ctrl.actionMenu.target = ctrl.grid.SelectedCharacter;
-            ctrl.actionMenu.ShowActionsMenu();
-            ctrl.grid.selectionMode = GridSelectionMode.Disabled;
+            
+            yield return new WaitForEndOfFrame();
+            
             ctrl.SetState(new ActionMenuOpenState(ctrl));
-            yield break;  
         }
 
         public override IEnumerator OnGridCellClicked(GridCellClickedData data)
@@ -34,8 +34,6 @@ namespace Controllers.BattleScene.States
                 ctrl.grid.selectionMode = GridSelectionMode.Cell;
                 ctrl.SetState(new NothingSelectedState(ctrl));
             }
-            
-            yield break;
         }
     }
 }
