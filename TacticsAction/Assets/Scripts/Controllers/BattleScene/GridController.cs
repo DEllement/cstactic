@@ -424,7 +424,18 @@ public class GridController : MonoBehaviour
     
     #endregion
     
+    #region GridHelpers
     
+    public class GridWorker{
+        public int[,] Grid;
+
+        public void Apply(){
+                    
+        }
+        
+        
+    }
+    #endregion
     
 }
 
