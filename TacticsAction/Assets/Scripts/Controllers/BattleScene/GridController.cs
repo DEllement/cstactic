@@ -426,15 +426,85 @@ public class GridController : MonoBehaviour
     
     #region GridHelpers
     
+    private float [,] ToWorkMatrix((int x,int y) center, int radius){
+        int rows = radius*2+1;
+        int cols = rows;
+        float [,] output = new float [cols,rows];
+        for(var x = Math.Max(0, center.x-radius); x < Math.Min(_gridCells.GetLength(0), center.x+radius); x++)    
+            for(var y = Math.Max(0, center.y-radius); y < Math.Min(_gridCells.GetLength(1), center.y+radius); y++)
+            {
+                var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
+                output[x,y] = gridCellCtrl.IsWalkable ? 1 : -4; //Floor , Wall
+                if (gridCellCtrl.OccupiedBy == null)
+                    continue;
+                var charCtrl = gridCellCtrl.OccupiedBy.GetComponent<GridCharacterController>();
+                if( charCtrl != null)
+                    output[x,y] = charCtrl.Character.IsEnnemy ? -2 : -1; //Ennemy Friend    
+                else
+                    output[x,y] = -3; //Crate or other object
+            }
+            
+        return output;
+    }
+    
+    /*
+     * -1 = character
+     * 0 = walkable (empty)
+     * 1 = 
+     * 
+     */
+    
     public class GridWorker{
-        public int[,] Grid;
+        public float[,] grid;
+        public float[,] results;
 
+        public void Snapshot(float[,] gameGridSection){
+            grid = gameGridSection;
+        }
+        
         public void Apply(){
                     
         }
-        
-        
+
+        public float[,] Rotate(float[,] matrix, float angle)
+        {
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            var output = new float[rows,cols];
+
+            /*float[,] yrollValues = {{Mathf.Cos(angleY), 0, Mathf.Sin(angleY),0},
+                                   {0,1,0,0},
+                                   {-Mathf.Sin(angleY), 0, Mathf.Cos(angleY),0},
+                                   {0,0,0,1}};*/
+            
+            switch(angle){
+                case -90:
+                case 270:
+                    for(var x=0; x < cols; x++)
+                        for(var y = 0; y < rows; y++)
+                            output[x,y] = matrix[y,cols - y - 1];
+                    break;
+                case 90:
+                case -270:
+                    for(var x=0; x < cols; x++)
+                        for(var y = 0; y < rows; y++)
+                            output[x,y] = matrix[cols - y - 1,x];
+                    break;
+                case 180:
+                case -180:
+                    for(var x=0; x < cols; x++)
+                        for(var y = 0; y < rows; y++)
+                            output[x,y] = matrix[cols - x - 1,x];
+                    break;
+                default:
+                    output = (float[,]) matrix.Clone();
+                    break;
+            }
+            
+            return output;
+        }
     }
+    
     #endregion
     
 }
