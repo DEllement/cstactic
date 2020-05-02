@@ -101,5 +101,67 @@ namespace Tests
             TestContext.Out.WriteLine(" 0 result:");
             PrintMatrix(output);
         }
+        
+        [Test]
+        public void ItShouldRotateTheTarget(){
+            var gridWorker = new GridController.GridWorker();
+            float[,] baseM = new float[,] {
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0}
+            };
+            gridWorker.New(baseM, (5,5), (5,5) );
+            gridWorker.ApplyTarget(new float[,] {
+                {0,0,0},
+                {0,0,1},
+                {0,0,0},
+            });
+            
+            gridWorker.SetCursorAt((5,0));
+            TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
+            PrintMatrix(gridWorker.targetResult);
+            
+            gridWorker.SetCursorAt((8,9));
+            TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
+            PrintMatrix(gridWorker.targetResult);
+            
+            gridWorker.SetCursorAt((0,5));
+            TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
+            PrintMatrix(gridWorker.targetResult);
+        }
+        
+        [Test]
+        public void ItShouldPerformTheFullOperation(){
+        
+            var gridWorker = new GridController.GridWorker();
+                    
+            float[,] baseM = new float[,] {
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0}
+            };
+            
+            gridWorker.New(baseM, (5,5), (5,5) );
+            gridWorker.ApplyRange(new float[,] {
+                {0,1,0},
+                {1,1,1},
+                {0,1,0},
+            });
+            gridWorker.ApplyTarget(new float[,] {
+                {0,1,0},
+                {0,0,0},
+                {0,0,0},
+            });
+            
+            gridWorker.SetCursorAt((5,0));
+            TestContext.Out.WriteLine(" -90 result:");
+            
+            gridWorker.SetCursorAt((5,4));
+            TestContext.Out.WriteLine(" -90 result:");
+        }
     }
 }

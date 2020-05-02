@@ -455,15 +455,30 @@ public class GridController : MonoBehaviour
      */
     
     public class GridWorker{
-        public float[,] grid;
+        public float[,] workGrid;
+        public float[,] range;
+        public float[,] targetBase;
+        public float[,] targetResult;
+        public float currentTargetAngle;
+        
+        private (int x, int y) offsetPos;
+        private (int x, int y) cursorPos;
+        private (int x, int y) agentPos;
+        
         public float[,] results;
 
-        public void Snapshot(float[,] gameGridSection){
-            grid = gameGridSection;
+        public void New(float[,] workGrid, (int x, int y) offsetPos, (int x, int y) agentPos){
+            this.workGrid = workGrid;
+            this.agentPos = agentPos;
+            this.offsetPos = offsetPos;
         }
         
-        public void Apply(){
+        public void ApplyRange(float[,] rangeTemplate){
                     
+        }
+        public void ApplyTarget(float[,] targetTemplate){
+            targetBase = targetTemplate;
+            targetResult = Rotate(targetTemplate, 0);
         }
 
         public float[,] Rotate(float[,] matrix, float angle)
@@ -472,17 +487,18 @@ public class GridController : MonoBehaviour
             int cols = matrix.GetLength(1);
             var output = new float[rows,cols];
 
-            /*float[,] yrollValues = {{Mathf.Cos(angleY), 0, Mathf.Sin(angleY),0},
-                                   {0,1,0,0},
-                                   {-Mathf.Sin(angleY), 0, Mathf.Cos(angleY),0},
-                                   {0,0,0,1}};*/
-            
-            switch(angle){
-                case -90:
+            switch((int) (Math.Round(angle/90f)*90f)){
                 case 270:
+                case -90:
                     for(var x=0; x < cols; x++)
                         for(var y = 0; y < rows; y++)
-                            output[x,y] = matrix[y,cols - y - 1];
+                            output[x,y] = matrix[y,cols - x - 1];
+                    break;
+                case 180:
+                case -180:
+                    for(var x=0; x < cols; x++)
+                    for(var y = 0; y < rows; y++)
+                        output[x,y] = matrix[x,cols - y - 1];
                     break;
                 case 90:
                 case -270:
@@ -490,18 +506,27 @@ public class GridController : MonoBehaviour
                         for(var y = 0; y < rows; y++)
                             output[x,y] = matrix[cols - y - 1,x];
                     break;
-                case 180:
-                case -180:
-                    for(var x=0; x < cols; x++)
-                        for(var y = 0; y < rows; y++)
-                            output[x,y] = matrix[cols - x - 1,x];
-                    break;
                 default:
                     output = (float[,]) matrix.Clone();
                     break;
             }
             
             return output;
+        }
+
+        public void SetCursorAt((int x, int y) cursorPos)
+        {
+            this.cursorPos = cursorPos;
+            
+            float angle = (float) (Math.Atan2(cursorPos.y-agentPos.y,cursorPos.x-agentPos.x) * 180 / Math.PI);
+            if( Math.Abs(currentTargetAngle - angle) < 0.01 )
+                return;
+            currentTargetAngle = angle;
+            targetResult = Rotate(targetBase, angle);
+        }
+        public void SetAgentAt((int x, int y) agentPos)
+        {
+            this.agentPos = agentPos;
         }
     }
     
