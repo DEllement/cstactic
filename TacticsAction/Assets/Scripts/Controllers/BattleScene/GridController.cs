@@ -324,6 +324,8 @@ public class GridController : MonoBehaviour
     private List<GameObject> _attackZoneGridCells;
     private List<GameObject> _attackTargetGridCells;
     private List<AttackRayTarget> _raysTargets;
+
+    private GridWorker _attackGridWorker = new GridWorker();
     
     //CreateTargetTracker(true, (5,5), new List<GridCellDir>{},0,1);
     public class AttackRayTarget{
@@ -363,8 +365,8 @@ public class GridController : MonoBehaviour
         _raysTargets = new List<AttackRayTarget>();
      
         //Create Zone of Action
-        attackZoneDirs.ForEach(dir=>{ //This should be an other pattern + radius
-            //_raysTargets.Add(new AttackRayTarget(dir, targetTrackerOrigin,attackZoneMinRadius, attackZoneMaxRadius));
+        /*attackZoneDirs.ForEach(dir=>
+        { //This should be an other pattern + radius
             var attackRangeRayTarget = new AttackRayTarget(dir, targetTrackerOrigin,attackZoneMinRadius, attackZoneMaxRadius);
             var hits = Physics.RaycastAll(attackRangeRayTarget.Start, attackRangeRayTarget.direction, attackRangeRayTarget.distance);
             foreach (var hit in hits)
@@ -376,6 +378,13 @@ public class GridController : MonoBehaviour
                 }
             }
         });
+        */
+        
+        if (attackRangeType == 0)
+        { 
+            _attackGridWorker.New( ToWorkMatrix(origPos, 10 ),  );
+        }
+
         //Create Target Rays
         if(attackPatternType == 0){ //1 Generic Forward attack
             _raysTargets.Add(new AttackRayTarget(GridCellDir.UP, Vector3.zero, 0f, 4f));
@@ -459,26 +468,29 @@ public class GridController : MonoBehaviour
         public float[,] range;
         public float[,] targetBase;
         public float[,] targetResult;
+        public List<Vector2> targetCells = new List<Vector2>();
         public float currentTargetAngle;
         
-        private (int x, int y) offsetPos;
-        private (int x, int y) cursorPos;
-        private (int x, int y) agentPos;
+        private Vector2 offsetPos;
+        private Vector2 cursorPos;
+        private Vector2 agentPos;
         
         public float[,] results;
 
-        public void New(float[,] workGrid, (int x, int y) offsetPos, (int x, int y) agentPos){
+        public void New(float[,] workGrid, Vector2 offsetPos, Vector2 agentPos){
             this.workGrid = workGrid;
             this.agentPos = agentPos;
             this.offsetPos = offsetPos;
         }
         
-        public void ApplyRange(float[,] rangeTemplate){
-                    
+        public void ApplyRange(float[,] rangeTemplate)
+        {
+            range = rangeTemplate;
         }
         public void ApplyTarget(float[,] targetTemplate){
             targetBase = targetTemplate;
             targetResult = Rotate(targetTemplate, 0);
+            
         }
 
         public float[,] Rotate(float[,] matrix, float angle)
@@ -514,7 +526,7 @@ public class GridController : MonoBehaviour
             return output;
         }
 
-        public void SetCursorAt((int x, int y) cursorPos)
+        public void SetCursorAt(Vector2 cursorPos)
         {
             this.cursorPos = cursorPos;
             
@@ -523,10 +535,26 @@ public class GridController : MonoBehaviour
                 return;
             currentTargetAngle = angle;
             targetResult = Rotate(targetBase, angle);
+            
+            
+            //TOOD: Apply to gridBase;
+            
+            
+            UpdateTargetCells();
         }
-        public void SetAgentAt((int x, int y) agentPos)
+        public void SetAgentAt(Vector2 agentPos)
         {
             this.agentPos = agentPos;
+        }
+
+        public void UpdateTargetCells()
+        {
+            targetCells.Clear();
+            for (var x = 0; x < targetResult.GetLength(0); x++){
+                for (var y = 0; y < targetResult.GetLength(0); y++){
+                    targetCells.Add(new Vector2(x,y) + offsetPos);
+                }
+            }
         }
     }
     
