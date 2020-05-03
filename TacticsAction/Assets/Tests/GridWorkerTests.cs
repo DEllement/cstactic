@@ -112,22 +112,22 @@ namespace Tests
                 {0,0,0,0,0},
                 {0,0,0,0,0}
             };
-            gridWorker.New(baseM, (5,5), (5,5) );
+            gridWorker.New(baseM, new Vector2(5,5), new Vector2(5,5) );
             gridWorker.ApplyTarget(new float[,] {
                 {0,0,0},
                 {0,0,1},
                 {0,0,0},
             });
             
-            gridWorker.SetCursorAt((5,0));
+            gridWorker.SetCursorAt(new Vector2(5,0));
             TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
             PrintMatrix(gridWorker.targetResult);
             
-            gridWorker.SetCursorAt((8,9));
+            gridWorker.SetCursorAt(new Vector2(8,9));
             TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
             PrintMatrix(gridWorker.targetResult);
             
-            gridWorker.SetCursorAt((0,5));
+            gridWorker.SetCursorAt(new Vector2(0,5));
             TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
             PrintMatrix(gridWorker.targetResult);
         }
@@ -145,7 +145,7 @@ namespace Tests
                 {0,0,0,0,0}
             };
             
-            gridWorker.New(baseM, (5,5), (5,5) );
+            gridWorker.New(baseM, new Vector2(5,5), new Vector2(5,5) );
             gridWorker.ApplyRange(new float[,] {
                 {0,1,0},
                 {1,1,1},
@@ -157,10 +157,10 @@ namespace Tests
                 {0,0,0},
             });
             
-            gridWorker.SetCursorAt((5,0));
+            gridWorker.SetCursorAt(new Vector2(5,0));
             TestContext.Out.WriteLine(" -90 result:");
             
-            gridWorker.SetCursorAt((5,4));
+            gridWorker.SetCursorAt(new Vector2(5,4));
             TestContext.Out.WriteLine(" -90 result:");
         }
     }

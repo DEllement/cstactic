@@ -379,10 +379,20 @@ public class GridController : MonoBehaviour
             }
         });
         */
-        
+        var charCtrl =_selectedCharacter.GetComponent<GridCharacterController>();
         if (attackRangeType == 0)
         { 
-            _attackGridWorker.New( ToWorkMatrix(origPos, 10 ),  );
+            _attackGridWorker.New( ToWorkMatrix(origPos, 10 ), new Vector2(origPos.x, origPos.y), charCtrl.CellCoords );
+            _attackGridWorker.ApplyRange(new float[,] {
+                {0,1,0},
+                {1,1,1},
+                {0,1,0},
+            });
+            _attackGridWorker.ApplyTarget(new float[,] {
+                {0,0,0},
+                {0,0,1},
+                {0,0,0},
+            });
         }
 
         //Create Target Rays
@@ -471,9 +481,9 @@ public class GridController : MonoBehaviour
         public List<Vector2> targetCells = new List<Vector2>();
         public float currentTargetAngle;
         
-        private Vector2 offsetPos;
-        private Vector2 cursorPos;
-        private Vector2 agentPos;
+        public Vector2 offsetPos;
+        public Vector2 cursorPos;
+        public Vector2 agentPos;
         
         public float[,] results;
 

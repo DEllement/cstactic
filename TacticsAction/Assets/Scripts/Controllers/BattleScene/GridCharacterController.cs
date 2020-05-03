@@ -12,6 +12,7 @@ public class GridCharacterController : MonoBehaviour
     public int X;
     public int Y;
     public (int x, int y) GridPosition => (X,Y);
+    public Vector2 CellCoords => new Vector2(X,Y);
     public Character Character;
 
     // Start is called before the first frame update
