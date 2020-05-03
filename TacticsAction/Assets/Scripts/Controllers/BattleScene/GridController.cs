@@ -453,14 +453,7 @@ public class GridController : MonoBehaviour
             for(var y = Math.Max(0, center.y-radius); y < Math.Min(_gridCells.GetLength(1), center.y+radius); y++)
             {
                 var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
-                output[x,y] = gridCellCtrl.IsWalkable ? 1 : -4; //Floor , Wall
-                if (gridCellCtrl.OccupiedBy == null)
-                    continue;
-                var charCtrl = gridCellCtrl.OccupiedBy.GetComponent<GridCharacterController>();
-                if( charCtrl != null)
-                    output[x,y] = charCtrl.Character.IsEnnemy ? -2 : -1; //Ennemy Friend    
-                else
-                    output[x,y] = -3; //Crate or other object
+                output[x,y] = gridCellCtrl.IsWalkable ? 0 : -1; //Floor , Wall
             }
             
         return output;
@@ -493,14 +486,13 @@ public class GridController : MonoBehaviour
             this.offsetPos = offsetPos;
         }
         
-        public void ApplyRange(float[,] rangeTemplate)
+        public void SetRange(float[,] rangeTemplate)
         {
             range = rangeTemplate;
         }
-        public void ApplyTarget(float[,] targetTemplate){
+        public void SetTarget(float[,] targetTemplate){
             targetBase = targetTemplate;
             targetResult = Rotate(targetTemplate, 0);
-            
         }
 
         public float[,] Rotate(float[,] matrix, float angle)
@@ -545,13 +537,31 @@ public class GridController : MonoBehaviour
                 return;
             currentTargetAngle = angle;
             targetResult = Rotate(targetBase, angle);
-            
-            
-            //TOOD: Apply to gridBase;
-            
+
+            // targetCentered on workGrid
+            // 00000 000000000     Math.floor(9/2)-1
+            //  010     010
+            // target centered on cursor
+
+            Apply(ref workGrid, ref targetResult, new Vector2());
             
             UpdateTargetCells();
         }
+
+        // Apply (add) a to b
+        public void Apply(ref float[,] a, ref float[,] b, bool centered=true)
+        {
+            var aL = a.GetLength(0);
+            var bL = b.GetLength(0);
+
+            var ox = (int)Math.Floor((float)(aL/bL))-1;
+            var oy = (int)Math.Floor((float)(aL/bL))-1;
+            for(var tx=0;tx < aL; tx++)
+            for (var ty = 0; ty < aL; ty++){
+                b[tx, ty] = a[tx + ox, ty + oy] + b[tx, ty];
+            }
+        }
+
         public void SetAgentAt(Vector2 agentPos)
         {
             this.agentPos = agentPos;
