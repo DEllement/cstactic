@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Model.Services;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -19,13 +20,14 @@ namespace Tests
         [Test]
         public void ItShouldRotateTheAllMatrix(){
         
-            var gridWorker = new GridController.GridWorker();
+            var gridWorker = new GridWorker();
                     
             float[,] matrix = new float[,] {
-                {1,1,1,1},
-                {2,2,2,2},
-                {3,3,3,3},
-                {4,4,4,4}
+                {1,1,1,1,1},
+                {2,2,2,2,2},
+                {3,3,3,3,3},
+                {4,4,4,4,4},
+                {5,5,5,5,5}
             };
             
             PrintMatrix(matrix);
@@ -104,21 +106,19 @@ namespace Tests
         
         [Test]
         public void ItShouldRotateTheTarget(){
-            var gridWorker = new GridController.GridWorker();
-            float[,] baseM = new float[,] {
+            var gridWorker = new GridWorker();
+            gridWorker.New(new float[,] {
                 {0,0,0,0,0},
                 {0,0,0,0,0},
                 {0,0,0,0,0},
                 {0,0,0,0,0},
                 {0,0,0,0,0}
-            };
-            gridWorker.New(baseM, new Vector2(5,5), new Vector2(5,5) );
-            gridWorker.ApplyTarget(new float[,] {
+            }, new Vector2(5,5), new Vector2(5,5) );
+            gridWorker.SetTarget(new float[,] {
                 {0,0,0},
                 {0,0,1},
                 {0,0,0},
             });
-            
             gridWorker.SetCursorAt(new Vector2(5,0));
             TestContext.Out.WriteLine("result: " + gridWorker.currentTargetAngle + "~" + (float) (Math.Round(gridWorker.currentTargetAngle/90f)*90f));
             PrintMatrix(gridWorker.targetResult);
@@ -135,9 +135,9 @@ namespace Tests
         [Test]
         public void ItShouldPerformTheFullOperation(){
         
-            var gridWorker = new GridController.GridWorker();
+            var gridWorker = new GridWorker();
                     
-            float[,] baseM = new float[,] {
+            var baseM = new float[,] {
                 {0,0,0,0,0},
                 {0,0,0,0,0},
                 {0,0,0,0,0},
@@ -146,21 +146,21 @@ namespace Tests
             };
             
             gridWorker.New(baseM, new Vector2(5,5), new Vector2(5,5) );
-            gridWorker.ApplyRange(new float[,] {
+            gridWorker.SetRange(new float[,] {
                 {0,1,0},
                 {1,1,1},
                 {0,1,0},
             });
-            gridWorker.ApplyTarget(new float[,] {
+            gridWorker.SetTarget(new float[,] {
                 {0,1,0},
                 {0,0,0},
                 {0,0,0},
             });
             
-            gridWorker.SetCursorAt(new Vector2(5,0));
+            gridWorker.SetCursorAt(new Vector2(4,0));
             TestContext.Out.WriteLine(" -90 result:");
             
-            gridWorker.SetCursorAt(new Vector2(5,4));
+            gridWorker.SetCursorAt(new Vector2(4,4));
             TestContext.Out.WriteLine(" -90 result:");
         }
     }

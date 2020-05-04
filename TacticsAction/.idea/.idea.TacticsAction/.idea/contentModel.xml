@@ -86,6 +86,9 @@
             <e p="GridCellEdge.cs" t="Include" />
             <e p="GridPath.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
+            <e p="Services" t="Include">
+              <e p="GridWorker.cs" t="Include" />
+            </e>
           </e>
           <e p="Pathfinding" t="Include">
             <e p="Dijkstra" t="Include">

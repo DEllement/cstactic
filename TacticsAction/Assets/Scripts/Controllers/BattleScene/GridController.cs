@@ -8,6 +8,7 @@ using API.Events;
 using Dijkstra.NET.Graph;
 using Dijkstra.NET.ShortestPath;
 using Model;
+using Model.Services;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -36,6 +37,32 @@ public class GridController : MonoBehaviour
     
     public GameObject SelectedCharacter => _selectedCharacter;
     
+    private GameObject GetGridCell(int x, int y){
+        if(x < 0 || y < 0 || x >= Cols || y >= Rows)
+            return null;
+        return _gridCells[x, y];
+    }
+    private GameObject GetGridCell((int x, int y) pos){
+        return GetGridCell(pos.x, pos.y);
+    }
+    private GameObject GetGridCell(Vector2 pos){
+        return GetGridCell((int)pos.x, (int)pos.y);
+    }
+    private GridCellController GetGridCellCtrl(int x, int y){
+        return GetGridCell(x, y)?.GetComponent<GridCellController>();
+    }
+    private GridCellController GetGridCellCtrl((int x, int y) pos)
+    {
+        return GetGridCell(pos)?.GetComponent<GridCellController>();
+    }
+    private GridCellController GetGridCellCtrl(Vector2 v){
+        return GetGridCell((int)v.x, (int)v.y)?.GetComponent<GridCellController>();
+    }
+    private GridCellController GetGridCellCtrl(uint cellIdx)
+    {
+        return _cellIdxToGridCellCtrls.ContainsKey(cellIdx) ? _cellIdxToGridCellCtrls[cellIdx] : null;
+    }
+    
     #region LifeCycle
     void Start()
     {
@@ -57,12 +84,14 @@ public class GridController : MonoBehaviour
         
         print("GenerateGrid");
   
-        _gridCells = new GameObject[Rows,Cols];
+        _gridCells = new GameObject[Cols,Rows];
+        
+        float yOffset = Rows*Space;
         
         uint i=0;
         for(var y = 0; y < Rows; y++)
             for(var x =0; x < Cols; x++){
-                var obj = Instantiate(prefab, new Vector3(x*Space, 0, y*Space), Quaternion.identity);
+                var obj = Instantiate(prefab, new Vector3(x*Space, 0, yOffset-y*Space), Quaternion.identity);
                     obj.tag = "GridCell";
                     obj.name = GetGridCellName(x,y);
                     obj.GetComponentInChildren<TextMesh>().text = x+","+y;
@@ -95,14 +124,11 @@ public class GridController : MonoBehaviour
         _initialized = false;
     }
     public bool CanWalkAt(int x, int y){
-        if(x < 0 || x >= Cols)
-            return false;
-        if(y < 0 || y >= Rows)
-            return false;
-        return _gridCells[x,y] != null &&
-               _gridCells[x,y].GetComponent<GridCellController>().IsWalkable &&
-              (_gridCells[x,y].GetComponent<GridCellController>().OccupiedBy == null ||
-               _gridCells[x,y].GetComponent<GridCellController>().OccupiedBy.CompareTag("Player"));
+        var gridCellCtrl = GetGridCellCtrl(x,y);
+        return  gridCellCtrl != null &&
+                gridCellCtrl.IsWalkable &&
+               (gridCellCtrl.OccupiedBy == null ||
+                gridCellCtrl.OccupiedBy.CompareTag("Player"));
     }
     public void ComputeEdges(){
         
@@ -113,14 +139,14 @@ public class GridController : MonoBehaviour
             for(var y = 0; y < Rows; y++)
                 for(var x =0; x < Cols; x++){
                     var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
-                    gridCellCtrl.Get(GridCellDir.N ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y+1);
-                    gridCellCtrl.Get(GridCellDir.S ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y-1);
+                    gridCellCtrl.Get(GridCellDir.N ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y-1);
+                    gridCellCtrl.Get(GridCellDir.S ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x,y+1);
                     gridCellCtrl.Get(GridCellDir.W ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y);
                     gridCellCtrl.Get(GridCellDir.E ).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y);
-                    gridCellCtrl.Get(GridCellDir.NW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y+1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
-                    gridCellCtrl.Get(GridCellDir.NE).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y+1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.E).Enabled;
-                    gridCellCtrl.Get(GridCellDir.SW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y-1) && gridCellCtrl.Get(GridCellDir.S).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
-                    gridCellCtrl.Get(GridCellDir.SE).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y-1) && gridCellCtrl.Get(GridCellDir.S).Enabled && gridCellCtrl.Get(GridCellDir.E).Enabled;
+                    gridCellCtrl.Get(GridCellDir.NW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y-1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
+                    gridCellCtrl.Get(GridCellDir.NE).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y-1) && gridCellCtrl.Get(GridCellDir.N).Enabled && gridCellCtrl.Get(GridCellDir.E).Enabled;
+                    gridCellCtrl.Get(GridCellDir.SW).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x-1,y+1) && gridCellCtrl.Get(GridCellDir.S).Enabled && gridCellCtrl.Get(GridCellDir.W).Enabled;
+                    gridCellCtrl.Get(GridCellDir.SE).Enabled = gridCellCtrl.IsWalkable && CanWalkAt(x+1,y+1) && gridCellCtrl.Get(GridCellDir.S).Enabled && gridCellCtrl.Get(GridCellDir.E).Enabled;
                 }
     }
     public void LoadGridCellsFromChilds(){
@@ -138,7 +164,7 @@ public class GridController : MonoBehaviour
     }
     public void ToggleGridCellsLabels(){
         for(var y = 0; y < Rows; y++)
-        for(var x =0; x < Cols; x++){
+        for(var x = 0; x < Cols; x++){
             var label = _gridCells[x,y].transform.Find("Label");
             label.gameObject.SetActive(!label.gameObject.activeSelf);
         }
@@ -212,14 +238,14 @@ public class GridController : MonoBehaviour
                     if(!edge.Enabled)
                         return;
                     switch(edge.Dir){
-                        case GridCellDir.N:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x,y+1].GetComponent<GridCellController>()); return;
-                        case GridCellDir.S:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x,y-1].GetComponent<GridCellController>()); return;
+                        case GridCellDir.N:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x,y-1].GetComponent<GridCellController>()); return;
+                        case GridCellDir.S:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x,y+1].GetComponent<GridCellController>()); return;
                         case GridCellDir.W:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x-1,y].GetComponent<GridCellController>()); return;
                         case GridCellDir.E:  ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x+1,y].GetComponent<GridCellController>()); return;
-                        case GridCellDir.NW: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x-1,y+1].GetComponent<GridCellController>(),true); return;
-                        case GridCellDir.NE: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x+1,y+1].GetComponent<GridCellController>(),true); return;
-                        case GridCellDir.SW: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x-1,y-1].GetComponent<GridCellController>(),true); return;
-                        case GridCellDir.SE: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x+1,y-1].GetComponent<GridCellController>(),true); return;
+                        case GridCellDir.NW: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x-1,y-1].GetComponent<GridCellController>(),true); return;
+                        case GridCellDir.NE: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x+1,y-1].GetComponent<GridCellController>(),true); return;
+                        case GridCellDir.SW: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x-1,y+1].GetComponent<GridCellController>(),true); return;
+                        case GridCellDir.SE: ConnectNodesUsingGridCellCtrls(gridCellCtrl, _gridCells[x+1,y+1].GetComponent<GridCellController>(),true); return;
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
@@ -256,6 +282,7 @@ public class GridController : MonoBehaviour
         data.GameObject.transform.position = _gridCells[data.X,data.Y].transform.position + new Vector3(0,.5f,0);
     }
     private GameObject _overGridCell;
+    private Vector3 _overGridCellWorldMousePos;
     private void DetectGridCellClick(){
        
         if(selectionMode == GridSelectionMode.Disabled)
@@ -268,6 +295,7 @@ public class GridController : MonoBehaviour
             var hit = hits.FirstOrDefault(x=> x.transform.CompareTag("GridCell"));
             if( hit.transform != null){
                 _overGridCell = hit.transform.gameObject;
+                _overGridCellWorldMousePos = hit.point;
                 if(Input.GetMouseButtonUp(0)){
                     ClickGridCell(_overGridCell);
                 }
@@ -320,34 +348,13 @@ public class GridController : MonoBehaviour
     
     #region RayCastCollision
     
+    private bool _enableAttack;
     private bool _enableTargetRayTracker;
     private List<GameObject> _attackZoneGridCells;
     private List<GameObject> _attackTargetGridCells;
-    private List<AttackRayTarget> _raysTargets;
-
+    
     private GridWorker _attackGridWorker = new GridWorker();
-    
-    //CreateTargetTracker(true, (5,5), new List<GridCellDir>{},0,1);
-    public class AttackRayTarget{
-        public float startOffset;
-        public float length;
-        public GridCellDir Dir;
-        public Vector3 Start;
-        public Vector3 End => Start + (GridCellEdge.ToDirVector(Dir) * length );
-
-        public Vector3 heading => End - Start;
-        public float distance => heading.magnitude;
-        public Vector3 direction => heading / distance; // This is now the normalized direction.
-        
-        public AttackRayTarget( GridCellDir dir, Vector3 start, float startOffset=0, float length=1)
-        {
-            this.startOffset = startOffset;
-            this.length = length;
-            Dir = dir;
-            Start = start;
-        }
-    }
-    
+  
     public void CreateTargetTracker(
         (int x, int y) origPos,
         List<GridCellDir> attackZoneDirs,
@@ -356,85 +363,54 @@ public class GridController : MonoBehaviour
         int attackRangeType=0, //Circle, Square, Line
         int attackPatternType=0){ //Single, Line, Square
     
-        var targetTrackerOrigin = _gridCells[origPos.x,origPos.y].transform.position;
         
-        //Get Affected GridCell
-            
-        _attackZoneGridCells = new List<GameObject>();
-        _attackTargetGridCells = new List<GameObject>();
-        _raysTargets = new List<AttackRayTarget>();
-     
-        //Create Zone of Action
-        /*attackZoneDirs.ForEach(dir=>
-        { //This should be an other pattern + radius
-            var attackRangeRayTarget = new AttackRayTarget(dir, targetTrackerOrigin,attackZoneMinRadius, attackZoneMaxRadius);
-            var hits = Physics.RaycastAll(attackRangeRayTarget.Start, attackRangeRayTarget.direction, attackRangeRayTarget.distance);
-            foreach (var hit in hits)
-            {
-                if( hit.transform.CompareTag("AttackColider") ){
-                    var gridCell = hit.transform.parent.gameObject;
-                    _attackZoneGridCells.Add(gridCell);
-                    gridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.yellow;
-                }
-            }
-        });
-        */
         var charCtrl =_selectedCharacter.GetComponent<GridCharacterController>();
         if (attackRangeType == 0)
         { 
-            _attackGridWorker.New( ToWorkMatrix(origPos, 10 ), new Vector2(origPos.x, origPos.y), charCtrl.CellCoords );
-            _attackGridWorker.ApplyRange(new float[,] {
-                {0,1,0},
-                {1,1,1},
-                {0,1,0},
+            var targetTrackerOrigin = charCtrl.CellCoords;//_gridCells[origPos.x,origPos.y].transform.position;
+            var radius = 2; //FIXME: = template.length/2+1
+            _attackGridWorker.New( ToWorkMatrix(targetTrackerOrigin, radius ), new Vector2(origPos.x-radius, origPos.y-radius), charCtrl.CellCoords );
+            _attackGridWorker.SetRange(new float[,] {
+                {0,0,1,1,0},
+                {1,0,1,0,0},
+                {1,1,0,1,1},
+                {0,0,1,0,1},
+                {0,1,1,0,0},
             });
-            _attackGridWorker.ApplyTarget(new float[,] {
-                {0,0,0},
-                {0,0,1},
-                {0,0,0},
+            _attackGridWorker.SetTarget(new float[,] {
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,1,1},
+                {0,0,0,0,1},
+                {0,0,0,0,0},
             });
-        }
-
-        //Create Target Rays
-        if(attackPatternType == 0){ //1 Generic Forward attack
-            _raysTargets.Add(new AttackRayTarget(GridCellDir.UP, Vector3.zero, 0f, 4f));
         }
         
-        _enableTargetRayTracker = true;
+        _enableAttack = true;
     }
+    Vector2 OverGridCellPosVector => _overGridCell?.GetComponent<GridCellController>()?.GridPosVector ?? new Vector2(-1,-1);
     private void UpdateTargetTracker(){
-        if(!_enableTargetRayTracker)
+        if(!_enableAttack || _overGridCell == null)
             return;
         
-        var overGridCellInZone = _attackZoneGridCells.Contains(_overGridCell);
-        
-        _attackTargetGridCells.ForEach(tGridCell=>{
-            tGridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.white;
-        });
-        _attackTargetGridCells.Clear();
-        _attackZoneGridCells.ForEach(tGridCell=>{
-            tGridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.yellow;
+        _attackGridWorker.previousRangeCells.ForEach(cellPos=>{ 
+            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.white;
         });
         
-        if(overGridCellInZone){
-            _raysTargets.ForEach( rayInfo=>{
-                rayInfo.Start = _overGridCell.transform.position+ new Vector3(0f, -1f, 0f);
-                
-                //Debug.DrawRay(rayInfo.Start,  rayInfo.direction*rayInfo.distance, Color.red );
-                var hits = Physics.RaycastAll(rayInfo.Start, rayInfo.direction, rayInfo.distance);
-                foreach (var hit in hits)
-                {
-                    if( hit.transform.CompareTag("GridCell") ){
-                        var gridCell = hit.transform.gameObject;//hit.transform.parent.gameObject;
-                        _attackTargetGridCells.Add(gridCell);
-                        gridCell.GetComponent<GridCellController>().Quad.GetComponent<Renderer>().material.color = Color.red;
-                    }
-                }
-            });
-        }
-        print(_attackTargetGridCells.Count + " " + Input.GetMouseButtonUp(0));
-        if(Input.GetMouseButtonUp(0) && _attackTargetGridCells.Count > 0){
-            GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackTargetGridCells));
+        var worldCharacterPos = _selectedCharacter.gameObject.GetComponentInParent<Transform>().position;
+        var angle = (float) (Math.Atan2(_overGridCellWorldMousePos.z-worldCharacterPos.z,_overGridCellWorldMousePos.x-worldCharacterPos.x) * 180 / Math.PI);
+        _attackGridWorker.SetAngleFromCenter(angle);
+        _attackGridWorker.SetCursorAt(OverGridCellPosVector);
+        _attackGridWorker.rangeCells.ForEach(cellPos=>{
+            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.yellow;
+        });
+        _attackGridWorker.targetCells.ForEach(cellPos=>{
+            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.red;
+        });
+        var overGridCellInZone = _attackGridWorker.targetCells.Contains(OverGridCellPosVector);
+        if( overGridCellInZone ){
+            if(Input.GetMouseButtonUp(0))
+                GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells.Select( GetGridCell ).ToList()));
         }
     }
     public void CancelTargetTracker(){
@@ -443,142 +419,18 @@ public class GridController : MonoBehaviour
     
     #endregion
     
-    #region GridHelpers
-    
-    private float [,] ToWorkMatrix((int x,int y) center, int radius){
+    private float [,] ToWorkMatrix(Vector2 center, int radius){
         int rows = radius*2+1;
         int cols = rows;
         float [,] output = new float [cols,rows];
-        for(var x = Math.Max(0, center.x-radius); x < Math.Min(_gridCells.GetLength(0), center.x+radius); x++)    
-            for(var y = Math.Max(0, center.y-radius); y < Math.Min(_gridCells.GetLength(1), center.y+radius); y++)
-            {
-                var gridCellCtrl = _gridCells[x,y].GetComponent<GridCellController>();
-                output[x,y] = gridCellCtrl.IsWalkable ? 0 : -1; //Floor , Wall
-            }
-            
+        int ox = 0;
+        int oy = 0;
+        for(var x = center.x-radius; x < cols; x++,ox++)
+            for(var  y = center.y-radius; y < rows; y++,oy++){
+                var gridCellCtrl = GetGridCellCtrl(center);
+                output[ox,oy] = gridCellCtrl != null && gridCellCtrl.IsWalkable ? 0 : int.MinValue;
+        }
         return output;
     }
-    
-    /*
-     * -1 = character
-     * 0 = walkable (empty)
-     * 1 = 
-     * 
-     */
-    
-    public class GridWorker{
-        public float[,] workGrid;
-        public float[,] range;
-        public float[,] targetBase;
-        public float[,] targetResult;
-        public List<Vector2> targetCells = new List<Vector2>();
-        public float currentTargetAngle;
-        
-        public Vector2 offsetPos;
-        public Vector2 cursorPos;
-        public Vector2 agentPos;
-        
-        public float[,] results;
-
-        public void New(float[,] workGrid, Vector2 offsetPos, Vector2 agentPos){
-            this.workGrid = workGrid;
-            this.agentPos = agentPos;
-            this.offsetPos = offsetPos;
-        }
-        
-        public void SetRange(float[,] rangeTemplate)
-        {
-            range = rangeTemplate;
-        }
-        public void SetTarget(float[,] targetTemplate){
-            targetBase = targetTemplate;
-            targetResult = Rotate(targetTemplate, 0);
-        }
-
-        public float[,] Rotate(float[,] matrix, float angle)
-        {
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-            var output = new float[rows,cols];
-
-            switch((int) (Math.Round(angle/90f)*90f)){
-                case 270:
-                case -90:
-                    for(var x=0; x < cols; x++)
-                        for(var y = 0; y < rows; y++)
-                            output[x,y] = matrix[y,cols - x - 1];
-                    break;
-                case 180:
-                case -180:
-                    for(var x=0; x < cols; x++)
-                    for(var y = 0; y < rows; y++)
-                        output[x,y] = matrix[x,cols - y - 1];
-                    break;
-                case 90:
-                case -270:
-                    for(var x=0; x < cols; x++)
-                        for(var y = 0; y < rows; y++)
-                            output[x,y] = matrix[cols - y - 1,x];
-                    break;
-                default:
-                    output = (float[,]) matrix.Clone();
-                    break;
-            }
-            
-            return output;
-        }
-
-        public void SetCursorAt(Vector2 cursorPos)
-        {
-            this.cursorPos = cursorPos;
-            
-            float angle = (float) (Math.Atan2(cursorPos.y-agentPos.y,cursorPos.x-agentPos.x) * 180 / Math.PI);
-            if( Math.Abs(currentTargetAngle - angle) < 0.01 )
-                return;
-            currentTargetAngle = angle;
-            targetResult = Rotate(targetBase, angle);
-
-            // targetCentered on workGrid
-            // 00000 000000000     Math.floor(9/2)-1
-            //  010     010
-            // target centered on cursor
-
-            Apply(ref workGrid, ref targetResult, new Vector2());
-            
-            UpdateTargetCells();
-        }
-
-        // Apply (add) a to b
-        public void Apply(ref float[,] a, ref float[,] b, bool centered=true)
-        {
-            var aL = a.GetLength(0);
-            var bL = b.GetLength(0);
-
-            var ox = (int)Math.Floor((float)(aL/bL))-1;
-            var oy = (int)Math.Floor((float)(aL/bL))-1;
-            for(var tx=0;tx < aL; tx++)
-            for (var ty = 0; ty < aL; ty++){
-                b[tx, ty] = a[tx + ox, ty + oy] + b[tx, ty];
-            }
-        }
-
-        public void SetAgentAt(Vector2 agentPos)
-        {
-            this.agentPos = agentPos;
-        }
-
-        public void UpdateTargetCells()
-        {
-            targetCells.Clear();
-            for (var x = 0; x < targetResult.GetLength(0); x++){
-                for (var y = 0; y < targetResult.GetLength(0); y++){
-                    targetCells.Add(new Vector2(x,y) + offsetPos);
-                }
-            }
-        }
-    }
-    
-    #endregion
-    
 }
 

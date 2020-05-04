@@ -27,6 +27,7 @@ public class GridCellController : MonoBehaviour{
     private bool _isRenderedDirty;
 
     public GameObject Quad => transform.GetChild(2).GetChild(0).gameObject;
+    public Vector2 GridPosVector {get; private set;}
     
     //LifeCycle
 
@@ -54,6 +55,8 @@ public class GridCellController : MonoBehaviour{
         defaultColor = new Color {r=255f,g=255f,b=255f, a = 0.25f};
         overColor = new Color {r=0f,g=0f,b=255f, a = 0.25f};
         Quad.GetComponent<Renderer>().material.color = defaultColor;
+        GridPosVector = new Vector2(X,Y);
+
     }
     
     public void Update(){

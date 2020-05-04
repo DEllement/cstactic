@@ -119,6 +119,7 @@
      <Compile Include="Assets\Scripts\Model\GridCellEdge.cs" />
      <Compile Include="Assets\Scripts\Model\GridPath.cs" />
      <Compile Include="Assets\Scripts\Model\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Model\Services\GridWorker.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Extensions\EnumerableExtensions.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\Edge.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Graph\EdgeTemp.cs" />
