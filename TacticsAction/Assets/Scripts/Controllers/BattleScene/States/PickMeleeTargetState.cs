@@ -33,6 +33,7 @@ namespace Controllers.BattleScene.States
                 {
                     //TODO: Pass down the selected targets to PerformActionState or assign on ctrl
                     ctrl.grid.CancelTargetTracker();
+                    ctrl.grid.selectionMode = GridSelectionMode.Cell;
                     ctrl.SetState(new PerformActionState(ctrl));
                     
                     //Test

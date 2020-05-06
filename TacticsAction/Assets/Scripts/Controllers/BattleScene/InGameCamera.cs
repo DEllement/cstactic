@@ -6,7 +6,7 @@ using UnityEngine;
 public class InGameCamera : MonoBehaviour
 {
     private const float Y_ANGLE_MIN = 0.0f;
-    private const float Y_ANGLE_MAX = 50.0f;
+    private const float Y_ANGLE_MAX = 89.0f;
     
     public Transform lookAt;
     private Camera cam;

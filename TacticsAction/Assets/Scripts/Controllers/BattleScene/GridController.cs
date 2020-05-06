@@ -317,6 +317,9 @@ public class GridController : MonoBehaviour
         var gridCellCtrl = _gridCells[pos.x, pos.y].GetComponent<GridCellController>();
         return _avCellToNodeIdx.ContainsKey(gridCellCtrl.CellIndex);
     }
+    public bool IsInsideGrid(Vector2 pos){
+        return pos.x >= 0 && pos.y >=0 && pos.x < Cols && pos.y < Rows;
+    }
     public bool WalkCharacterToIfPossible((int x, int y) toPos){
         var characterCtrl = _selectedCharacter.GetComponent<GridCharacterController>();
         var gridCellCtrl = _gridCells[toPos.x, toPos.y].GetComponent<GridCellController>(); 
@@ -349,10 +352,7 @@ public class GridController : MonoBehaviour
     #region RayCastCollision
     
     private bool _enableAttack;
-    private bool _enableTargetRayTracker;
-    private List<GameObject> _attackZoneGridCells;
-    private List<GameObject> _attackTargetGridCells;
-    
+
     private GridWorker _attackGridWorker = new GridWorker();
   
     public void CreateTargetTracker(
@@ -363,7 +363,6 @@ public class GridController : MonoBehaviour
         int attackRangeType=0, //Circle, Square, Line
         int attackPatternType=0){ //Single, Line, Square
     
-        
         var charCtrl =_selectedCharacter.GetComponent<GridCharacterController>();
         if (attackRangeType == 0)
         { 
@@ -371,17 +370,17 @@ public class GridController : MonoBehaviour
             var radius = 2; //FIXME: = template.length/2+1
             _attackGridWorker.New( ToWorkMatrix(targetTrackerOrigin, radius ), new Vector2(origPos.x-radius, origPos.y-radius), charCtrl.CellCoords );
             _attackGridWorker.SetRange(new float[,] {
-                {0,0,1,1,0},
-                {1,0,1,0,0},
-                {1,1,0,1,1},
-                {0,0,1,0,1},
-                {0,1,1,0,0},
+                {0,0,0,0,0},
+                {0,0,1,0,0},
+                {0,1,0,1,0},
+                {0,0,1,0,0},
+                {0,0,0,0,0},
             });
             _attackGridWorker.SetTarget(new float[,] {
                 {0,0,0,0,0},
                 {0,0,0,0,0},
-                {0,0,0,1,1},
-                {0,0,0,0,1},
+                {0,0,0,1,0},
+                {0,0,0,0,0},
                 {0,0,0,0,0},
             });
         }
@@ -394,7 +393,8 @@ public class GridController : MonoBehaviour
             return;
         
         _attackGridWorker.previousRangeCells.ForEach(cellPos=>{ 
-            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.white;
+            if( IsInsideGrid(cellPos) )
+                GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.white;
         });
         
         var worldCharacterPos = _selectedCharacter.gameObject.GetComponentInParent<Transform>().position;
@@ -402,19 +402,24 @@ public class GridController : MonoBehaviour
         _attackGridWorker.SetAngleFromCenter(angle);
         _attackGridWorker.SetCursorAt(OverGridCellPosVector);
         _attackGridWorker.rangeCells.ForEach(cellPos=>{
-            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.yellow;
+            if( IsInsideGrid(cellPos) )
+                GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.yellow;
         });
         _attackGridWorker.targetCells.ForEach(cellPos=>{
-            GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.red;
+            if( IsInsideGrid(cellPos) )
+                GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.red;
         });
         var overGridCellInZone = _attackGridWorker.targetCells.Contains(OverGridCellPosVector);
         if( overGridCellInZone ){
-            if(Input.GetMouseButtonUp(0))
-                GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells.Select( GetGridCell ).ToList()));
+            if( Input.GetMouseButtonUp(0) )
+                GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells
+                                                                                                   .Where( IsInsideGrid )
+                                                                                                   .Select( GetGridCell )
+                                                                                                   .ToList()));
         }
     }
     public void CancelTargetTracker(){
-        _enableTargetRayTracker = false;
+        _enableAttack =false;
     }
     
     #endregion

@@ -138,7 +138,7 @@ namespace Model.Services
                 for (var y = 0; y < targetResult.GetLength(1); y++){
                     if(targetResult[x,y] > 0){
                         var pos = new Vector2(y,x) + offsetPos; //FIXME: why did i had to invert x & y
-                       targetCells.Add(pos);
+                        targetCells.Add(pos);
                     }
                 }
             }

@@ -20,16 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Services.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tests/BattleTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tests/BattleTest.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/BattleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/GridCellMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/GridCellMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/GridWorkerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/GridWorkerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/InGameCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/InGameCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +129,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/CharacterTurnEnded.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterLeavingGridCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterMovedToGridCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/BattleTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDeSelected.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCellClicked.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/API/Events/GridCharacterDoneMoving.cs" root0="FORCE_HIGHLIGHTING" />
@@ -136,8 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/HideActionsMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/ShowActionsMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestButtonsHandlers.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ActionMenuItemController.cs" />
@@ -160,11 +162,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuItemController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnEndingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterTurnStartingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Commands/AssignCharacterToGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleIntroState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/GridCellEdge.cs" />
@@ -181,12 +181,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/API/Events/GridTargetsSelected.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCellController.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/GridWorkerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMeleeTargetState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/InGameCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tests/BattleTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" />
       </list>
     </option>
   </component>
@@ -262,7 +266,9 @@
       <workItem from="1588175677752" duration="1328000" />
       <workItem from="1588281253905" duration="13952000" />
       <workItem from="1588394384691" duration="34983000" />
-      <workItem from="1588569196494" duration="1103000" />
+      <workItem from="1588569196494" duration="4300000" />
+      <workItem from="1588655963138" duration="1809000" />
+      <workItem from="1588710635833" duration="18029000" />
     </task>
     <servers />
   </component>
@@ -425,12 +431,12 @@
     <state x="657" y="233" key="IDE.errors.dialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587742414831" />
     <state x="657" y="241" key="IDE.errors.dialog/0.0.3072.1280@0.0.3072.1280" timestamp="1588476278292" />
     <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
-    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1588034971357">
+    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1588730216627">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
     <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588034971357" />
-    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587752412896" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1588730216627" />
     <state x="932" y="418" key="SettingsEditor" timestamp="1588529635237">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -447,12 +453,12 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
-    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1588048489329">
+    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1588711912185">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="959" y="245" width="739" height="606" key="find.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586663311362" />
     <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588048489329" />
-    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587759067022" />
+    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1588711912185" />
     <state x="1193" y="647" width="563" height="274" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1588475684706">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -462,12 +468,12 @@
     </state>
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588283912501" />
     <state x="425" y="293" width="672" height="677" key="run.anything.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1586041809513" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1588046037418">
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup" timestamp="1588728701550">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="943" y="222" width="672" height="678" key="search.everywhere.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1587132202665" />
     <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588046037418" />
-    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1587759075768" />
+    <state x="1132" y="268" width="840" height="819" key="search.everywhere.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1588728701550" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -135,6 +135,7 @@
           </e>
         </e>
         <e p="Tests" t="Include">
+          <e p="BattleTest.cs" t="Include" />
           <e p="GridWorkerTests.cs" t="Include" />
           <e p="Tests.asmdef" t="Include" />
           <e p="TurnManagerTests.cs" t="Include" />
