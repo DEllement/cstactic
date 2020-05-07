@@ -98,15 +98,28 @@ namespace Model
 
         public DamageResult PreviewDamage(DamageDice damageDice)
         {
+            var res = Stats.GetDamageResistance(damageDice.DamageType);
+            var rolledDamage = damageDice.Roll();
+            var finalDamage = rolledDamage - (rolledDamage*res);
+            
             var result = new DamageResult();
             result.DamageType = damageDice.DamageType;
-
-            var res = Stats.GetDamageResistance(result.DamageType);
-            var rolledDamage = damageDice.Roll();
-
-            
-            
+            result.Total = finalDamage;
             return result;
+        }
+        
+        public float GetDamageResistance(DamageType damageDiceDamageType)
+        {
+            var res = Stats.GetBaseDamageRessistance(damageType);
+            Equipments.ForEach(e =>
+            {
+                //TODO: apply each equipment res bonus    
+            });
+            return res;
+        }
+        public List<DamageDice> GetDamageDices()
+        {
+            
         }
     }
     public class Ennemy : Character{

@@ -55,6 +55,12 @@ namespace Model
         public void ComputeStats(){
             
             
-        }    
+        }
+
+
+        public float GetBaseDamageRessistance(DamageType damageType)
+        {
+            return 0;
+        }
     }
 }
