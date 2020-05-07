@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
@@ -19,13 +20,18 @@ namespace Model
         Chaos
     }
     public class DamageDice{
-        DamageType DamageType;
-        Dice Dice;
+        public DamageType DamageType;
+        public Dice Dice;
 
         public DamageDice(DamageType damageType, Dice dice)
         {
             this.DamageType = damageType;
             this.Dice = dice;
+        }
+
+        public int Roll()
+        {
+            return Dice.Roll();
         }
     }
     
@@ -85,6 +91,23 @@ namespace Model
         }
 
         public int HP => Stats.HP;
+        public List<DamageResult> PreviewDamages(List<DamageDice> damageDices)
+        {
+            return damageDices.Select(PreviewDamage).ToList();
+        }
+
+        public DamageResult PreviewDamage(DamageDice damageDice)
+        {
+            var result = new DamageResult();
+            result.DamageType = damageDice.DamageType;
+
+            var res = Stats.GetDamageResistance(result.DamageType);
+            var rolledDamage = damageDice.Roll();
+
+            
+            
+            return result;
+        }
     }
     public class Ennemy : Character{
         public Ennemy()
