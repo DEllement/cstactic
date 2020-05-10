@@ -63,9 +63,11 @@
      <Compile Include="Assets\Scripts\API\Commands\ExecuteCharacterTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ForceNextTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\HideActionsMenu.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\HideCharacterHealthStatus.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ShowActionsMenu.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ShowCharacterHealthStatus.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ShowPossibleMove.cs" />
      <Compile Include="Assets\Scripts\API\Events\ActionMenuItemClicked.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterDied.cs" />
@@ -80,6 +82,7 @@
      <Compile Include="Assets\Scripts\API\Events\GridCharacterMovingToGridCell.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridReady.cs" />
      <Compile Include="Assets\Scripts\API\Events\GridTargetsSelected.cs" />
+     <Compile Include="Assets\Scripts\API\Events\GridTargetsTargeted.cs" />
      <Compile Include="Assets\Scripts\API\Events\TurnManagerInitialized.cs" />
      <Compile Include="Assets\Scripts\API\Events\TurnManagerLineUpChanged.cs" />
      <Compile Include="Assets\Scripts\API\GameCommands.cs" />
@@ -90,6 +93,7 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridCellController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridCharacterController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\HealthBarsController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\InGameCamera.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\ActionMenuOpenState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\BattleIntroState.cs" />
@@ -102,7 +106,7 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\MovingCharacterState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\NothingSelectedState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PerformActionState.cs" />
-     <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PickMeleeTargetState.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PickActionTargetState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PickMoveLocationState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\TurnBarController.cs" />
      <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />

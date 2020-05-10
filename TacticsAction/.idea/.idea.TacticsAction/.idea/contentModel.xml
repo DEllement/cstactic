@@ -15,9 +15,11 @@
               <e p="ExecuteCharacterTurn.cs" t="Include" />
               <e p="ForceNextTurn.cs" t="Include" />
               <e p="HideActionsMenu.cs" t="Include" />
+              <e p="HideCharacterHealthStatus.cs" t="Include" />
               <e p="MoveGridCharacter.cs" t="Include" />
               <e p="SelectCharacter.cs" t="Include" />
               <e p="ShowActionsMenu.cs" t="Include" />
+              <e p="ShowCharacterHealthStatus.cs" t="Include" />
               <e p="ShowPossibleMove.cs" t="Include" />
             </e>
             <e p="events" t="Include">
@@ -34,6 +36,7 @@
               <e p="GridCharacterMovingToGridCell.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
               <e p="GridTargetsSelected.cs" t="Include" />
+              <e p="GridTargetsTargeted.cs" t="Include" />
               <e p="TurnManagerInitialized.cs" t="Include" />
               <e p="TurnManagerLineUpChanged.cs" t="Include" />
             </e>
@@ -48,6 +51,7 @@
               <e p="GridCellController.cs" t="Include" />
               <e p="GridCharacterController.cs" t="Include" />
               <e p="GridController.cs" t="Include" />
+              <e p="HealthBarsController.cs" t="Include" />
               <e p="InGameCamera.cs" t="Include" />
               <e p="States" t="Include">
                 <e p="ActionMenuOpenState.cs" t="Include" />
@@ -61,7 +65,7 @@
                 <e p="MovingCharacterState.cs" t="Include" />
                 <e p="NothingSelectedState.cs" t="Include" />
                 <e p="PerformActionState.cs" t="Include" />
-                <e p="PickMeleeTargetState.cs" t="Include" />
+                <e p="PickActionTargetState.cs" t="Include" />
                 <e p="PickMoveLocationState.cs" t="Include" />
               </e>
               <e p="TurnBarController.cs" t="Include" />

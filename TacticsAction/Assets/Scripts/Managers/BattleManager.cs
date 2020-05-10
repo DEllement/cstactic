@@ -17,13 +17,20 @@ public class GridCellInfo{
 
 public class DamageResult{
     public DamageType DamageType;
-    public int Total;
+    
+    public float Min;
+    public float Max;
+    public float Avg => (Min+Max)/2;
+    public int TargetHP { get; set; }
+
+    public float Total;
     public string AttackDetails;
 }
 
-public interface ITargetable{
+public interface IDamageable{
     int HP {get;}
-    List<DamageResult> PreviewDamage(List<DamageDice> damageDices);
+    List<DamageResult> DoDamages(List<DamageDice> damageDices);
+    List<DamageResult> PreviewDamages(List<DamageDice> damageDices);
 }
 
 public enum Hands{
@@ -65,20 +72,15 @@ public class BattleManager : MonoBehaviour
         
     }
     
-    public CharacterActionResult Atc(ActionType actionType, List<(int x, int y)> targets){
-    
-        
-        return null;
+    public CharacterActionResult Atc(ActionType actionType,AttackWith attackWith, int skillId,Character actor, IDamageable target){
+        return new CharacterActionResult{
+            Damages = target.DoDamages(actor.GetDamageDices(attackWith, skillId))
+        };
     }
-    public List<CharacterActionResult> PreviewActResult(ActionType actionType, AttackWith attackWith, int skillId, Character actor, List<ITargetable> targets){
-    
-        var damageDices = actor.GetDamageDices(attackWith, skillId);
-        targets.ForEach( t=>{
-            var damageResults = t.PreviewDamage(damageDices);
-            //TODO: Need to send that somewhere to diplay
-        });
-        
-        return null;
+    public CharacterActionResult PreviewActResult(ActionType actionType, AttackWith attackWith, int skillId, Character actor, IDamageable target){
+        return new CharacterActionResult{
+            Damages = target.PreviewDamages(actor.GetDamageDices(attackWith, skillId))
+        };
     }
     // Start is called before the first frame update
     void Start()

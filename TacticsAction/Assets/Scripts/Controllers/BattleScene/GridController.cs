@@ -388,6 +388,8 @@ public class GridController : MonoBehaviour
         _enableAttack = true;
     }
     Vector2 OverGridCellPosVector => _overGridCell?.GetComponent<GridCellController>()?.GridPosVector ?? new Vector2(-1,-1);
+    List<Vector2> _lastTargetedCells;
+    bool _hasTargetsCellsChanged = false;
     private void UpdateTargetTracker(){
         if(!_enableAttack || _overGridCell == null)
             return;
@@ -401,6 +403,9 @@ public class GridController : MonoBehaviour
         var angle = (float) (Math.Atan2(_overGridCellWorldMousePos.z-worldCharacterPos.z,_overGridCellWorldMousePos.x-worldCharacterPos.x) * 180 / Math.PI);
         _attackGridWorker.SetAngleFromCenter(angle);
         _attackGridWorker.SetCursorAt(OverGridCellPosVector);
+        
+        _hasTargetsCellsChanged = _attackGridWorker.targetCells != _lastTargetedCells;
+        
         _attackGridWorker.rangeCells.ForEach(cellPos=>{
             if( IsInsideGrid(cellPos) )
                 GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.yellow;
@@ -411,6 +416,12 @@ public class GridController : MonoBehaviour
         });
         var overGridCellInZone = _attackGridWorker.targetCells.Contains(OverGridCellPosVector);
         if( overGridCellInZone ){
+            if(_hasTargetsCellsChanged){
+                GameEvents.GridTargetsTargeted.Invoke(new GridTargetsTargetedData(_attackGridWorker.targetCells
+                                                                                                   .Where( IsInsideGrid )
+                                                                                                   .Select( GetGridCell )
+                                                                                                   .ToList()));            
+            }
             if( Input.GetMouseButtonUp(0) )
                 GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells
                                                                                                    .Where( IsInsideGrid )

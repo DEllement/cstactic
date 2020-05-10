@@ -9,10 +9,13 @@ using UnityEngine;
 
 public class GridCharacterController : MonoBehaviour
 {
+    //This is a Grid Cell Object Behaviour
     public int X;
     public int Y;
     public (int x, int y) GridPosition => (X,Y);
     public Vector2 CellCoords => new Vector2(X,Y);
+    //---
+    
     public Character Character;
 
     // Start is called before the first frame update
@@ -84,5 +87,12 @@ public class GridCharacterController : MonoBehaviour
         }
     }
 
-  
+
+    public void HideDamagePreview()
+    {
+    }
+
+    public void ShowDamagePreview(float minDamage, float maxDamage)
+    {
+    }
 }

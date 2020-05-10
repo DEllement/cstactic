@@ -11,10 +11,13 @@ public class BattleSceneController : MonoBehaviour
     [SerializeField] public GridController grid;
     [SerializeField] public ActionMenuController actionMenu;
     [SerializeField] public TurnBarController turnBar;
+    [SerializeField] public HealthBarsController healthsBar;
+    
     [SerializeField] public LevelManager levelManager;
     [SerializeField] public ActionTreeManager actionTreeManager;
     [SerializeField] public BattleManager battleManager;
     [SerializeField] public TurnManager turnManager;
+    
     
     private BattleSceneState _previousState;
     private BattleSceneState _state;
@@ -44,6 +47,7 @@ public class BattleSceneController : MonoBehaviour
     void Start()
     {
         GameEvents.GridCellClicked.AddListener(Handle);
+        GameEvents.GridTargetsTargeted.AddListener(Handle);
         GameEvents.GridTargetsSelected.AddListener(Handle);
         GameEvents.GridCharacterClicked.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
@@ -56,10 +60,25 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.TurnBarReady.AddListener(OnTurnBarReady);
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
+        GameCommands.ShowCharacterHealthStatus.AddListener(Execute);
+        GameCommands.HideCharacterHealthStatus.AddListener(Execute);
         
         SetState(new NothingSelectedState(this));
     }
-    
+
+    private void Execute(ShowCharacterHealthStatusData arg0)
+    {
+        healthsBar.ShowCharacterHealthStatus();
+    }
+    private void Execute(HideCharacterHealthStatusData arg0)
+    {
+        healthsBar.ShowCharacterHealthStatus();
+    }
+
+    private void Handle(GridTargetsTargetedData arg0)
+    {
+    }
+
     private void SetupLevel(){
         _setupStarted = true;
         levelManager.SetupLevel();

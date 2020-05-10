@@ -25,5 +25,11 @@ public class TestButtonsHandlers : MonoBehaviour
         
        GameCommands.ShowActionsMenu.Invoke(null);
     }
+    public void OnShowCharacterHealthStatusClick(){
+        GameCommands.ShowCharacterHealthStatus.Invoke(null);
+    }
+    public void OnHideCharacterHealthStatusClick(){
+        GameCommands.HideCharacterHealthStatus.Invoke(null);
+    }
     
 }

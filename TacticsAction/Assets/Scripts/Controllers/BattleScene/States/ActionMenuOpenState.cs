@@ -35,7 +35,7 @@ namespace Controllers.BattleScene.States
                     ctrl.actionMenu.CloseActionMenu();
                     
                     yield return new WaitForEndOfFrame();
-                    ctrl.SetState(new PickMeleeTargetState(ctrl, data.ActionType));
+                    ctrl.SetState(new PickActionTargetState(ctrl, data.ActionType));
                     break;
                 case ActionType.Wait:
                     ctrl.actionMenu.CloseActionMenu();

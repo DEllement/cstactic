@@ -20,7 +20,7 @@ namespace Tests
             
             battleManager.Init(new List<Character>{c1}, new List<Ennemy>{e1});
             
-            var result = battleManager.PreviewActResult(ActionType.Melee, AttackWith.Weapon, 0 , c1, new List<ITargetable>{ e1 });
+            var result = battleManager.PreviewActResult(ActionType.Melee, AttackWith.Weapon, 0 , c1, e1);
             
             
         }

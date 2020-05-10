@@ -26,9 +26,8 @@ namespace Model
         public int MND; //Affects the success of SPECIAL SKILLS and offensive and defensive MAGIC.
         public int RES; //Affects the ability to RESIST MAGIC.
         public int LUC; //Affects the chance to DROP ITEMS.
-        
         public int ATK;
-        public int DEF;
+        public int DEF; //Affects the ability to DEF againts physical damage
         
         public Aura[] Auras;
         public Curse[] Curses;
@@ -62,5 +61,35 @@ namespace Model
         {
             return 0;
         }
+    }
+    
+    public enum StatType { 
+  
+        HP_REGEN,
+        MP_REGEN,
+        
+        HP,
+        MP,
+        STR,
+        INT,
+        DEX,
+        MVP,
+        VIT,
+        AGI,
+        AVD,
+        MND,
+        RES,
+        LUC,
+        ATK,
+        DEF
+    }
+    public enum StatProperty { Value, Base, Min, Max, Affinity, MaxAffinity }
+    public enum StatModType { Active, Direct }
+    public enum StatModEffect { Add, Multiply }
+    
+    public class StatsModifier{
+        private StatModType ModType {get;set;}
+        private StatModEffect ModEffect {get;set;}
+        private StatType StatType {get;set;}        
     }
 }

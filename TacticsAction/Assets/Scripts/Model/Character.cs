@@ -48,9 +48,22 @@ namespace Model
         public IEquipable Finger1;
         public IEquipable Finger2;
         public IEquipable Foots;
+        
+        public List<IEquipable> ToList(){
+            return new List<IEquipable>{
+                Head,
+                Neck,
+                LeftHand,
+                RightHand,
+                Waist,
+                Finger1,
+                Finger2,
+                Foots
+            };
+        }
     }
     
-    public class Character : ITargetable
+    public class Character : IDamageable
     {
         public int Id;
         public string Name;
@@ -91,6 +104,11 @@ namespace Model
         }
 
         public int HP => Stats.HP;
+   
+        public List<DamageResult> DoDamages(List<DamageDice> damageDices)
+        {
+            return damageDices.Select(DoDamage).ToList();
+        }
         public List<DamageResult> PreviewDamages(List<DamageDice> damageDices)
         {
             return damageDices.Select(PreviewDamage).ToList();
@@ -98,28 +116,37 @@ namespace Model
 
         public DamageResult PreviewDamage(DamageDice damageDice)
         {
-            var res = Stats.GetDamageResistance(damageDice.DamageType);
-            var rolledDamage = damageDice.Roll();
-            var finalDamage = rolledDamage - (rolledDamage*res);
+            var res = GetDamageResistance(damageDice.DamageType);
+            return new DamageResult {
+                DamageType = damageDice.DamageType,
+                Min = damageDice.Dice.min - (damageDice.Dice.min*res),
+                Max = damageDice.Dice.max - (damageDice.Dice.max*res)
+            };
+        }
+        public DamageResult DoDamage(DamageDice damageDice)
+        {
+            var res = GetDamageResistance(damageDice.DamageType);
+            var roll = damageDice.Dice.Roll();
+            var damage = roll - (roll*res);
             
-            var result = new DamageResult();
-            result.DamageType = damageDice.DamageType;
-            result.Total = finalDamage;
-            return result;
+            Stats.HP -= (int)damage;
+            
+            return new DamageResult {
+                DamageType = damageDice.DamageType,
+                Total = damage,
+                TargetHP = Stats.HP,
+                AttackDetails = damage + " " +  damageDice.DamageType + " Damage",
+            };
         }
         
-        public float GetDamageResistance(DamageType damageDiceDamageType)
+        public float GetDamageResistance(DamageType damageType)
         {
             var res = Stats.GetBaseDamageRessistance(damageType);
-            Equipments.ForEach(e =>
+            Equipments.ToList().ForEach(e =>
             {
-                //TODO: apply each equipment res bonus    
+                //e.StatsModifiers
             });
             return res;
-        }
-        public List<DamageDice> GetDamageDices()
-        {
-            
         }
     }
     public class Ennemy : Character{
