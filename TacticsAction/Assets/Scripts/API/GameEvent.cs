@@ -9,6 +9,7 @@ namespace API{
         public static GridCellClicked GridCellClicked = new GridCellClicked();
         public static GridTargetsSelected GridTargetsSelected = new GridTargetsSelected();
         public static GridTargetsTargeted GridTargetsTargeted = new GridTargetsTargeted();
+        public static GridOutsideTargetRangeClicked GridOutsideTargetRangeClicked = new GridOutsideTargetRangeClicked();
         public static GridCharacterClicked GridCharacterClicked = new GridCharacterClicked();
         public static GridCharacterDeSelected GridCharacterDeSelected = new GridCharacterDeSelected();
         public static GridCharacterLeavingGridCell GridCharacterLeavingGridCell = new GridCharacterLeavingGridCell();

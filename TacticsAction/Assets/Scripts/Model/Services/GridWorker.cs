@@ -154,7 +154,22 @@ namespace Model.Services
             }
         }
 
-    
+        public void Clear()
+        {
+            workGrid = null;
+            range = null;
+            rangeResult = null;
+            targetBase = null;
+            targetResult = null;
+            rangeCells = new List<Vector2>();
+            previousRangeCells = new List<Vector2>();
+            targetCells = new List<Vector2>();
+            previousTargetCells = new List<Vector2>();
+            currentTargetAngle = 0;
+            offsetPos = Vector3.zero;
+            cursorPos = Vector3.zero;
+            agentPos = Vector3.zero;
+            targetCenteredOnCursor =false;
+        }
     }
-    
 }

@@ -34,6 +34,7 @@
               <e p="GridCharacterLeavingGridCell.cs" t="Include" />
               <e p="GridCharacterMovedToGridCell.cs" t="Include" />
               <e p="GridCharacterMovingToGridCell.cs" t="Include" />
+              <e p="GridOutsideTargetRangeClicked.cs" t="Include" />
               <e p="GridReady.cs" t="Include" />
               <e p="GridTargetsSelected.cs" t="Include" />
               <e p="GridTargetsTargeted.cs" t="Include" />

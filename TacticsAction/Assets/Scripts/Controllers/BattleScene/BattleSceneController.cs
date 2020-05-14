@@ -52,6 +52,7 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.GridCellClicked.AddListener(Handle);
         GameEvents.GridTargetsTargeted.AddListener(Handle);
         GameEvents.GridTargetsSelected.AddListener(Handle);
+        GameEvents.GridOutsideTargetRangeClicked.AddListener(Handle);
         GameEvents.GridCharacterClicked.AddListener(Handle);
         GameEvents.GridCharacterDeSelected.AddListener(Handle);
         GameEvents.GridCharacterDoneMoving.AddListener(Handle);
@@ -68,7 +69,9 @@ public class BattleSceneController : MonoBehaviour
         
         SetState(new NothingSelectedState(this));
     }
-    
+
+  
+
     private void SetupLevel(){
         _setupStarted = true;
         levelManager.SetupLevel();
@@ -104,6 +107,10 @@ public class BattleSceneController : MonoBehaviour
     private void Handle(GridTargetsSelectedData data)
     {
         StartCoroutine(_state.OnGridTargetsSelected(data));
+    }
+    private void Handle(GridOutsideTargetRangeClickedData data)
+    {
+        StartCoroutine(_state.OnGridOutsideTargetRangeClicked(data));
     }
     private void Handle(GridCharacterClickedData data) 
     {

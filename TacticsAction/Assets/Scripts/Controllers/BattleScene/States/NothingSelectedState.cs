@@ -9,8 +9,18 @@ namespace Controllers.BattleScene.States
     public class NothingSelectedState : BattleSceneState{
         public NothingSelectedState(BattleSceneController ctrl) : base(ctrl)
         {
+            
         }
-        
+
+        public override IEnumerator Enter()
+        {
+            ctrl.grid.selectionMode = GridSelectionMode.Cell;
+            ctrl.grid.HideGridCellAsReachable();
+            ctrl.grid.CancelTargetTracker();
+            ctrl.healthsBar.HideHealthStatus();
+            yield break;
+        }
+
         //TODO: OnGridCellMouseOver
 
         public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)

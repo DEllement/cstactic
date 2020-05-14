@@ -23,5 +23,6 @@ namespace Controllers.BattleScene.States
         public virtual IEnumerator OnGridCharacterMovingToGridCell(GridCharacterMovingToGridCell data){yield break;}
         public virtual IEnumerator OnGridTargetsTargeted(GridTargetsTargetedData data){yield break;}
         public virtual IEnumerator OnGridTargetsSelected(GridTargetsSelectedData data){yield break;}
+        public virtual IEnumerator OnGridOutsideTargetRangeClicked(GridOutsideTargetRangeClickedData data){yield break;}
     }
 }

@@ -80,5 +80,13 @@ namespace Controllers.BattleScene.States
             
             yield break;
         }
+
+        public override IEnumerator OnGridOutsideTargetRangeClicked(GridOutsideTargetRangeClickedData data){
+
+            ctrl.healthsBar.HideHealthStatus();
+            ctrl.SetState(new NothingSelectedState(ctrl));
+            
+            yield break;
+        }
     }
 }

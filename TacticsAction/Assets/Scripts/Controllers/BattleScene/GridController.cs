@@ -388,14 +388,19 @@ public class GridController : MonoBehaviour
     Vector2 OverGridCellPosVector => _overGridCell?.GetComponent<GridCellController>()?.GridPosVector ?? new Vector2(-1,-1);
     List<Vector2> _lastTargetedCells;
     bool _hasTargetsCellsChanged = false;
+    
+    private void ResetPreviousRangeCells(){
+        _attackGridWorker?.previousRangeCells.ForEach(cellPos=>{ 
+            if( IsInsideGrid(cellPos) )
+                GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.white;
+        });
+    }
+    
     private void UpdateTargetTracker(){
         if(!_enableAttack || _overGridCell == null)
             return;
         
-        _attackGridWorker.previousRangeCells.ForEach(cellPos=>{ 
-            if( IsInsideGrid(cellPos) )
-                GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.white;
-        });
+        ResetPreviousRangeCells();
         
         var worldCharacterPos = _selectedCharacter.gameObject.GetComponentInParent<Transform>().position;
         var angle = (float) (Math.Atan2(_overGridCellWorldMousePos.z-worldCharacterPos.z,_overGridCellWorldMousePos.x-worldCharacterPos.x) * 180 / Math.PI);
@@ -421,20 +426,26 @@ public class GridController : MonoBehaviour
                 .ToList())); 
         
         var overGridCellInZone = _attackGridWorker.targetCells.Contains(OverGridCellPosVector);
-        if( overGridCellInZone )
-            if( Input.GetMouseButtonUp(0) )
+        if( Input.GetMouseButtonUp(0) )
+            if( overGridCellInZone )
                 GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells
                                                                                                    .Where( IsInsideGrid )
                                                                                                    .Select( GetGridCell )
                                                                                                    .ToList()));
+            else
+                GameEvents.GridOutsideTargetRangeClicked.Invoke(new GridOutsideTargetRangeClickedData(null));
     }
     public void CancelTargetTracker(){
+        ResetPreviousRangeCells();
         _enableAttack =false;
+        _attackGridWorker.Clear();
+        _lastTargetedCells = null;
     }
     
     #endregion
     
     private float [,] ToWorkMatrix(Vector2 center, int radius){
+        
         int rows = radius*2+1;
         int cols = rows;
         float [,] output = new float [cols,rows];
@@ -443,6 +454,7 @@ public class GridController : MonoBehaviour
         for(var x = center.x-radius; x < cols; x++,ox++)
             for(var  y = center.y-radius; y < rows; y++,oy++){
                 var gridCellCtrl = GetGridCellCtrl(center);
+                //FIXME: When Deselecting Character & reselecting + Act Melee, ox & oy is out of bound
                 output[ox,oy] = gridCellCtrl != null && gridCellCtrl.IsWalkable ? 0 : int.MinValue;
         }
         return output;
