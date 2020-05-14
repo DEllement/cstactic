@@ -12,6 +12,7 @@ namespace Model
         public int Level; //Level
         public int Xp;
         
+        public int HPMax;
         public int HP;
         public int MP;
         
@@ -32,6 +33,7 @@ namespace Model
         public Aura[] Auras;
         public Curse[] Curses;
         
+
         public void AddXp(int xp, int foeLevel){
             Xp += xp;
             

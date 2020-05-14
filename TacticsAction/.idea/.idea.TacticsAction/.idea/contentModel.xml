@@ -15,11 +15,11 @@
               <e p="ExecuteCharacterTurn.cs" t="Include" />
               <e p="ForceNextTurn.cs" t="Include" />
               <e p="HideActionsMenu.cs" t="Include" />
-              <e p="HideCharacterHealthStatus.cs" t="Include" />
+              <e p="HideHealthStatus.cs" t="Include" />
               <e p="MoveGridCharacter.cs" t="Include" />
               <e p="SelectCharacter.cs" t="Include" />
               <e p="ShowActionsMenu.cs" t="Include" />
-              <e p="ShowCharacterHealthStatus.cs" t="Include" />
+              <e p="ShowHealthStatus.cs" t="Include" />
               <e p="ShowPossibleMove.cs" t="Include" />
             </e>
             <e p="events" t="Include">
@@ -89,6 +89,7 @@
             <e p="Enums.cs" t="Include" />
             <e p="GridCellEdge.cs" t="Include" />
             <e p="GridPath.cs" t="Include" />
+            <e p="IDamageableController.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="Services" t="Include">
               <e p="GridWorker.cs" t="Include" />

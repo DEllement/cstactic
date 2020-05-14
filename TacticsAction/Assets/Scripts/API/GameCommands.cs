@@ -13,8 +13,8 @@ namespace API{
         public static HideActionsMenu HideActionsMenu = new HideActionsMenu();
         
         public static ShowPossibleMove ShowPossibleMove = new ShowPossibleMove(); 
-        public static ShowCharacterHealthStatus ShowCharacterHealthStatus = new ShowCharacterHealthStatus();
-        public static HideCharacterHealthStatus HideCharacterHealthStatus = new HideCharacterHealthStatus();
+        public static ShowHealthStatus ShowHealthStatus = new ShowHealthStatus();
+        public static HideHealthStatus HideHealthStatus = new HideHealthStatus();
         
         
         //Tests Actions

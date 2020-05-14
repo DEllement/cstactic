@@ -7,7 +7,7 @@ using API.Events;
 using Model;
 using UnityEngine;
 
-public class GridCharacterController : MonoBehaviour
+public class GridCharacterController : MonoBehaviour, IDamageableController
 {
     //This is a Grid Cell Object Behaviour
     public int X;
@@ -87,12 +87,8 @@ public class GridCharacterController : MonoBehaviour
         }
     }
 
-
-    public void HideDamagePreview()
-    {
-    }
-
-    public void ShowDamagePreview(float minDamage, float maxDamage)
-    {
-    }
+    //IDamageableController
+    
+    IDamageable IDamageableController.Damageable => Character;
+    GameObject IDamageableController.GameObject => this.gameObject;
 }

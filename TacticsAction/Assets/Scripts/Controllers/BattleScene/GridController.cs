@@ -82,8 +82,6 @@ public class GridController : MonoBehaviour
         if(_initialized)
             return;
         
-        print("GenerateGrid");
-  
         _gridCells = new GameObject[Cols,Rows];
         
         float yOffset = Rows*Space;
@@ -405,7 +403,8 @@ public class GridController : MonoBehaviour
         _attackGridWorker.SetCursorAt(OverGridCellPosVector);
         
         _hasTargetsCellsChanged = _attackGridWorker.targetCells != _lastTargetedCells;
-        
+        _lastTargetedCells = _attackGridWorker.targetCells;
+       
         _attackGridWorker.rangeCells.ForEach(cellPos=>{
             if( IsInsideGrid(cellPos) )
                 GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.yellow;
@@ -414,20 +413,20 @@ public class GridController : MonoBehaviour
             if( IsInsideGrid(cellPos) )
                 GetGridCellCtrl(cellPos).Quad.GetComponent<Renderer>().material.color = Color.red;
         });
+        
+        if(_hasTargetsCellsChanged)
+            GameEvents.GridTargetsTargeted.Invoke(new GridTargetsTargetedData(_attackGridWorker.targetCells
+                .Where( IsInsideGrid )
+                .Select( GetGridCell )
+                .ToList())); 
+        
         var overGridCellInZone = _attackGridWorker.targetCells.Contains(OverGridCellPosVector);
-        if( overGridCellInZone ){
-            if(_hasTargetsCellsChanged){
-                GameEvents.GridTargetsTargeted.Invoke(new GridTargetsTargetedData(_attackGridWorker.targetCells
-                                                                                                   .Where( IsInsideGrid )
-                                                                                                   .Select( GetGridCell )
-                                                                                                   .ToList()));            
-            }
+        if( overGridCellInZone )
             if( Input.GetMouseButtonUp(0) )
                 GameEvents.GridTargetsSelected.Invoke(new GridTargetsSelectedData(_attackGridWorker.targetCells
                                                                                                    .Where( IsInsideGrid )
                                                                                                    .Select( GetGridCell )
                                                                                                    .ToList()));
-        }
     }
     public void CancelTargetTracker(){
         _enableAttack =false;
@@ -447,6 +446,20 @@ public class GridController : MonoBehaviour
                 output[ox,oy] = gridCellCtrl != null && gridCellCtrl.IsWalkable ? 0 : int.MinValue;
         }
         return output;
+    }
+    
+    public List<IDamageableController> GetAllDamageableTargets(){
+        var result = new List<IDamageableController>();
+        for(var x=0; x< Cols; x++)
+            for(var y=0; y < Rows; y++){
+                var ctrl = GetGridCellCtrl(x,y);
+                if( ctrl.OccupiedBy != null ){
+                    var damageable = ctrl.OccupiedBy.GetComponent<IDamageableController>();
+                    if( damageable != null)
+                        result.Add(damageable);                
+                }
+        }
+        return result;
     }
 }
 

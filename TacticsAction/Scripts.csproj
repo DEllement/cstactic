@@ -63,11 +63,11 @@
      <Compile Include="Assets\Scripts\API\Commands\ExecuteCharacterTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ForceNextTurn.cs" />
      <Compile Include="Assets\Scripts\API\Commands\HideActionsMenu.cs" />
-     <Compile Include="Assets\Scripts\API\Commands\HideCharacterHealthStatus.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\HideHealthStatus.cs" />
      <Compile Include="Assets\Scripts\API\Commands\MoveGridCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\SelectCharacter.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ShowActionsMenu.cs" />
-     <Compile Include="Assets\Scripts\API\Commands\ShowCharacterHealthStatus.cs" />
+     <Compile Include="Assets\Scripts\API\Commands\ShowHealthStatus.cs" />
      <Compile Include="Assets\Scripts\API\Commands\ShowPossibleMove.cs" />
      <Compile Include="Assets\Scripts\API\Events\ActionMenuItemClicked.cs" />
      <Compile Include="Assets\Scripts\API\Events\CharacterDied.cs" />
@@ -122,6 +122,7 @@
      <Compile Include="Assets\Scripts\Model\Enums.cs" />
      <Compile Include="Assets\Scripts\Model\GridCellEdge.cs" />
      <Compile Include="Assets\Scripts\Model\GridPath.cs" />
+     <Compile Include="Assets\Scripts\Model\IDamageableController.cs" />
      <Compile Include="Assets\Scripts\Model\Inventory.cs" />
      <Compile Include="Assets\Scripts\Model\Services\GridWorker.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\Dijkstra\Extensions\EnumerableExtensions.cs" />

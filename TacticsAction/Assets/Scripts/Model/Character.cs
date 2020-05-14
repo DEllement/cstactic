@@ -82,14 +82,14 @@ namespace Model
         {
             switch(attackWith){
                 case AttackWith.Fist:
-                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,2))};
+                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,5))};
                 case AttackWith.Foots:
-                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,2))};
+                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,5))};
                 case AttackWith.Weapon:
                     //TODO: get weapon stats
                     //TODO: get character stats
                     //TODO: compute stats
-                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,2))};
+                    return new List<DamageDice> {new DamageDice(DamageType.Physical, new Dice(1,5))};
                 case AttackWith.Spell:
                     //TODO: get spell stats
                     //TODO: get character stats
@@ -103,6 +103,7 @@ namespace Model
             return null;
         }
 
+        public int HPMax => Stats.HPMax;
         public int HP => Stats.HP;
    
         public List<DamageResult> DoDamages(List<DamageDice> damageDices)

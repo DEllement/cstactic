@@ -22,14 +22,13 @@ public class TestButtonsHandlers : MonoBehaviour
         GameCommands.ForceNextTurn.Invoke(null);
     }
     public void OnShowActionMenuClick(){
-        
        GameCommands.ShowActionsMenu.Invoke(null);
     }
     public void OnShowCharacterHealthStatusClick(){
-        GameCommands.ShowCharacterHealthStatus.Invoke(null);
+        GameCommands.ShowHealthStatus.Invoke(null);
     }
     public void OnHideCharacterHealthStatusClick(){
-        GameCommands.HideCharacterHealthStatus.Invoke(null);
+        GameCommands.HideHealthStatus.Invoke(null);
     }
     
 }

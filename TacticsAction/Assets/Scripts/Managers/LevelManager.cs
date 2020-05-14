@@ -28,12 +28,12 @@ public class LevelManager : MonoBehaviour
     public List<Character> Ennemies;
     
     public void SetupLevel(){
-        Character c1 = new Character{Id=1, Stats=new Stats{HP=10}, Inventory=new Inventory()};
-        Character c2 = new Character{Id=2, Stats=new Stats{HP=10}, Inventory=new Inventory()};
-        Character c3 = new Character{Id=3, Stats=new Stats{HP=10}, Inventory=new Inventory()};
-        Ennemy e1 = new Ennemy{Id=4, Stats=new Stats{HP=10},Inventory=new Inventory()};
-        Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10},Inventory=new Inventory()};
-        Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10},Inventory=new Inventory()};
+        Character c1 = new Character{Id=1, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Character c2 = new Character{Id=2, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Character c3 = new Character{Id=3, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e1 = new Ennemy{Id=4, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
         
         Friends = new List<Character>{c1,c2,c3};
         Ennemies = new List<Character>{e1,e2,e3};

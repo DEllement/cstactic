@@ -28,6 +28,7 @@ public class DamageResult{
 }
 
 public interface IDamageable{
+    int HPMax {get;}
     int HP {get;}
     List<DamageResult> DoDamages(List<DamageDice> damageDices);
     List<DamageResult> PreviewDamages(List<DamageDice> damageDices);

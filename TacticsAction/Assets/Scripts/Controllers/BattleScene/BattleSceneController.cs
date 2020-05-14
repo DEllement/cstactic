@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using API;
 using API.Commands;
 using API.Events;
 using Controllers.BattleScene.States;
 using UnityEngine;
+
+
 
 public class BattleSceneController : MonoBehaviour
 {
@@ -60,42 +63,43 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.TurnBarReady.AddListener(OnTurnBarReady);
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
-        GameCommands.ShowCharacterHealthStatus.AddListener(Execute);
-        GameCommands.HideCharacterHealthStatus.AddListener(Execute);
+        GameCommands.ShowHealthStatus.AddListener(Execute);
+        GameCommands.HideHealthStatus.AddListener(Execute);
         
         SetState(new NothingSelectedState(this));
     }
-
-    private void Execute(ShowCharacterHealthStatusData arg0)
-    {
-        healthsBar.ShowCharacterHealthStatus();
-    }
-    private void Execute(HideCharacterHealthStatusData arg0)
-    {
-        healthsBar.ShowCharacterHealthStatus();
-    }
-
-    private void Handle(GridTargetsTargetedData arg0)
-    {
-    }
-
+    
     private void SetupLevel(){
         _setupStarted = true;
         levelManager.SetupLevel();
         turnManager.Init(levelManager.Friends, levelManager.Ennemies);
         turnManager.Next();
-        
         //SetState(new BattleIntroState(this));
     }
 
+    private void Execute(ShowAllHealthStatusData data)
+    {
+        var damageableTargets =  grid.GetAllDamageableTargets();
+        var items = damageableTargets.Select( x=> new HealthBarsController.DamageableTargetInfo{ damageableCtrl = x } )
+                                                              .ToList();
+        healthsBar.ShowHealthStatus(items);
+    }
+    private void Execute(HideHealthStatusData data)
+    {
+        healthsBar.HideHealthStatus();
+    }
+    private void Execute(AssignCharacterToGridData data)
+    {
+        grid.AssignCharacterToGrid(data);
+    }
+    
     private void Handle(GridCellClickedData data)
     {
         StartCoroutine(_state.OnGridCellClicked(data));
     }
-
-    private void Execute(AssignCharacterToGridData data)
+    private void Handle(GridTargetsTargetedData data)
     {
-        grid.AssignCharacterToGrid(data);
+        StartCoroutine(_state.OnGridTargetsTargeted(data));
     }
     private void Handle(GridTargetsSelectedData data)
     {
@@ -117,7 +121,6 @@ public class BattleSceneController : MonoBehaviour
     {
         
     }
-   
     
     private void OnActionMenuOpened()
     {
@@ -137,4 +140,5 @@ public class BattleSceneController : MonoBehaviour
     {
         
     }
+
 }
