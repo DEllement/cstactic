@@ -14,6 +14,7 @@ namespace Model
         
         public int HPMax;
         public int HP;
+        public int MPMax { get; set; }
         public int MP;
         
         public int STR; //Affects melee PHYSICAL ATTACK & HP
@@ -42,6 +43,8 @@ namespace Model
             //TODO: Check if ready to levelup
         }
         public int XpUntilNextLevel{get;set;}
+   
+
         public double GetXpMultiplier(int foeLevel){
             int safeZone = (int)Math.Floor( (3+ (decimal)Level/16));
             double effDiff = Math.Max( Math.Abs(Level-foeLevel)-safeZone, 0);

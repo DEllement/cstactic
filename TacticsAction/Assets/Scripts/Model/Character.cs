@@ -68,6 +68,7 @@ namespace Model
         public int Id;
         public string Name;
         public int Level;
+        public string Class;
         public bool IsEnnemy;
         public bool IsGuest;
         public bool AutoCombat;
@@ -105,7 +106,8 @@ namespace Model
 
         public int HPMax => Stats.HPMax;
         public int HP => Stats.HP;
-   
+        
+
         public List<DamageResult> DoDamages(List<DamageDice> damageDices)
         {
             return damageDices.Select(DoDamage).ToList();

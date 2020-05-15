@@ -15,12 +15,13 @@ public class BattleSceneController : MonoBehaviour
     [SerializeField] public ActionMenuController actionMenu;
     [SerializeField] public TurnBarController turnBar;
     [SerializeField] public HealthBarsController healthsBar;
+    [SerializeField] public CharacterStatusBarController leftCharacterStatusBar;
+    [SerializeField] public CharacterStatusBarController rightCharacterStatusBar;
     
     [SerializeField] public LevelManager levelManager;
     [SerializeField] public ActionTreeManager actionTreeManager;
     [SerializeField] public BattleManager battleManager;
     [SerializeField] public TurnManager turnManager;
-    
     
     private BattleSceneState _previousState;
     private BattleSceneState _state;
@@ -118,6 +119,7 @@ public class BattleSceneController : MonoBehaviour
     }
     private void Handle(GridCharacterDeSelectedData data)
     {
+        
         //StartCoroutine(_state.OnGridCharacterDeSelected(data));
     }
     private void Handle(GridCharacterDoneMovingData data)

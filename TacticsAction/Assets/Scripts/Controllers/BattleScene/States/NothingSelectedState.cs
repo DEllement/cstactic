@@ -18,6 +18,7 @@ namespace Controllers.BattleScene.States
             ctrl.grid.HideGridCellAsReachable();
             ctrl.grid.CancelTargetTracker();
             ctrl.healthsBar.HideHealthStatus();
+            ctrl.leftCharacterStatusBar.HideStatus();
             yield break;
         }
 
@@ -31,6 +32,7 @@ namespace Controllers.BattleScene.States
             ctrl.grid.BuildPossibleGroundMoveGraph(2);
             ctrl.grid.ShowGridCellAsReachable();
             ctrl.grid.selectionMode = GridSelectionMode.ActMove;
+            ctrl.leftCharacterStatusBar.ShowStatus( data.GameObject.GetComponent<GridCharacterController>().Character );
             ctrl.SetState(new PickMoveLocationState(this.ctrl));
             
     

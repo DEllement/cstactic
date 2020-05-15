@@ -28,9 +28,9 @@ public class LevelManager : MonoBehaviour
     public List<Character> Ennemies;
     
     public void SetupLevel(){
-        Character c1 = new Character{Id=1, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
-        Character c2 = new Character{Id=2, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
-        Character c3 = new Character{Id=3, Stats=new Stats{HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Character c1 = new Character{Id=1, Class="Templar", Name="Landry de Lauzon", Level=2, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Character c2 = new Character{Id=2, Class="Monk", Name="Benedicte",Level=1, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
+        Character c3 = new Character{Id=3, Class="Knight", Name="Marcus Aurelius", Level=5, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
         Ennemy e1 = new Ennemy{Id=4, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
         Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
         Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
@@ -45,8 +45,8 @@ public class LevelManager : MonoBehaviour
         GameObject Ennemy01 = GameObject.Find("Ennemy01");
             
         GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Ennemy01, e1,9,9));  
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01, e2,5,5));  
-        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,e3,0,1)); 
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character01, c1,5,5));  
+        GameCommands.AssignCharacterToGrid.Invoke(new AssignCharacterToGridData(Character02,c3,0,1)); 
     }
     
     // Update is called once per frame

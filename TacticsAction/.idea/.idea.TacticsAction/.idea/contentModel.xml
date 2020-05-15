@@ -49,6 +49,7 @@
               <e p="ActionMenuController.cs" t="Include" />
               <e p="ActionMenuItemController.cs" t="Include" />
               <e p="BattleSceneController.cs" t="Include" />
+              <e p="CharacterStatusBarController.cs" t="Include" />
               <e p="GridCellController.cs" t="Include" />
               <e p="GridCharacterController.cs" t="Include" />
               <e p="GridController.cs" t="Include" />

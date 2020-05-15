@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\ActionMenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\ActionMenuItemController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\BattleSceneController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\CharacterStatusBarController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridCellController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridCharacterController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridController.cs" />
