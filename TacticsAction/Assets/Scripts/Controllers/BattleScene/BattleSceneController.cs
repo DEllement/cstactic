@@ -32,6 +32,9 @@ public class BattleSceneController : MonoBehaviour
         StartCoroutine(_state.Enter());
         print(_state.ToString());
     } 
+    public BattleSceneState GetState(){
+        return _state;
+    }
     
     private bool _gridReady, _turnBarReady, _setupStarted;
     private bool CanSetupLevel => _gridReady && _turnBarReady && !_setupStarted;
@@ -63,6 +66,7 @@ public class BattleSceneController : MonoBehaviour
         GameEvents.CharacterTurnStarted.AddListener(Handle);
         GameEvents.GridReady.AddListener(OnGridReady);
         GameEvents.TurnBarReady.AddListener(OnTurnBarReady);
+        GameEvents.NonUIClicked.AddListener(Handle);
         
         GameCommands.AssignCharacterToGrid.AddListener(Execute);
         GameCommands.ShowHealthStatus.AddListener(Execute);
@@ -71,7 +75,8 @@ public class BattleSceneController : MonoBehaviour
         SetState(new NothingSelectedState(this));
     }
 
-  
+
+
 
     private void SetupLevel(){
         _setupStarted = true;
@@ -129,6 +134,10 @@ public class BattleSceneController : MonoBehaviour
     private void Handle(CharacterTurnStartedData arg0)
     {
         
+    }
+    private void Handle()
+    {
+        StartCoroutine(_state.OnNonUIClicked());
     }
     
     private void OnActionMenuOpened()

@@ -24,5 +24,6 @@ namespace Controllers.BattleScene.States
         public virtual IEnumerator OnGridTargetsTargeted(GridTargetsTargetedData data){yield break;}
         public virtual IEnumerator OnGridTargetsSelected(GridTargetsSelectedData data){yield break;}
         public virtual IEnumerator OnGridOutsideTargetRangeClicked(GridOutsideTargetRangeClickedData data){yield break;}
+        public virtual IEnumerator OnNonUIClicked(){yield break;}
     }
 }

@@ -41,6 +41,7 @@ public class ActionMenuController : MonoBehaviour
         _currentActionPath = new List<ActionType>();
         CreateMenu();
         this.gameObject.SetActive(true);
+        Update(); //This fix the mini ui glich, remove once ActionMenu will not be a follow gameobject
         GameEvents.ActionMenuOpened.Invoke();
     }
     public void CloseActionMenu(){
@@ -72,4 +73,5 @@ public class ActionMenuController : MonoBehaviour
             
         }).ToList();
     }
+    
 }

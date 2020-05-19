@@ -31,9 +31,9 @@ public class LevelManager : MonoBehaviour
         Character c1 = new Character{Id=1, Class="Templar", Name="Landry de Lauzon", Level=2, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
         Character c2 = new Character{Id=2, Class="Monk", Name="Benedicte",Level=1, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
         Character c3 = new Character{Id=3, Class="Knight", Name="Marcus Aurelius", Level=5, Stats=new Stats{ HP=10, HPMax=10}, Inventory=new Inventory(), Equipments= new Equipments()};
-        Ennemy e1 = new Ennemy{Id=4, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
-        Ennemy e2 = new Ennemy{Id=5, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
-        Ennemy e3 = new Ennemy{Id=6, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e1 = new Ennemy{Id=4, Class="Soldier", Level=1, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e2 = new Ennemy{Id=5, Class="Soldier", Level=1, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
+        Ennemy e3 = new Ennemy{Id=6, Class="Soldier", Level=1, Stats=new Stats{HP=10, HPMax=10},Inventory=new Inventory(), Equipments= new Equipments()};
         
         Friends = new List<Character>{c1,c2,c3};
         Ennemies = new List<Character>{e1,e2,e3};

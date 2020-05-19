@@ -16,6 +16,7 @@ namespace API{
         public static GridCharacterMovingToGridCell GridCharacterMovingToGridCell = new GridCharacterMovingToGridCell();
         public static GridCharacterMovedToGridCell GridCharacterMovedToGridCell = new GridCharacterMovedToGridCell();
         public static GridCharacterDoneMoving GridCharacterDoneMoving = new GridCharacterDoneMoving();
+        public static UnityEvent NonUIClicked = new UnityEvent();
         
         public static CharacterTurnStarted CharacterTurnStarted = new CharacterTurnStarted();
         public static CharacterTurnEnded CharacterTurnEnded = new CharacterTurnEnded();

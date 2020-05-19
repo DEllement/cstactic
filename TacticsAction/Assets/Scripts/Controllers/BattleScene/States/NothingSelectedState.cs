@@ -28,15 +28,11 @@ namespace Controllers.BattleScene.States
         {
             yield return new WaitForEndOfFrame();
             
-            ctrl.grid.SelectCharacter(data);
-            ctrl.grid.BuildPossibleGroundMoveGraph(2);
-            ctrl.grid.ShowGridCellAsReachable();
-            ctrl.grid.selectionMode = GridSelectionMode.ActMove;
-            ctrl.leftCharacterStatusBar.ShowStatus( data.GameObject.GetComponent<GridCharacterController>().Character );
-            ctrl.SetState(new PickMoveLocationState(this.ctrl));
-            
-    
-            
+            if(data.GameObject.CompareTag("Ennemy")){
+                ctrl.SetState(new EnnemySelectedState(ctrl, data.GameObject));
+                yield break;
+            }
+            ctrl.SetState(new CharacterSelectedState(ctrl, data.GameObject));
             yield break;
         }
     }

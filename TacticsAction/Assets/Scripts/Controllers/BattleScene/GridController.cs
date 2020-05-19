@@ -176,11 +176,8 @@ public class GridController : MonoBehaviour
         var characterCtrl = _selectedCharacter.GetComponent<GridCharacterController>();
         _gridCells[characterCtrl.X, characterCtrl.Y].GetComponent<GridCellController>().DeSelect(); //this should dispatch GridCharacterDeSelected
     }
-    public void SelectCharacter(GridCharacterClickedData data){ //TODO: change params
-        /*if(_selectedCharacter != null && _selectedCharacter != data.GameObject){
-            DeSelectSelectedCharacter();
-        }*/
-        _selectedCharacter = data.GameObject;
+    public void SelectCharacter(GameObject gridCharacter){ 
+        _selectedCharacter = gridCharacter;
     }
     public void SelectCharacter(int characterId){
         
@@ -282,9 +279,14 @@ public class GridController : MonoBehaviour
     private GameObject _overGridCell;
     private Vector3 _overGridCellWorldMousePos;
     private void DetectGridCellClick(){
-       
-        if(selectionMode == GridSelectionMode.Disabled)
+        if(EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
+        
+        //if(selectionMode == GridSelectionMode.Disabled)
+        //    return;
+        
+        if( Input.GetMouseButtonUp(0))
+            GameEvents.NonUIClicked.Invoke();
         
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits = Physics.RaycastAll(ray);

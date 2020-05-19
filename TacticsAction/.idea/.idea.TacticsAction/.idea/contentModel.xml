@@ -62,6 +62,7 @@
                 <e p="CharacterSelectedState.cs" t="Include" />
                 <e p="CharacterTurnEndingState.cs" t="Include" />
                 <e p="CharacterTurnStartingState.cs" t="Include" />
+                <e p="EnnemySelectedState.cs" t="Include" />
                 <e p="InventoryOpenState.cs" t="Include" />
                 <e p="LevelObjectiveOverviewState.cs" t="Include" />
                 <e p="MovingCharacterState.cs" t="Include" />

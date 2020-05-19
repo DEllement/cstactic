@@ -103,6 +103,7 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterSelectedState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterTurnEndingState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterTurnStartingState.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\States\EnnemySelectedState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\InventoryOpenState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\LevelObjectiveOverviewState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\MovingCharacterState.cs" />

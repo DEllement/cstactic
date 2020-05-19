@@ -15,11 +15,8 @@ namespace Controllers.BattleScene.States
         public override IEnumerator OnGridCharacterDoneMoving(GridCharacterDoneMovingData data){
             
             //TODO: if character finish turn Next or DoNothing or OpenMenu?
-
-            
-            
             ctrl.grid.ComputeEdges();
-            ctrl.SetState(new CharacterSelectedState(ctrl));
+            ctrl.SetState(new CharacterSelectedState(ctrl, ctrl.grid.SelectedCharacter));
             
             yield break;
         }
