@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Controllers.BattleScene.Actions;
 
 namespace Model
 {
@@ -10,5 +11,6 @@ namespace Model
         public Func<bool> Enabled = ()=>true;
         public Func<bool> Visible = ()=>true;
         public bool Executable;
+        public Func<BattleAction> Command = ()=> null;
     }
 }

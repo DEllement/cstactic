@@ -14,12 +14,20 @@ namespace Controllers.BattleScene.States
         
         public override IEnumerator Enter(){
             Debug.Log("CharacterSelectedState::Enter");
+            var character = _gridCharacter.GetComponent<GridCharacterController>().Character;
             ctrl.grid.selectionMode = GridSelectionMode.Cell;
             ctrl.grid.SelectCharacter(_gridCharacter);
-            ctrl.leftCharacterStatusBar.ShowStatus( _gridCharacter.GetComponent<GridCharacterController>().Character );
-            //TODO: If can move:
-            ctrl.SetState(new PickMoveLocationState(ctrl));
+            ctrl.leftCharacterStatusBar.ShowStatus( character );
+            
+            //TODO: Generate Character Menu
+            //TODO: If can move: Need to find whats the default move per character
+            ctrl.SetState(new PickMoveLocationState(ctrl, _gridCharacter, character.DefaultMoveRange, character.DefaultMove ));
             yield break;        
+        }
+        
+        public override IEnumerator OnActionMenuItemClicked(ActionMenuItemClickedData data){
+            this.ctrl.ExecuteBattleAction(data.ActionItem.Command());
+            yield break;
         }
 
         public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)
@@ -27,7 +35,6 @@ namespace Controllers.BattleScene.States
             //New Character Selected
             if(data.GameObject != _gridCharacter){
                 Debug.Log("CharacterSelectedState::OnGridCharacterClicked * New Character Selected");
-                ctrl.grid.HideGridCellAsReachable();
                 ctrl.grid.DeSelectSelectedCharacter();
                 ctrl.SetState(new CharacterSelectedState(ctrl, data.GameObject));
                 yield break;
@@ -42,10 +49,7 @@ namespace Controllers.BattleScene.States
         {
             if(data.GameObject.GetComponent<GridCellController>().OccupiedBy != ctrl.grid.SelectedCharacter){
                 yield return new WaitForEndOfFrame();
-                
-                ctrl.grid.HideGridCellAsReachable();
-                ctrl.grid.DeSelectSelectedCharacter();
-                ctrl.grid.selectionMode = GridSelectionMode.Cell;
+               
                 ctrl.SetState(new NothingSelectedState(ctrl));
             }
         }

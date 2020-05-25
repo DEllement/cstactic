@@ -11,7 +11,9 @@ namespace Controllers.BattleScene.States
         }
         public virtual IEnumerator Enter(){ yield break;}
         public virtual IEnumerator Exit(){yield break;}
-        public virtual IEnumerator OnActionMenuItemClicked(ActionMenuItemClickedData data){yield break;}
+        public virtual IEnumerator OnActionMenuItemClicked(ActionMenuItemClickedData data){
+            yield break;
+        }
         public virtual IEnumerator OnActionMenuClosed(){yield break;}
         public virtual IEnumerator OnGridCellClicked(GridCellClickedData data){yield break;}
         public virtual IEnumerator OnGridCharacterClicked(GridCharacterClickedData data){ yield break;}

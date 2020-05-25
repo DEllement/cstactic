@@ -170,7 +170,7 @@ public class GridController : MonoBehaviour
     public void DeSelectSelectedCharacter(){
         print("DeSelectSelectedCharacter");
         selectionMode = GridSelectionMode.Cell;
-        
+        HideGridCellAsReachable();
         if(_selectedCharacter == null)
             return;
         var characterCtrl = _selectedCharacter.GetComponent<GridCharacterController>();

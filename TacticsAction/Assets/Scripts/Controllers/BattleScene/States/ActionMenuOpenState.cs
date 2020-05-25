@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using API.Events;
+using Controllers.BattleScene.Actions;
 using Model;
 using UnityEngine;
 
@@ -22,21 +23,21 @@ namespace Controllers.BattleScene.States
         }
     
         public override IEnumerator OnActionMenuItemClicked(ActionMenuItemClickedData data){
-            switch(data.ActionType){
-                case ActionType.Move:
-                    yield return new WaitForEndOfFrame(); //NOTE: To avoid the mouseup race issue
-                    ctrl.SetState(new PickMoveLocationState(ctrl));
-                    break;
+            
+            yield return new WaitForEndOfFrame(); //NOTE: To avoid the mouseup race issue
+            ctrl.ExecuteBattleAction( data.ActionItem.Command() ); 
+            
+            /*switch(data.ActionType){
+                /*case ActionType.Move:
+                    ctrl.SetState(new PickMoveLocationState(ctrl, ctrl.grid.SelectedCharacter));
+                    break;*
                 case ActionType.Melee:
-                    yield return new WaitForEndOfFrame();
-                    ctrl.SetState(new PickActionTargetState(ctrl, data.ActionType));
+                    ctrl.SetState(new PickActionTargetState(ctrl));
                     break;
                 case ActionType.Wait:
-                    yield return new WaitForEndOfFrame();
                     ctrl.grid.HideGridCellAsReachable();
                     break;
-            }
-            yield break;
+            }*/
         }
         
         public override IEnumerator OnNonUIClicked(){

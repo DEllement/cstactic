@@ -36,7 +36,7 @@ public class ActionMenuItemController : MonoBehaviour
             ShowHideChildItems(showChild);
         }
         else if(ActionItem.Enabled())
-            GameEvents.ActionMenuItemClicked.Invoke(new ActionMenuItemClickedData(ActionItem.ActionType));
+            GameEvents.ActionMenuItemClicked.Invoke(new ActionMenuItemClickedData(ActionItem));
     }
     
     public void ShowHideChildItems(bool active){

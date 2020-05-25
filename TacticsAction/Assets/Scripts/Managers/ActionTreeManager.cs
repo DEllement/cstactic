@@ -5,6 +5,7 @@ using System.Linq;
 using API;
 using API.Commands;
 using API.Events;
+using Controllers.BattleScene.Actions;
 using Model;
 using UnityEngine;
 
@@ -73,7 +74,7 @@ public class ActionTreeManager : MonoBehaviour
     public List<ActionItem> GetSelfActions(Func<ActionState> _state)
     {
         return new List<ActionItem>{
-            new ActionItem{ActionType = ActionType.Move,  Enabled=()=>!_state().HaveMoved, Executable=true },
+            new ActionItem{ActionType = ActionType.Move,  Enabled=()=>!_state().HaveMoved, Executable=true , Command=()=> new MoveAction{ ActionType = ActionType.MoveWalk, RangeRadius=(0,1) }}, 
             new ActionItem{ActionType = ActionType.Act,   Enabled=()=>!_state().HaveActed,
                 Children= ()=> new List<ActionItem>{
                     new ActionItem{ ActionType=ActionType.Attack, 

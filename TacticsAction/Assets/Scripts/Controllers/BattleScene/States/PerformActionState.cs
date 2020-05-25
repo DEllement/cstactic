@@ -10,7 +10,7 @@ namespace Controllers.BattleScene.States
 
         public override IEnumerator OnGridTargetsSelected(GridTargetsSelectedData data)
         {
-            throw new System.NotImplementedException();
+            yield break;
         }
     }
 }

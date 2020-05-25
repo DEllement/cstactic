@@ -19,6 +19,9 @@ namespace Model
     {
         None,
         Move,
+        MoveWalk,
+        MoveFly,
+        MoveTeleport,
         Act,
             Attack,
                 Melee,
@@ -31,5 +34,10 @@ namespace Model
             Scrolls,
             Consumable,
         Wait,
+    }
+    public enum ActionTargetType{
+        Self,
+        Melee,
+        Range
     }
 }

@@ -15,10 +15,11 @@ namespace Controllers.BattleScene.States
         public override IEnumerator Enter()
         {
             ctrl.grid.selectionMode = GridSelectionMode.Cell;
-            ctrl.grid.HideGridCellAsReachable();
+            ctrl.grid.DeSelectSelectedCharacter();
             ctrl.grid.CancelTargetTracker();
             ctrl.healthsBar.HideHealthStatus();
             ctrl.leftCharacterStatusBar.HideStatus();
+            ctrl.rightCharacterStatusBar.HideStatus();
             yield break;
         }
 

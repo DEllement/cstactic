@@ -1,5 +1,6 @@
 using System.Collections;
 using API.Events;
+using Controllers.BattleScene.Actions;
 using Model;
 using UnityEngine;
 
@@ -7,25 +8,36 @@ namespace Controllers.BattleScene.States
 {
     public class PickMoveLocationState : BattleSceneState
     {
-        public PickMoveLocationState(BattleSceneController ctrl) : base(ctrl)
+        private GameObject _gridCharacter;
+        private (int s, int e) _moveRangeRadius;
+        private ActionType _actionMoveType;
+        public PickMoveLocationState(BattleSceneController ctrl, GameObject gridCharacter, (int s, int e) moveRangeRadius, ActionType actionMoveType) : base(ctrl)
         {
+            _gridCharacter = gridCharacter;
+            _moveRangeRadius = moveRangeRadius;
+            _actionMoveType = actionMoveType;
         }
 
         public override IEnumerator Enter()
         {
             ctrl.grid.selectionMode = GridSelectionMode.ActMove;
-            ctrl.grid.BuildPossibleGroundMoveGraph(2); //TODO: depending on unit is flying, use Range Graph instead
+            
+            switch(_actionMoveType){
+                case ActionType.MoveWalk: ctrl.grid.BuildPossibleGroundMoveGraph(_moveRangeRadius.e); break;
+                case ActionType.MoveFly: break;
+                case ActionType.MoveTeleport: break;
+            }
             ctrl.grid.ShowGridCellAsReachable();
             
             yield break;
         }
         public override IEnumerator OnGridCellClicked(GridCellClickedData data){
             var gridCellCtrl = data.GameObject.GetComponent<GridCellController>();
-            var currGridCharCtrl = ctrl.grid.SelectedCharacter.GetComponent<GridCharacterController>();
+            var currGridCharCtrl = _gridCharacter.GetComponent<GridCharacterController>();
             
             //Clicked on already selected Character
             if( data.GridPosition.X == currGridCharCtrl.X && data.GridPosition.Y == currGridCharCtrl.Y){ 
-                ctrl.actionMenu.target = ctrl.grid.SelectedCharacter;
+                ctrl.actionMenu.target = _gridCharacter;
                 ctrl.SetState(new ActionMenuOpenState(ctrl));
             }
             //OutSide Move Zone Clicked
@@ -38,13 +50,12 @@ namespace Controllers.BattleScene.States
                              ctrl.SetState(new EnnemySelectedState(ctrl, gridCharCtrl.gameObject));
                         else
                             ctrl.SetState(new CharacterSelectedState(ctrl, gridCharCtrl.gameObject));
-                        
-                        yield break;
                     }
                 }
+                ctrl.SetState(new NothingSelectedState(ctrl));
                 //Reselected Character
-                ctrl.SetState(new CharacterSelectedState(ctrl, currGridCharCtrl.gameObject)); 
-                ctrl.grid.HideGridCellAsReachable();
+                //ctrl.SetState(new CharacterSelectedState(ctrl, currGridCharCtrl.gameObject)); 
+                //ctrl.grid.HideGridCellAsReachable();
             }
             //Perform Move If Possible
             else if(ctrl.grid.WalkCharacterToIfPossible(data.GridPosition))

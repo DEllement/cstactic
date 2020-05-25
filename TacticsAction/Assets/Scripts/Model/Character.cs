@@ -79,6 +79,11 @@ namespace Model
         public Inventory Inventory;
         public Equipments Equipments;
         
+        public Character(){
+            DefaultMove = ActionType.MoveWalk;
+            DefaultMoveRange = (0,2);
+        }
+        
         public List<DamageDice> GetDamageDices(AttackWith attackWith, int skillId)
         {
             switch(attackWith){
@@ -107,6 +112,8 @@ namespace Model
         public int HPMax => Stats.HPMax;
         public int HP => Stats.HP;
         
+        public (int s, int e) DefaultMoveRange { get; set; }
+        public ActionType DefaultMove { get; set; }
 
         public List<DamageResult> DoDamages(List<DamageDice> damageDices)
         {

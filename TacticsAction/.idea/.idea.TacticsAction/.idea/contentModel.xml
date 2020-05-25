@@ -48,6 +48,15 @@
             <e p="BattleScene" t="Include">
               <e p="ActionMenuController.cs" t="Include" />
               <e p="ActionMenuItemController.cs" t="Include" />
+              <e p="Actions" t="Include">
+                <e p="base" t="Include">
+                  <e p="BattleAction.cs" t="Include" />
+                  <e p="IRequireTargetAction.cs" t="Include" />
+                </e>
+                <e p="MeleeAttackAction.cs" t="Include" />
+                <e p="MoveAction.cs" t="Include" />
+                <e p="RangeAttackAction.cs" t="Include" />
+              </e>
               <e p="BattleSceneController.cs" t="Include" />
               <e p="CharacterStatusBarController.cs" t="Include" />
               <e p="GridCellController.cs" t="Include" />
@@ -57,8 +66,10 @@
               <e p="InGameCamera.cs" t="Include" />
               <e p="States" t="Include">
                 <e p="ActionMenuOpenState.cs" t="Include" />
+                <e p="base" t="Include">
+                  <e p="BattleSceneState.cs" t="Include" />
+                </e>
                 <e p="BattleIntroState.cs" t="Include" />
-                <e p="BattleSceneState.cs" t="Include" />
                 <e p="CharacterSelectedState.cs" t="Include" />
                 <e p="CharacterTurnEndingState.cs" t="Include" />
                 <e p="CharacterTurnStartingState.cs" t="Include" />
@@ -92,6 +103,7 @@
             <e p="Enums.cs" t="Include" />
             <e p="GridCellEdge.cs" t="Include" />
             <e p="GridPath.cs" t="Include" />
+            <e p="IActionCommand.cs" t="Include" />
             <e p="IDamageableController.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="Services" t="Include">

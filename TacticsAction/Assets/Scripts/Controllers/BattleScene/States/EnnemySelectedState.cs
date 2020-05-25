@@ -14,7 +14,14 @@ namespace Controllers.BattleScene.States
         
         public override IEnumerator Enter(){
             ctrl.rightCharacterStatusBar.ShowStatus( _gridCharacter.GetComponent<GridCharacterController>().Character );
+            
+            //TODO: Generate ennemy selection action menu options
+            
             yield break;        
+        }
+        public override IEnumerator OnActionMenuItemClicked(ActionMenuItemClickedData data){
+            this.ctrl.ExecuteBattleAction(data.ActionItem.Command());
+            yield break;
         }
         public override IEnumerator OnGridCellClicked(GridCellClickedData data){
             
@@ -24,15 +31,27 @@ namespace Controllers.BattleScene.States
                 //ctrl.actionMenu.target = gridCharCtrl.gameObject;
                 //ctrl.SetState(new ActionMenuOpenState(ctrl));
                 //TODO: Could Show Menu like "Info, Attack" etc... 
+                
+            }else{
+                ctrl.SetState(new NothingSelectedState(ctrl)); 
+            }
+            
+            yield break;
+        }
+        public override IEnumerator OnGridCharacterClicked(GridCharacterClickedData data)
+        {
+            //New Character Selected
+            if( data.GameObject != _gridCharacter ){
+                ctrl.grid.DeSelectSelectedCharacter();
+                ctrl.SetState(new CharacterSelectedState(ctrl, data.GameObject));
                 yield break;
             }
             
-            //Reselected Curr Friend Character
-            var currGridCharCtrl = ctrl.grid.SelectedCharacter.GetComponent<GridCharacterController>();
-            ctrl.SetState(new CharacterSelectedState(ctrl, currGridCharCtrl.gameObject)); 
-            ctrl.grid.HideGridCellAsReachable();
-                
+            yield return new WaitForEndOfFrame();
+            
+            //ctrl.SetState(new ActionMenuOpenState(ctrl));
         }
+
         public override IEnumerator Exit(){
             ctrl.rightCharacterStatusBar.HideStatus();
             yield break;        

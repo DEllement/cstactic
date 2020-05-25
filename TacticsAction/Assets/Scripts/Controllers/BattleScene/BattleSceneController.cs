@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using API;
 using API.Commands;
 using API.Events;
+using Controllers.BattleScene.Actions;
 using Controllers.BattleScene.States;
+using Model;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -22,7 +26,7 @@ public class BattleSceneController : MonoBehaviour
     [SerializeField] public ActionTreeManager actionTreeManager;
     [SerializeField] public BattleManager battleManager;
     [SerializeField] public TurnManager turnManager;
-    
+
     private BattleSceneState _previousState;
     private BattleSceneState _state;
     public void SetState(BattleSceneState state){
@@ -72,6 +76,7 @@ public class BattleSceneController : MonoBehaviour
         GameCommands.ShowHealthStatus.AddListener(Execute);
         GameCommands.HideHealthStatus.AddListener(Execute);
         
+
         SetState(new NothingSelectedState(this));
     }
 
@@ -151,6 +156,14 @@ public class BattleSceneController : MonoBehaviour
     private void OnActionMenuItemClicked(ActionMenuItemClickedData data)
     {
         StartCoroutine(_state.OnActionMenuItemClicked(data));
+    }
+    
+    //Act as the Invoker of BattleAction's Commands
+    public void ExecuteBattleAction(IActionCommand cmd){
+        if( cmd is BattleAction){
+            ((BattleAction)cmd).ctrl = this;
+            StartCoroutine(cmd.Execute());
+        }
     }
     
     // Update is called once per frame

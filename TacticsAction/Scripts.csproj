@@ -90,6 +90,11 @@
      <Compile Include="Assets\Scripts\API\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\ActionMenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\ActionMenuItemController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\Actions\MeleeAttackAction.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\Actions\MoveAction.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\Actions\RangeAttackAction.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\Actions\base\BattleAction.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\Actions\base\IRequireTargetAction.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\BattleSceneController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\CharacterStatusBarController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\GridCellController.cs" />
@@ -99,7 +104,6 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\InGameCamera.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\ActionMenuOpenState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\BattleIntroState.cs" />
-     <Compile Include="Assets\Scripts\Controllers\BattleScene\States\BattleSceneState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterSelectedState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterTurnEndingState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\CharacterTurnStartingState.cs" />
@@ -111,6 +115,7 @@
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PerformActionState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PickActionTargetState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\States\PickMoveLocationState.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BattleScene\States\base\BattleSceneState.cs" />
      <Compile Include="Assets\Scripts\Controllers\BattleScene\TurnBarController.cs" />
      <Compile Include="Assets\Scripts\Editors\GridCellEditor.cs" />
      <Compile Include="Assets\Scripts\Editors\GridControllerEditor.cs" />
@@ -125,6 +130,7 @@
      <Compile Include="Assets\Scripts\Model\Enums.cs" />
      <Compile Include="Assets\Scripts\Model\GridCellEdge.cs" />
      <Compile Include="Assets\Scripts\Model\GridPath.cs" />
+     <Compile Include="Assets\Scripts\Model\IActionCommand.cs" />
      <Compile Include="Assets\Scripts\Model\IDamageableController.cs" />
      <Compile Include="Assets\Scripts\Model\Inventory.cs" />
      <Compile Include="Assets\Scripts\Model\Services\GridWorker.cs" />

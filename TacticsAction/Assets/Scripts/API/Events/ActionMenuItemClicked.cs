@@ -5,10 +5,10 @@ using UnityEngine.Events;
 namespace API.Events
 {
     public class ActionMenuItemClickedData{
-        public ActionType ActionType;
-        public ActionMenuItemClickedData(ActionType actionType)
+        public ActionItem ActionItem;
+        public ActionMenuItemClickedData(ActionItem actionItem)
         {
-            this.ActionType = actionType;
+            ActionItem = actionItem;
         }
     }
     public class ActionMenuItemClicked : UnityEvent<ActionMenuItemClickedData>{}
