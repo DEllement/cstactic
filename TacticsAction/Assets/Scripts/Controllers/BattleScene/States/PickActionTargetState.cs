@@ -56,13 +56,26 @@ namespace Controllers.BattleScene.States
                     Object.Destroy(damageableCtrl.GameObject);
                 }
             });
-                    
             //TODO: Pass down the selected targets to PerformActionState or assign on ctrl
             ctrl.grid.CancelTargetTracker();
             ctrl.grid.selectionMode = GridSelectionMode.Cell;
-            ctrl.SetState(new PerformActionState(ctrl));
+            ctrl.SetState(new PerformActionState(ctrl, ()=>{
+                
+                //TODO: Run Animation
+                //TODO: Run Damage Results
+                //TODO: Display Damage Done
+                
+                //Re-Select Character if can still move
+                // or
+                //
+                
+                //TODO: Switch to other state
+                
+            }));
             yield break;
         }
+        
+                
     }
     
     public class PickActionTargetState : BattleSceneState

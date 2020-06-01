@@ -20,41 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MeleeAttackAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MeleeAttackAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MoveAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MoveAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/RangeAttackAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/RangeAttackAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/BattleAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/BattleAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/IRequireTargetAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/IRequireTargetAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/base.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IActionCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/IActionCommand.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/API/Events/ActionMenuItemClicked.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuItemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/ActionMenuOpenState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/base/BattleSceneState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/BattleSceneState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/base/BattleSceneState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/CharacterSelectedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/EnnemySelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/EnnemySelectedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/NothingSelectedState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ActionItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,13 +174,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/ActionMenuController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MoveActionCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/IActionCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/BattleAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickMoveLocationState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/IRequireTargetAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/AttackAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Enums.cs" />
@@ -229,6 +196,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MeleeAttackAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
       </list>
     </option>
   </component>
@@ -245,6 +214,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.4340344" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="TWShift.4" value="true" />
@@ -314,7 +284,9 @@
       <workItem from="1589418809064" duration="21074000" />
       <workItem from="1589493124945" duration="8579000" />
       <workItem from="1589769061349" duration="73795000" />
-      <workItem from="1590375650993" duration="3571000" />
+      <workItem from="1590375650993" duration="18469000" />
+      <workItem from="1590762795973" duration="34000" />
+      <workItem from="1590805777135" duration="1605000" />
     </task>
     <servers />
   </component>

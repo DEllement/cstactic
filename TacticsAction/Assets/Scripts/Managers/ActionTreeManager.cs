@@ -37,7 +37,7 @@ public class ActionTreeManager : MonoBehaviour
 
     private void Handle(ActionMenuItemClickedData data)
     {
-        switch(data.ActionType){
+        switch(data.ActionItem.ActionType){
             case ActionType.Move:
                 GameCommands.ShowPossibleMove.Invoke(new ShowPossibleMoveData(CurrentCharacterTurn, true));        
                 break;
