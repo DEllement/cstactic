@@ -17,9 +17,15 @@ namespace Controllers.BattleScene.States
         }
         
         public override IEnumerator Enter(){
+            while(_commandToRuns.Count > 0){
+                yield return ctrl.StartCoroutine(ExecuteAction(_commandToRuns.Dequeue()));
+            }
+            //TODO: On All Action Runned change move to next state or trust the queue last action
+        }
         
-            
-            
+        
+        private IEnumerator ExecuteAction(Action action){
+            action();
             yield break;
         }
     }

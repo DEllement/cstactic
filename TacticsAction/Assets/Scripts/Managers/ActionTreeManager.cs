@@ -42,7 +42,6 @@ public class ActionTreeManager : MonoBehaviour
                 GameCommands.ShowPossibleMove.Invoke(new ShowPossibleMoveData(CurrentCharacterTurn, true));        
                 break;
         }
-        
     }
 
     private void Handle(CharacterTurnStartedData data)

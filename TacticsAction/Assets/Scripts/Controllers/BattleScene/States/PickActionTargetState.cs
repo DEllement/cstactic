@@ -11,6 +11,13 @@ using Object = UnityEngine.Object;
 
 namespace Controllers.BattleScene.States
 {
+    public class PerformAction{
+        public IEnumerator Run(){
+            
+            yield break;            
+        }
+    }
+    
     public class PickActionMeleeTargetState : PickActionTargetState{
         private MeleeAttackAction _action;
         public PickActionMeleeTargetState(BattleSceneController ctrl, MeleeAttackAction action) : base(ctrl)
@@ -59,23 +66,14 @@ namespace Controllers.BattleScene.States
             //TODO: Pass down the selected targets to PerformActionState or assign on ctrl
             ctrl.grid.CancelTargetTracker();
             ctrl.grid.selectionMode = GridSelectionMode.Cell;
-            ctrl.SetState(new PerformActionState(ctrl, ()=>{
-                
-                //TODO: Run Animation
-                //TODO: Run Damage Results
-                //TODO: Display Damage Done
-                
-                //Re-Select Character if can still move
-                // or
-                //
-                
-                //TODO: Switch to other state
-                
-            }));
+            
+            var actions = new List<Action>();
+            actions.Add(delegate() {  });
+            
+            ctrl.SetState(new PerformActionState(ctrl, actions));
             yield break;
         }
-        
-                
+           
     }
     
     public class PickActionTargetState : BattleSceneState

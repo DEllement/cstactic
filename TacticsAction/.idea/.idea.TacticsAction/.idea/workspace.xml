@@ -195,9 +195,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/base/BattleAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MeleeAttackAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
       </list>
     </option>
   </component>
@@ -286,7 +286,7 @@
       <workItem from="1589769061349" duration="73795000" />
       <workItem from="1590375650993" duration="18469000" />
       <workItem from="1590762795973" duration="34000" />
-      <workItem from="1590805777135" duration="1605000" />
+      <workItem from="1590805777135" duration="10602000" />
     </task>
     <servers />
   </component>
