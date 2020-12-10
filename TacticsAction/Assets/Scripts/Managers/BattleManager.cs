@@ -27,7 +27,10 @@ public class DamageResult{
     public string AttackDetails;
 }
 
-public interface IDamageable{
+public interface ITargetable{
+}
+
+public interface IDamageable : ITargetable{
     int HPMax {get;}
     int HP {get;}
     List<DamageResult> DoDamages(List<DamageDice> damageDices);

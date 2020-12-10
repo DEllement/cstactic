@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a56cfdc5-7a1b-4a42-88b1-0025e79bd502" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TacticsAction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +162,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/TestButtonsHandlers.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/IDamageableBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/GridCharacterController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/Services/GridWorker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/HealthBarsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/CharacterStats.cs" />
@@ -196,8 +194,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/BattleSceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/Actions/MeleeAttackAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ActionTreeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PerformActionState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/BattleScene/States/PickActionTargetState.cs" />
       </list>
     </option>
   </component>
@@ -286,7 +285,7 @@
       <workItem from="1589769061349" duration="73795000" />
       <workItem from="1590375650993" duration="18469000" />
       <workItem from="1590762795973" duration="34000" />
-      <workItem from="1590805777135" duration="10602000" />
+      <workItem from="1590805777135" duration="19535000" />
     </task>
     <servers />
   </component>
@@ -453,12 +452,12 @@
     <state x="657" y="233" key="IDE.errors.dialog/0.0.3072.1240@0.0.3072.1240" timestamp="1587742414831" />
     <state x="657" y="241" key="IDE.errors.dialog/0.0.3072.1280@0.0.3072.1280" timestamp="1588476278292" />
     <state x="308" y="179" key="IDE.errors.dialog/0.23.1440.830@0.23.1440.830" timestamp="1587213880051" />
-    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1590252051507">
+    <state x="479" y="300" key="RiderGenerateDialog" timestamp="1591160546450">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="399" y="248" key="RiderGenerateDialog/0.0.2560.1027@0.0.2560.1027" timestamp="1587157069280" />
     <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588034971357" />
-    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1590252051507" />
+    <state x="479" y="300" key="RiderGenerateDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1591160546450" />
     <state x="1207" y="403" key="SettingsEditor" timestamp="1589424403620">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
@@ -475,12 +474,12 @@
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="1630" y="100" width="1349" height="1046" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3072.1240@0.0.3072.1240" timestamp="1585780192195" />
-    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1590206804293">
+    <state x="537" y="286" width="887" height="732" key="find.popup" timestamp="1591366528473">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
     <state x="959" y="245" width="739" height="606" key="find.popup/0.0.2560.1027@0.0.2560.1027" timestamp="1586663311362" />
     <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240/3840.-138.1200.1920@0.0.3072.1240" timestamp="1588048489329" />
-    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1590206804293" />
+    <state x="537" y="286" width="887" height="732" key="find.popup/0.0.3072.1240@0.0.3072.1240" timestamp="1591366528473" />
     <state x="1193" y="647" width="563" height="274" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1588475684706">
       <screen x="0" y="0" width="3072" height="1240" />
     </state>
